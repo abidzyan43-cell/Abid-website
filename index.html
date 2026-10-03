@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ABID | My Personal Space</title>
+<title>UR PARAMEDIC | My Personal Space</title>
 
 <style>
 *{
@@ -93,7 +93,7 @@ nav a:hover{
     padding:18px;
     background:#12291f;
     border-radius:14px;
-    text-align:center;
+    text-align:center
 }
 
 .item strong{
@@ -285,6 +285,60 @@ footer{
 <footer>
     © 2026 ABID • My Personal Website
 </footer>
+<section class="query-section">
+    <h2>Any Queries?</h2>
+    <p>Have a question? Feel free to ask me.</p>
 
+    <form action="https://formspree.io/f/xzeznyjb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <textarea name="message" rows="6"
+        placeholder="Write your query here..." required></textarea>
+
+        <button type="submit">Send Query</button>
+    </form>
+</section>
+
+<style>
+.query-section {
+    margin: 40px 20px;
+    padding: 25px;
+    background: #0b3d2e;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.query-section h2 {
+    color: #d4af37;
+    font-size: 30px;
+}
+
+.query-section p {
+    color: white;
+}
+
+.query-section input,
+.query-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.query-section button {
+    padding: 14px 30px;
+    background: #d4af37;
+    color: #07110d;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+</style>
 </body>
 </html>
