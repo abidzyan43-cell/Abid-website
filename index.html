@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UR PARAMEDIC | My Personal Space</title>
+<title>UR PARAMEDIC | Fitness • Health • Medical</title>
 
 <style>
 *{
@@ -14,109 +14,232 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#07110d;
-    color:white;
+    color:#fff;
+    line-height:1.6;
 }
 
 header{
-    padding:35px 20px;
-    text-align:center;
     background:linear-gradient(135deg,#0b3d2e,#07110d);
+    padding:45px 20px;
+    text-align:center;
+    border-bottom:1px solid #245d49;
 }
 
-header h1{
-    font-size:35px;
+.logo{
+    font-size:42px;
+    font-weight:bold;
     color:#d4af37;
+    letter-spacing:2px;
 }
 
-header p{
-    margin-top:10px;
-    color:#b8c9c1;
-}
-
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    padding:15px;
-    background:#0b1813;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:10px 15px;
-    border-radius:20px;
-    background:#123326;
-}
-
-nav a:hover{
-    background:#d4af37;
-    color:#07110d;
+.tagline{
+    margin-top:8px;
+    color:#cbd8d2;
+    font-size:16px;
 }
 
 .container{
-    max-width:900px;
+    max-width:1100px;
     margin:auto;
-    padding:25px 15px;
+    padding:25px 16px;
+}
+
+.hero{
+    text-align:center;
+    padding:35px 15px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.hero span{
+    color:#d4af37;
+}
+
+.hero p{
+    color:#cbd8d2;
+    max-width:700px;
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:25px;
 }
 
 .card{
-    background:#0d1d16;
-    border:1px solid #214c3a;
+    background:linear-gradient(145deg,#0d241b,#091811);
+    border:1px solid #245d49;
     border-radius:18px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 5px 25px #0005;
+    padding:25px 20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#d4af37;
 }
 
 .card h2{
     color:#d4af37;
-    margin-bottom:12px;
+    margin-bottom:8px;
 }
 
 .card p{
-    line-height:1.7;
-    color:#d4ded9;
+    color:#cbd8d2;
+    font-size:14px;
 }
 
-.plan{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:12px;
+button,
+.button{
+    border:0;
+    background:#d4af37;
+    color:#07110d;
+    padding:12px 20px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
     margin-top:15px;
+    display:inline-block;
 }
 
-.item{
-    padding:18px;
-    background:#12291f;
-    border-radius:14px;
-    text-align:center
+button:hover,
+.button:hover{
+    background:#f0ca55;
 }
 
-.item strong{
+.page{
+    display:none;
+}
+
+.page.active{
     display:block;
+}
+
+.back{
+    margin-bottom:20px;
+    background:#173d2e;
+    color:white;
+    border:1px solid #356c56;
+}
+
+.list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-top:20px;
+}
+
+.list button{
+    margin:0;
+    background:#10271e;
+    color:#fff;
+    border:1px solid #356c56;
+}
+
+.list button:hover{
+    background:#d4af37;
+    color:#07110d;
+}
+
+.content{
+    background:#0d2018;
+    border:1px solid #245d49;
+    padding:25px;
+    border-radius:18px;
+    margin-top:20px;
+}
+
+.content h2,
+.content h3{
     color:#d4af37;
-    margin-bottom:8px;
+    margin-bottom:12px;
+}
+
+.content ul{
+    padding-left:22px;
+    margin-bottom:15px;
+}
+
+.content li{
+    margin:7px 0;
+}
+
+.day-content{
+    display:none;
+}
+
+.day-content.active{
+    display:block;
+}
+
+.disease-content{
+    display:none;
+}
+
+.disease-content.active{
+    display:block;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    margin:8px 0 15px;
+    border-radius:10px;
+    border:1px solid #356c56;
+    background:#07110d;
+    color:white;
+    font-size:15px;
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+label{
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.success{
+    margin-top:15px;
+    color:#8be0ae;
 }
 
 footer{
     text-align:center;
-    padding:30px;
-    color:#879890;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid #245d49;
+    color:#9fb2a9;
 }
 
-.button{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 20px;
-    background:#d4af37;
-    color:#07110d;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:bold;
+.quote{
+    border-left:4px solid #d4af37;
+    padding:15px 20px;
+    margin:20px 0;
+    background:#10271e;
+    font-style:italic;
+}
+
+.small{
+    color:#9fb2a9;
+    font-size:13px;
+}
+
+@media(max-width:600px){
+    .logo{font-size:32px}
+    .hero h1{font-size:30px}
+    .container{padding:18px 12px}
 }
 </style>
 </head>
@@ -124,219 +247,593 @@ footer{
 <body>
 
 <header>
-    <h1>Ur Paramedic</h1>
-    <p>My Personal Space • Fitness • Routine • Knowledge</p>
+    <div class="logo">UR PARAMEDIC</div>
+    <div class="tagline">
+        Fitness • Health • Medical Knowledge • Discipline
+    </div>
 </header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#routine">Routine</a>
-    <a href="#diet">Diet</a>
-    <a href="#workout">Workout</a>
-    <a href="#book">My Book</a>
-</nav>
 
 <div class="container">
 
-<section class="card" id="about">
-    <h2>👋 About Me</h2>
+<!-- HOME -->
+<section id="home" class="page active">
+
+<div class="hero">
+    <h1>Welcome to <span>UR PARAMEDIC</span></h1>
     <p>
-        Welcome to my personal website.
-        Here I share my daily routine, fitness journey,
-        diet plan, knowledge and personal projects.
+        A personal platform for fitness, health awareness,
+        paramedic knowledge, workout routines and practical medical information.
     </p>
-</section>
 
-<section class="card" id="routine">
-    <h2>📅 Daily Routine</h2>
-    <div class="plan">
-        <div class="item">
-            <strong>Morning</strong>
-            Wake up & exercise
-        </div>
-
-        <div class="item">
-            <strong>Day</strong>
-            Work & learning
-        </div>
-
-        <div class="item">
-            <strong>Evening</strong>
-            Workout & study
-        </div>
-
-        <div class="item">
-            <strong>Night</strong>
-            Planning & rest
-        </div>
+    <div class="quote">
+        “Motivation may help you start, but consistency is what takes you to your destination.”
     </div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <h2>👤 About</h2>
+    <p>Learn about UR PARAMEDIC and the person behind this platform.</p>
+    <button onclick="showPage('about')">Open</button>
+</div>
+
+<div class="card">
+    <h2>🏋️ Workout</h2>
+    <p>Open the weekly workout routine and select any day.</p>
+    <button onclick="showPage('workout')">Open</button>
+</div>
+
+<div class="card">
+    <h2>🥗 Diet Plan</h2>
+    <p>Nutrition plans and practical healthy eating guidance.</p>
+    <button onclick="showPage('diet')">Open</button>
+</div>
+
+<div class="card">
+    <h2>💪 Fitness Tips</h2>
+    <p>Simple fitness and lifestyle tips.</p>
+    <button onclick="showPage('fitness')">Open</button>
+</div>
+
+<div class="card">
+    <h2>🩺 Common Diseases</h2>
+    <p>Click to explore information about common diseases.</p>
+    <button onclick="showPage('diseases')">Open</button>
+</div>
+
+<div class="card">
+    <h2>📖 My Blog / Book</h2>
+    <p>Articles, personal notes, experiences and learning material.</p>
+    <button onclick="showPage('blog')">Open</button>
+</div>
+
+<div class="card">
+    <h2>📩 Contact / Queries</h2>
+    <p>Have a question? Send your query directly.</p>
+    <button onclick="showPage('contact')">Open</button>
+</div>
+
+</div>
 </section>
 
-<section class="card" id="diet">
-    <h2>🥗 My Diet Plan</h2>
 
-    <div class="plan">
-        <div class="item">
-            <strong>Breakfast</strong>
-            Protein + balanced food
-        </div>
+<!-- ABOUT -->
+<section id="about" class="page">
 
-        <div class="item">
-            <strong>Lunch</strong>
-            Protein + vegetables
-        </div>
+<button class="back" onclick="showPage('home')">← Back to Home</button>
 
-        <div class="item">
-            <strong>Snack</strong>
-            Fruit / healthy snack
-        </div>
+<div class="content">
+<h2>👤 About UR PARAMEDIC</h2>
 
-        <div class="item">
-            <strong>Dinner</strong>
-            Light balanced meal
-        </div>
-    </div>
+<p>
+Welcome to <strong>UR PARAMEDIC</strong> — a platform created to share
+fitness knowledge, health awareness, paramedic learning and practical
+information in a simple way.
+</p>
+
+<br>
+
+<p>
+The goal is to make useful knowledge easy to understand and encourage
+people to build discipline, consistency and a healthier lifestyle.
+</p>
+
+<div class="quote">
+“Don't aim to be perfect. Aim to be consistent.”
+</div>
+
+<p class="small">
+More personal information and introduction can be added here later.
+</p>
+</div>
+
 </section>
 
-<section class="card" id="workout">
-    <h2>💪 Workout</h2>
 
-    <p>
-        My fitness journey includes strength training,
-        cardio, stretching and regular physical activity.
-    </p>
+<!-- WORKOUT -->
+<section id="workout" class="page">
 
-    <div class="plan">
-        <div class="item">
-            <strong>MON</strong>
-            Chest
-        </div>
+<button class="back" onclick="showPage('home')">← Back to Home</button>
 
-        <div class="item">
-            <strong>TUE</strong>
-            Back
-        </div>
+<div class="content">
+<h2>🏋️ Weekly Workout</h2>
+<p>Select a day to view that day's workout.</p>
 
-        <div class="item">
-            <strong>WED</strong>
-            Legs
-        </div>
+<div class="list">
+<button onclick="showDay('sunday')">Sunday</button>
+<button onclick="showDay('monday')">Monday</button>
+<button onclick="showDay('tuesday')">Tuesday</button>
+<button onclick="showDay('wednesday')">Wednesday</button>
+<button onclick="showDay('thursday')">Thursday</button>
+<button onclick="showDay('friday')">Friday</button>
+<button onclick="showDay('saturday')">Saturday</button>
+</div>
 
-        <div class="item">
-            <strong>THU</strong>
-            Shoulders
-        </div>
-    </div>
+<div id="sunday" class="day-content content">
+<h3>Sunday — Full Body + Cardio</h3>
+<ul>
+<li>Warm-up — 10 minutes</li>
+<li>Bodyweight Squats — 3 × 15</li>
+<li>Push-ups — 3 × 10-15</li>
+<li>Pull-ups / Assisted Pull-ups — 3 sets</li>
+<li>Plank — 3 × 40 seconds</li>
+<li>Brisk Walk / Jog — 20-30 minutes</li>
+</ul>
+</div>
+
+<div id="monday" class="day-content content">
+<h3>Monday — Chest + Triceps</h3>
+<ul>
+<li>Warm-up — 10 minutes</li>
+<li>Push-ups — 4 × 12</li>
+<li>Incline Push-ups — 3 × 12</li>
+<li>Diamond Push-ups — 3 × 8-10</li>
+<li>Triceps Dips — 3 × 10</li>
+<li>Stretching — 5 minutes</li>
+</ul>
+</div>
+
+<div id="tuesday" class="day-content content">
+<h3>Tuesday — Back + Biceps</h3>
+<ul>
+<li>Warm-up — 10 minutes</li>
+<li>Pull-ups — 3 sets</li>
+<li>Australian Rows — 3 × 12</li>
+<li>Back Extensions — 3 × 15</li>
+<li>Biceps Curls — 3 × 12</li>
+<li>Hammer Curls — 3 × 12</li>
+</ul>
+</div>
+
+<div id="wednesday" class="day-content content">
+<h3>Wednesday — Legs</h3>
+<ul>
+<li>Warm-up — 10 minutes</li>
+<li>Bodyweight Squats — 4 × 15</li>
+<li>Lunges — 3 × 10 each leg</li>
+<li>Glute Bridge — 3 × 15</li>
+<li>Calf Raises — 4 × 20</li>
+<li>Light Jog — 15 minutes</li>
+</ul>
+</div>
+
+<div id="thursday" class="day-content content">
+<h3>Thursday — Shoulders + Core</h3>
+<ul>
+<li>Shoulder warm-up — 5 minutes</li>
+<li>Overhead Press — 3 × 12</li>
+<li>Lateral Raises — 3 × 15</li>
+<li>Front Raises — 3 × 12</li>
+<li>Leg Raises — 3 × 12</li>
+<li>Plank — 3 × 45 seconds</li>
+</ul>
+</div>
+
+<div id="friday" class="day-content content">
+<h3>Friday — Cardio + Abs</h3>
+<ul>
+<li>Brisk Walk / Jog — 25-30 minutes</li>
+<li>Mountain Climbers — 3 × 20</li>
+<li>Leg Raises — 3 × 12</li>
+<li>Bicycle Crunches — 3 × 20</li>
+<li>Plank — 3 × 45 seconds</li>
+</ul>
+</div>
+
+<div id="saturday" class="day-content content">
+<h3>Saturday — Active Recovery</h3>
+<ul>
+<li>Light walking — 20-30 minutes</li>
+<li>Full body stretching</li>
+<li>Mobility exercises</li>
+<li>Deep breathing</li>
+<li>Rest and recovery</li>
+</ul>
+</div>
+
+</div>
 </section>
 
-<section class="card" id="book">
-    <h2>📖 The Power of Consistency</h2>
 
-    <p>
-        “Success is not built in one day. It is built by doing
-        the right things every day.”
-    </p>
+<!-- DIET -->
+<section id="diet" class="page">
 
-    <p>
-        Consistency does not mean being perfect every day.
-        Some days you will feel tired, unmotivated, or frustrated.
-        Sometimes your progress will seem invisible.
-        The important thing is to keep moving forward.
-    </p>
+<button class="back" onclick="showPage('home')">← Back to Home</button>
 
-    <p>
-        Small actions, repeated every day, create big changes
-        over time.
-    </p>
+<div class="content">
+<h2>🥗 Diet Plan</h2>
 
-    <p>
-        • Be 1% better every day.<br>
-        • Stay disciplined when motivation disappears.<br>
-        • Learn from failure and start again.<br>
-        • Trust the process when progress feels slow.<br>
-        • Never let one bad day become a reason to quit.
-    </p>
+<h3>Morning</h3>
+<ul>
+<li>Water after waking up</li>
+<li>Eggs / oats / fruit depending on your goal</li>
+</ul>
 
-    <p>
-        <strong>Motivation may help you start, but consistency
-        is what takes you to your destination.</strong>
-    </p>
+<h3>Breakfast</h3>
+<ul>
+<li>Oats with milk</li>
+<li>Eggs / paneer</li>
+<li>One fruit</li>
+</ul>
 
-    <p>
-        “Don’t aim to be perfect. Aim to be consistent.”
-    </p>
+<h3>Lunch</h3>
+<ul>
+<li>Rice or roti</li>
+<li>Dal</li>
+<li>Chicken / fish / paneer</li>
+<li>Vegetables + salad</li>
+</ul>
 
-    <p>— Abid’s Personal Notes</p>
-</section><section class="card" id="book">
-    <h2>📖 My Book / Notes</h2>
+<h3>Evening</h3>
+<ul>
+<li>Fruit</li>
+<li>Curd / yogurt</li>
+<li>Handful of nuts</li>
+</ul>
 
-    <p>
-        This section can be used for my personal book,
-        medical notes, learning material, articles and
-        daily experiences.
-    </p>
+<h3>Dinner</h3>
+<ul>
+<li>Protein source</li>
+<li>Vegetables</li>
+<li>Moderate roti/rice according to your goal</li>
+</ul>
 
-    <a class="button" href="#about">Explore</a>
+<div class="quote">
+Stay hydrated and focus on consistency rather than extreme dieting.
+</div>
+
+<p class="small">
+For medical conditions, pregnancy, kidney/liver disease or other special
+situations, diet should be individualized by a qualified professional.
+</p>
+
+</div>
+</section>
+
+
+<!-- FITNESS -->
+<section id="fitness" class="page">
+
+<button class="back" onclick="showPage('home')">← Back to Home</button>
+
+<div class="content">
+<h2>💪 Fitness Tips</h2>
+
+<ul>
+<li>Be consistent even when motivation is low.</li>
+<li>Sleep 7-9 hours whenever possible.</li>
+<li>Drink enough water.</li>
+<li>Prioritize protein and whole foods.</li>
+<li>Do not depend only on supplements.</li>
+<li>Increase workout intensity gradually.</li>
+<li>Take rest and recovery seriously.</li>
+<li>Track your progress.</li>
+<li>Warm up before intense exercise.</li>
+<li>Stop exercise if you develop severe pain, chest pain, fainting or breathing difficulty.</li>
+</ul>
+
+<div class="quote">
+Small steps repeated every day create big changes.
+</div>
+
+</div>
+</section>
+
+
+<!-- DISEASES -->
+<section id="diseases" class="page">
+
+<button class="back" onclick="showPage('home')">← Back to Home</button>
+
+<div class="content">
+<h2>🩺 Common Diseases</h2>
+<p>Select a disease to view basic information.</p>
+
+<div class="list">
+<button onclick="showDisease('hypertension')">Hypertension</button>
+<button onclick="showDisease('diabetes')">Diabetes</button>
+<button onclick="showDisease('asthma')">Asthma</button>
+<button onclick="showDisease('anemia')">Anemia</button>
+<button onclick="showDisease('malaria')">Malaria</button>
+<button onclick="showDisease('dengue')">Dengue</button>
+<button onclick="showDisease('typhoid')">Typhoid</button>
+<button onclick="showDisease('tb')">Tuberculosis</button>
+<button onclick="showDisease('obesity')">Obesity</button>
+<button onclick="showDisease('migraine')">Migraine</button>
+<button onclick="showDisease('gastritis')">Gastritis</button>
+<button onclick="showDisease('gerd')">GERD</button>
+<button onclick="showDisease('uti')">UTI</button>
+<button onclick="showDisease('arthritis')">Arthritis</button>
+<button onclick="showDisease('cholesterol')">High Cholesterol</button>
+<button onclick="showDisease('fattyliver')">Fatty Liver</button>
+<button onclick="showDisease('kidneystone')">Kidney Stones</button>
+<button onclick="showDisease('constipation')">Constipation</button>
+<button onclick="showDisease('diarrhea')">Diarrhea</button>
+<button onclick="showDisease('commoncold')">Common Cold</button>
+</div>
+
+<div id="hypertension" class="disease-content content">
+<h3>Hypertension</h3>
+<p>High blood pressure that can increase cardiovascular risk.</p>
+<p><strong>General diet:</strong> Reduce excess salt, eat vegetables, fruits, whole grains and appropriate protein. Follow prescribed treatment.</p>
+</div>
+
+<div id="diabetes" class="disease-content content">
+<h3>Diabetes</h3>
+<p>A condition involving elevated blood glucose.</p>
+<p><strong>General diet:</strong> Prefer high-fiber foods, vegetables, controlled portions and minimize sugary drinks.</p>
+</div>
+
+<div id="asthma" class="disease-content content">
+<h3>Asthma</h3>
+<p>A chronic condition affecting the airways.</p>
+<p><strong>General care:</strong> Identify triggers and follow the prescribed inhaler/action plan.</p>
+</div>
+
+<div id="anemia" class="disease-content content">
+<h3>Anemia</h3>
+<p>A condition in which blood does not carry enough oxygen effectively.</p>
+<p><strong>Nutrition:</strong> Iron-rich foods such as legumes, leafy vegetables and appropriate animal sources may help depending on the cause.</p>
+</div>
+
+<div id="malaria" class="disease-content content">
+<h3>Malaria</h3>
+<p>A mosquito-borne infection requiring appropriate diagnosis and treatment.</p>
+<p><strong>Nutrition:</strong> Maintain fluids and adequate nutritious food during recovery. Treatment must follow medical advice.</p>
+</div>
+
+<div id="dengue" class="disease-content content">
+<h3>Dengue</h3>
+<p>A viral infection transmitted by mosquitoes.</p>
+<p><strong>Care:</strong> Fluids and medical monitoring are important. Avoid self-medication with medicines that can increase bleeding risk.</p>
+</div>
+
+<div id="typhoid" class="disease-content content">
+<h3>Typhoid</h3>
+<p>A bacterial infection that requires appropriate medical treatment.</p>
+<p><strong>Diet:</strong> Fluids and easily tolerated nutritious foods may be useful during recovery.</p>
+</div>
+
+<div id="tb" class="disease-content content">
+<h3>Tuberculosis</h3>
+<p>An infectious disease commonly affecting the lungs.</p>
+<p><strong>Nutrition:</strong> Adequate calories and protein can support recovery alongside the complete prescribed treatment.</p>
+</div>
+
+<div id="obesity" class="disease-content content">
+<h3>Obesity</h3>
+<p>Excess body fat that can increase health risks.</p>
+<p><strong>Diet:</strong> Focus on sustainable calorie control, protein, vegetables, fiber and regular activity.</p>
+</div>
+
+<div id="migraine" class="disease-content content">
+<h3>Migraine</h3>
+<p>A neurological condition that can cause recurrent headaches and other symptoms.</p>
+<p><strong>General care:</strong> Regular sleep, hydration and identifying individual triggers may help.</p>
+</div>
+
+<div id="gastritis" class="disease-content content">
+<h3>Gastritis</h3>
+<p>Inflammation of the stomach lining.</p>
+<p><strong>Diet:</strong> Avoid foods that clearly trigger symptoms and follow medical advice.</p>
+</div>
+
+<div id="gerd" class="disease-content content">
+<h3>GERD</h3>
+<p>Acid reflux from the stomach into the esophagus.</p>
+<p><strong>General care:</strong> Avoid large late-night meals and individual trigger foods.</p>
+</div>
+
+<div id="uti" class="disease-content content">
+<h3>UTI</h3>
+<p>Urinary tract infection requiring appropriate assessment and treatment.</p>
+<p><strong>General care:</strong> Maintain hydration unless a clinician has advised fluid restriction.</p>
+</div>
+
+<div id="arthritis" class="disease-content content">
+<h3>Arthritis</h3>
+<p>A group of conditions causing joint pain and inflammation.</p>
+<p><strong>General care:</strong> Appropriate activity, healthy weight and individualized treatment can help.</p>
+</div>
+
+<div id="cholesterol" class="disease-content content">
+<h3>High Cholesterol</h3>
+<p>Elevated blood lipids that can contribute to cardiovascular risk.</p>
+<p><strong>Diet:</strong> Increase fiber-rich foods and reduce excessive saturated and trans fats.</p>
+</div>
+
+<div id="fattyliver" class="disease-content content">
+<h3>Fatty Liver</h3>
+<p>Excess fat accumulation in the liver.</p>
+<p><strong>General care:</strong> Weight management, physical activity and limiting alcohol when relevant are important.</p>
+</div>
+
+<div id="kidneystone" class="disease-content content">
+<h3>Kidney Stones</h3>
+<p>Hard deposits that can form in the kidneys.</p>
+<p><strong>General care:</strong> Adequate fluid intake is commonly important, but the exact diet depends on stone type.</p>
+</div>
+
+<div id="constipation" class="disease-content content">
+<h3>Constipation</h3>
+<p>Infrequent or difficult bowel movements.</p>
+<p><strong>Diet:</strong> Gradually increase fiber, fluids and physical activity when appropriate.</p>
+</div>
+
+<div id="diarrhea" class="disease-content content">
+<h3>Diarrhea</h3>
+<p>Frequent loose or watery stools.</p>
+<p><strong>Care:</strong> Replace fluids and electrolytes. Seek medical care for severe dehydration, blood in stool or persistent symptoms.</p>
+</div>
+
+<div id="commoncold" class="disease-content content">
+<h3>Common Cold</h3>
+<p>A common viral respiratory infection.</p>
+<p><strong>Care:</strong> Rest, fluids and symptomatic care can help. Seek medical attention for severe or unusual symptoms.</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- BLOG -->
+<section id="blog" class="page">
+
+<button class="back" onclick="showPage('home')">← Back to Home</button>
+
+<div class="content">
+
+<h2>📖 My Blog / Book</h2>
+
+<h3>Consistency Over Motivation</h3>
+<p>
+Motivation can get you started, but consistency keeps you moving.
+You will not feel motivated every day. The real transformation happens
+when you continue even on the days when motivation is low.
+</p>
+
+<div class="quote">
+“Success is not about doing something once. It is about showing up again and again.”
+</div>
+
+<h3>Discipline</h3>
+<p>
+Discipline means doing what needs to be done even when you don't feel like doing it.
+Small daily actions eventually become habits.
+</p>
+
+<h3>My Personal Notes</h3>
+<p>
+This section can later contain your own medical notes, experiences,
+fitness journey, paramedic learning material and personal articles.
+</p>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+
+<button class="back" onclick="showPage('home')">← Back to Home</button>
+
+<div class="content">
+
+<h2>📩 Contact / Queries</h2>
+
+<p>
+Have a question, suggestion or feedback?
+Fill the form below. Your message will be sent to me.
+</p>
+
+<form action="https://formspree.io/f/xzeznyjb" method="POST">
+
+<label>Your Name</label>
+<input
+type="text"
+name="name"
+placeholder="Enter your name"
+required>
+
+<label>Your Email</label>
+<input
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+<label>Your Query</label>
+<textarea
+name="message"
+placeholder="Write your query here..."
+required></textarea>
+
+<button type="submit">Send Query</button>
+
+</form>
+
+<p class="small">
+Please do not submit passwords, OTPs or other sensitive personal information.
+</p>
+
+</div>
 </section>
 
 </div>
 
 <footer>
-    © 2026 ABID • My Personal Website
+© 2026 UR PARAMEDIC • Health • Fitness • Medical Knowledge
 </footer>
-<section class="query-section">
-    <h2>Any Queries?</h2>
-    <p>Have a question? Feel free to ask me.</p>
 
-    <form action="https://formspree.io/f/xzeznyjb" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
 
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="6"
-        placeholder="Write your query here..." required></textarea>
+<script>
 
-        <button type="submit">Send Query</button>
-    </form>
-</section>
+function showPage(pageId){
 
-<style>
-.query-section {
-    margin: 40px 20px;
-    padding: 25px;
-    background: #0b3d2e;
-    border-radius: 15px;
-    text-align: center;
+    document.querySelectorAll(".page").forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageId).classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
-.query-section h2 {
-    color: #d4af37;
-    font-size: 30px;
+
+function showDay(dayId){
+
+    document.querySelectorAll(".day-content").forEach(function(day){
+        day.classList.remove("active");
+    });
+
+    document.getElementById(dayId).classList.add("active");
+
+    document.getElementById(dayId).scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
 }
 
-.query-section p {
-    color: white;
+
+function showDisease(diseaseId){
+
+    document.querySelectorAll(".disease-content").forEach(function(disease){
+        disease.classList.remove("active");
+    });
+
+    document.getElementById(diseaseId).classList.add("active");
+
+    document.getElementById(diseaseId).scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
 }
 
-.query-section input,
-.query-section textarea {
-    width: 100%;
-    box-sizing: border-box;
-    margin: 10px 0;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-}
+</script>
 
-.query-section button {
-    padding: 14px 30px;
-    background: #d4af37;
-    color: #07110d;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
-}
-</style>
 </body>
 </html>
