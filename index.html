@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ABID | My Personal Space</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#07110d;
+    color:white;
+}
+
+header{
+    padding:35px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#0b3d2e,#07110d);
+}
+
+header h1{
+    font-size:35px;
+    color:#d4af37;
+}
+
+header p{
+    margin-top:10px;
+    color:#b8c9c1;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    padding:15px;
+    background:#0b1813;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:20px;
+    background:#123326;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:#07110d;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:25px 15px;
+}
+
+.card{
+    background:#0d1d16;
+    border:1px solid #214c3a;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 25px #0005;
+}
+
+.card h2{
+    color:#d4af37;
+    margin-bottom:12px;
+}
+
+.card p{
+    line-height:1.7;
+    color:#d4ded9;
+}
+
+.plan{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+    margin-top:15px;
+}
+
+.item{
+    padding:18px;
+    background:#12291f;
+    border-radius:14px;
+    text-align:center;
+}
+
+.item strong{
+    display:block;
+    color:#d4af37;
+    margin-bottom:8px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#879890;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#d4af37;
+    color:#07110d;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ABID</h1>
+    <p>My Personal Space • Fitness • Routine • Knowledge</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#routine">Routine</a>
+    <a href="#diet">Diet</a>
+    <a href="#workout">Workout</a>
+    <a href="#book">My Book</a>
+</nav>
+
+<div class="container">
+
+<section class="card" id="about">
+    <h2>👋 About Me</h2>
+    <p>
+        Welcome to my personal website.
+        Here I share my daily routine, fitness journey,
+        diet plan, knowledge and personal projects.
+    </p>
+</section>
+
+<section class="card" id="routine">
+    <h2>📅 Daily Routine</h2>
+
+    <div class="plan">
+        <div class="item">
+            <strong>Morning</strong>
+            Wake up & exercise
+        </div>
+
+        <div class="item">
+            <strong>Day</strong>
+            Work & learning
+        </div>
+
+        <div class="item">
+            <strong>Evening</strong>
+            Workout & study
+        </div>
+
+        <div class="item">
+            <strong>Night</strong>
+            Planning & rest
+        </div>
+    </div>
+</section>
+
+<section class="card" id="diet">
+    <h2>🥗 My Diet Plan</h2>
+
+    <div class="plan">
+        <div class="item">
+            <strong>Breakfast</strong>
+            Protein + balanced food
+        </div>
+
+        <div class="item">
+            <strong>Lunch</strong>
+            Protein + vegetables
+        </div>
+
+        <div class="item">
+            <strong>Snack</strong>
+            Fruit / healthy snack
+        </div>
+
+        <div class="item">
+            <strong>Dinner</strong>
+            Light balanced meal
+        </div>
+    </div>
+</section>
+
+<section class="card" id="workout">
+    <h2>💪 Workout</h2>
+
+    <p>
+        My fitness journey includes strength training,
+        cardio, stretching and regular physical activity.
+    </p>
+
+    <div class="plan">
+        <div class="item">
+            <strong>MON</strong>
+            Chest
+        </div>
+
+        <div class="item">
+            <strong>TUE</strong>
+            Back
+        </div>
+
+        <div class="item">
+            <strong>WED</strong>
+            Legs
+        </div>
+
+        <div class="item">
+            <strong>THU</strong>
+            Shoulders
+        </div>
+    </div>
+</section>
+
+<section class="card" id="book">
+    <h2>📖 My Book / Notes</h2>
+
+    <p>
+        This section can be used for my personal book,
+        medical notes, learning material, articles and
+        daily experiences.
+    </p>
+
+    <a class="button" href="#about">Explore</a>
+</section>
+
+</div>
+
+<footer>
+    © 2026 ABID • My Personal Website
+</footer>
+
+</body>
+</html>
