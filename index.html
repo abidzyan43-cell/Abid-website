@@ -352,7 +352,7 @@ header.hero {
 }
 
 .hero h1 {
-    margin: 0;
+    margin: 
     color: #d4af37;
     font-size: 44px;
     font-weight: 800;
@@ -1528,6 +1528,400 @@ selected.classList.add("show");
 
 </script>
 
+<!-- ================= UR PARAMEDIC TOOLS ================= -->
+
+<style>
+.tools-section {
+    padding: 35px 15px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.tools-section h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+
+.tool-card {
+    background: #09251d;
+    border: 1px solid #235c4a;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+.tool-card h3 {
+    color: #d4af37;
+    margin-top: 0;
+}
+
+.tool-card input,
+.tool-card select {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0;
+    border-radius: 8px;
+    border: 1px solid #487968;
+    background: #071a15;
+    color: white;
+    box-sizing: border-box;
+}
+
+.tool-card button {
+    padding: 11px 18px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: #d4af37;
+    color: #071a15;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0d3328;
+    border-radius: 8px;
+    color: white;
+    line-height: 1.7;
+}
+
+#searchBox {
+    font-size: 16px;
+}
+
+.timer-display {
+    text-align: center;
+    font-size: 55px;
+    font-weight: bold;
+    color: #d4af37;
+    margin: 15px 0;
+}
+
+.timer-buttons {
+    text-align: center;
+}
+
+.timer-buttons button {
+    margin: 5px;
+}
+</style>
+
+<section class="tools-section" id="tools">
+
+    <h2>🛠️ UR PARAMEDIC TOOLS</h2>
+
+    <!-- SEARCH -->
+    <div class="tool-card">
+        <h3>🔎 Search</h3>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search workout, diet, fitness, disease..."
+            onkeyup="searchWebsite()"
+        >
+
+        <div id="searchResult" class="result">
+            Type something to search this page.
+        </div>
+    </div>
+
+
+    <!-- BMI -->
+    <div class="tool-card">
+        <h3>⚖️ BMI Calculator</h3>
+
+        <input
+            type="number"
+            id="bmiWeight"
+            placeholder="Weight (kg)"
+        >
+
+        <input
+            type="number"
+            id="bmiHeight"
+            placeholder="Height (cm)"
+        >
+
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div id="bmiResult" class="result">
+            Your BMI will appear here.
+        </div>
+    </div>
+
+
+    <!-- BMR + CALORIES -->
+    <div class="tool-card">
+
+        <h3>🔥 BMR & Daily Calories Calculator</h3>
+
+        <select id="calGender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <input
+            type="number"
+            id="calAge"
+            placeholder="Age"
+        >
+
+        <input
+            type="number"
+            id="calWeight"
+            placeholder="Weight (kg)"
+        >
+
+        <input
+            type="number"
+            id="calHeight"
+            placeholder="Height (cm)"
+        >
+
+        <select id="activityLevel">
+            <option value="1.2">Sedentary - little exercise</option>
+            <option value="1.375">Light exercise - 1 to 3 days</option>
+            <option value="1.55">Moderate exercise - 3 to 5 days</option>
+            <option value="1.725">Hard exercise - 6 to 7 days</option>
+            <option value="1.9">Very hard exercise / physical job</option>
+        </select>
+
+        <button onclick="calculateCalories()">
+            Calculate BMR & Calories
+        </button>
+
+        <div id="calorieResult" class="result">
+            Your result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- WORKOUT TIMER -->
+    <div class="tool-card">
+
+        <h3>⏱️ Workout Timer</h3>
+
+        <div class="timer-display" id="timerDisplay">
+            00:00
+        </div>
+
+        <div class="timer-buttons">
+
+            <button onclick="startTimer()">
+                ▶ Start
+            </button>
+
+            <button onclick="pauseTimer()">
+                ⏸ Pause
+            </button>
+
+            <button onclick="resetTimer()">
+                🔄 Reset
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ================= SEARCH ================= */
+
+function searchWebsite() {
+
+    let query = document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+    let result = document.getElementById("searchResult");
+
+    if (query === "") {
+        result.innerHTML = "Type something to search this page.";
+        return;
+    }
+
+    let text = document.body.innerText.toLowerCase();
+
+    if (text.includes(query)) {
+        result.innerHTML =
+            "✅ <strong>Found:</strong> \"" + query +
+            "\" appears on this page.";
+    } else {
+        result.innerHTML =
+            "❌ No result found for \"" + query + "\".";
+    }
+}
+
+
+/* ================= BMI ================= */
+
+function calculateBMI() {
+
+    let weight = parseFloat(
+        document.getElementById("bmiWeight").value
+    );
+
+    let height = parseFloat(
+        document.getElementById("bmiHeight").value
+    );
+
+    let result = document.getElementById("bmiResult");
+
+    if (!weight || !height || weight <= 0 || height <= 0) {
+        result.innerHTML = "⚠️ Please enter valid weight and height.";
+        return;
+    }
+
+    let heightMeter = height / 100;
+
+    let bmi = weight / (heightMeter * heightMeter);
+
+    let category = "";
+
+    if (bmi < 18.5) {
+        category = "Underweight";
+    } else if (bmi < 25) {
+        category = "Normal";
+    } else if (bmi < 30) {
+        category = "Overweight";
+    } else {
+        category = "Obesity";
+    }
+
+    result.innerHTML =
+        "⚖️ <strong>BMI:</strong> " + bmi.toFixed(1) +
+        "<br>📊 <strong>Category:</strong> " + category;
+}
+
+
+/* ================= BMR + CALORIES ================= */
+
+function calculateCalories() {
+
+    let gender =
+        document.getElementById("calGender").value;
+
+    let age =
+        parseFloat(document.getElementById("calAge").value);
+
+    let weight =
+        parseFloat(document.getElementById("calWeight").value);
+
+    let height =
+        parseFloat(document.getElementById("calHeight").value);
+
+    let activity =
+        parseFloat(document.getElementById("activityLevel").value);
+
+    let result =
+        document.getElementById("calorieResult");
+
+    if (!age || !weight || !height) {
+        result.innerHTML =
+            "⚠️ Please enter age, weight and height.";
+        return;
+    }
+
+    let bmr;
+
+    if (gender === "male") {
+
+        bmr =
+            (10 * weight) +
+            (6.25 * height) -
+            (5 * age) +
+            5;
+
+    } else {
+
+        bmr =
+            (10 * weight) +
+            (6.25 * height) -
+            (5 * age) -
+            161;
+    }
+
+    let calories = bmr * activity;
+
+    result.innerHTML =
+        "🔥 <strong>BMR:</strong> " +
+        Math.round(bmr) +
+        " kcal/day" +
+
+        "<br>🍽️ <strong>Estimated Daily Calories:</strong> " +
+        Math.round(calories) +
+        " kcal/day";
+}
+
+
+/* ================= WORKOUT TIMER ================= */
+
+let timerSeconds = 0;
+let timerInterval = null;
+
+function updateTimerDisplay() {
+
+    let minutes =
+        Math.floor(timerSeconds / 60);
+
+    let seconds =
+        timerSeconds % 60;
+
+    minutes =
+        String(minutes).padStart(2, "0");
+
+    seconds =
+        String(seconds).padStart(2, "0");
+
+    document.getElementById("timerDisplay")
+        .innerText = minutes + ":" + seconds;
+}
+
+function startTimer() {
+
+    if (timerInterval !== null) {
+        return;
+    }
+
+    timerInterval = setInterval(function() {
+
+        timerSeconds++;
+
+        updateTimerDisplay();
+
+    }, 1000);
+}
+
+function pauseTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+}
+
+function resetTimer() {
+
+    clearInterval(timerInterval);
+
+    timerInterval = null;
+
+    timerSeconds = 0;
+
+    updateTimerDisplay();
+}
+
+</script>
 
 </body>
 </html>
