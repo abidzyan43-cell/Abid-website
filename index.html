@@ -4,836 +4,1474 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UR PARAMEDIC | Fitness • Health • Medical</title>
+<title>UR PARAMEDIC</title>
 
 <style>
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#07110d;
-    color:#fff;
-    line-height:1.6;
-}
-
-header{
-    background:linear-gradient(135deg,#0b3d2e,#07110d);
-    padding:45px 20px;
-    text-align:center;
-    border-bottom:1px solid #245d49;
-}
-
-.logo{
-    font-size:42px;
-    font-weight:bold;
-    color:#d4af37;
-    letter-spacing:2px;
-}
-
-.tagline{
-    margin-top:8px;
-    color:#cbd8d2;
-    font-size:16px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:25px 16px;
+font-family:Arial,sans-serif;
+background:#04120e;
+color:white;
+line-height:1.6;
 }
 
 .hero{
-    text-align:center;
-    padding:35px 15px;
+background:linear-gradient(135deg,#063b2d,#04120e);
+text-align:center;
+padding:30px 12px;
+border-bottom:1px solid #1c5a46;
 }
 
-.hero h1{
-    font-size:38px;
-    margin-bottom:10px;
+.logo{
+font-size:34px;
+font-weight:bold;
+letter-spacing:2px;
+color:#d7ad2f;
 }
 
-.hero span{
-    color:#d4af37;
+.tagline{
+color:#d5ddd9;
+font-size:15px;
+margin-top:5px;
 }
 
-.hero p{
-    color:#cbd8d2;
-    max-width:700px;
-    margin:auto;
+/* TOP MENU */
+
+nav{
+position:sticky;
+top:0;
+z-index:100;
+background:#071a14;
+border-bottom:1px solid #1c5a46;
+display:flex;
+justify-content:center;
+overflow-x:auto;
+white-space:nowrap;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-    margin-top:25px;
+nav button{
+background:none;
+border:0;
+color:#e5ebe8;
+font-size:12px;
+font-weight:bold;
+padding:13px 10px;
+cursor:pointer;
 }
 
-.card{
-    background:linear-gradient(145deg,#0d241b,#091811);
-    border:1px solid #245d49;
-    border-radius:18px;
-    padding:25px 20px;
-    text-align:center;
-    transition:.3s;
+nav button:hover{
+color:#d7ad2f;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    border-color:#d4af37;
+/* MAIN */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px 14px 50px;
 }
 
-.card h2{
-    color:#d4af37;
-    margin-bottom:8px;
+.welcome{
+text-align:center;
+padding:30px 5px 10px;
 }
 
-.card p{
-    color:#cbd8d2;
-    font-size:14px;
+.welcome h1{
+font-size:30px;
+margin-bottom:12px;
 }
 
-button,
-.button{
-    border:0;
-    background:#d4af37;
-    color:#07110d;
-    padding:12px 20px;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-    display:inline-block;
+.gold{
+color:#d7ad2f;
 }
 
-button:hover,
-.button:hover{
-    background:#f0ca55;
+.welcome p{
+color:#b9c8c0;
+font-size:16px;
+max-width:700px;
+margin:auto;
 }
 
-.page{
-    display:none;
+.quote{
+margin:20px auto;
+max-width:700px;
+background:#0b2b20;
+border-left:5px solid #d7ad2f;
+padding:17px;
+font-style:italic;
+color:#e8eee9;
 }
 
-.page.active{
-    display:block;
+/* QUERY SMALL BUTTON */
+
+.query-mini{
+text-align:center;
+margin:10px 0 25px;
 }
 
-.back{
-    margin-bottom:20px;
-    background:#173d2e;
-    color:white;
-    border:1px solid #356c56;
+.small-btn{
+background:#0b2b20;
+border:1px solid #1c5a46;
+color:#fff;
+padding:9px 15px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.list{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:12px;
-    margin-top:20px;
+.small-btn:hover{
+color:#d7ad2f;
+border-color:#d7ad2f;
 }
 
-.list button{
-    margin:0;
-    background:#10271e;
-    color:#fff;
-    border:1px solid #356c56;
+/* PANELS */
+
+.panel{
+display:none;
+background:#08251c;
+border:1px solid #1c5a46;
+border-radius:14px;
+padding:20px;
+margin-top:15px;
 }
 
-.list button:hover{
-    background:#d4af37;
-    color:#07110d;
+.panel.show{
+display:block;
 }
 
-.content{
-    background:#0d2018;
-    border:1px solid #245d49;
-    padding:25px;
-    border-radius:18px;
-    margin-top:20px;
+.panel h2{
+color:#d7ad2f;
+margin-bottom:10px;
 }
 
-.content h2,
-.content h3{
-    color:#d4af37;
-    margin-bottom:12px;
+.panel h3{
+color:#f0d77b;
+margin:15px 0 6px;
 }
 
-.content ul{
-    padding-left:22px;
-    margin-bottom:15px;
+.panel p,
+.panel li{
+color:#c1cec8;
 }
 
-.content li{
-    margin:7px 0;
+ul{
+padding-left:20px;
+}
+
+/* WORKOUT */
+
+.week{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:15px 0;
+}
+
+.day-btn,
+.disease-btn{
+background:#0b2b20;
+border:1px solid #1c5a46;
+color:white;
+padding:9px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.day-btn:hover,
+.disease-btn:hover{
+border-color:#d7ad2f;
+color:#d7ad2f;
 }
 
 .day-content{
-    display:none;
+display:none;
+border-top:1px solid #1c5a46;
+padding-top:15px;
 }
 
-.day-content.active{
-    display:block;
+.day-content.show{
+display:block;
+}
+
+/* CARDS */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:12px;
+margin-top:15px;
+}
+
+.info-card{
+background:#061b14;
+border:1px solid #174a39;
+border-radius:10px;
+padding:15px;
+}
+
+.info-card h3{
+margin:0 0 5px;
+color:#d7ad2f;
+}
+
+/* DISEASE */
+
+.diseases{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:15px 0;
 }
 
 .disease-content{
-    display:none;
+display:none;
+border-top:1px solid #1c5a46;
+padding-top:15px;
 }
 
-.disease-content.active{
-    display:block;
+.disease-content.show{
+display:block;
+}
+
+/* BLOG */
+
+.blog{
+padding:15px 0;
+border-bottom:1px solid #1c5a46;
+}
+
+.blog h3{
+color:#d7ad2f;
+}
+
+/* FORM */
+
+form{
+max-width:650px;
+margin:auto;
 }
 
 input,
 textarea{
-    width:100%;
-    padding:14px;
-    margin:8px 0 15px;
-    border-radius:10px;
-    border:1px solid #356c56;
-    background:#07110d;
-    color:white;
-    font-size:15px;
+width:100%;
+background:#061a13;
+color:white;
+border:1px solid #1c5a46;
+border-radius:8px;
+padding:11px;
+margin:6px 0 12px;
+font-size:15px;
 }
 
 textarea{
-    min-height:150px;
-    resize:vertical;
+min-height:130px;
 }
 
-label{
-    color:#d4af37;
-    font-weight:bold;
+.submit{
+background:#d7ad2f;
+color:#10150f;
+border:0;
+border-radius:8px;
+padding:11px 20px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.success{
-    margin-top:15px;
-    color:#8be0ae;
+.note{
+font-size:13px;
+color:#8fa198;
+margin-top:12px;
 }
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px 15px;
-    margin-top:40px;
-    border-top:1px solid #245d49;
-    color:#9fb2a9;
+text-align:center;
+border-top:1px solid #1c5a46;
+padding:20px;
+color:#91a39a;
+font-size:13px;
 }
 
-.quote{
-    border-left:4px solid #d4af37;
-    padding:15px 20px;
-    margin:20px 0;
-    background:#10271e;
-    font-style:italic;
-}
-
-.small{
-    color:#9fb2a9;
-    font-size:13px;
-}
+/* MOBILE */
 
 @media(max-width:600px){
-    .logo{font-size:32px}
-    .hero h1{font-size:30px}
-    .container{padding:18px 12px}
+
+.logo{
+font-size:29px;
 }
+
+nav{
+justify-content:flex-start;
+}
+
+nav button{
+font-size:11px;
+padding:12px 9px;
+}
+
+.welcome h1{
+font-size:27px;
+}
+
+.panel{
+padding:16px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">UR PARAMEDIC</div>
-    <div class="tagline">
-        Fitness • Health • Medical Knowledge • Discipline
-    </div>
+<header class="hero">
+
+<div class="logo">
+UR PARAMEDIC
+</div>
+
+<div class="tagline">
+Fitness • Health • Medical Knowledge • Discipline
+</div>
+
 </header>
 
-<div class="container">
 
-<!-- HOME -->
-<section id="home" class="page active">
+<!-- TOP MENU -->
 
-<div class="hero">
-    <h1>Welcome to <span>UR PARAMEDIC</span></h1>
-    <p>
-        A personal platform for fitness, health awareness,
-        paramedic knowledge, workout routines and practical medical information.
-    </p>
+<nav>
 
-    <div class="quote">
-        “Motivation may help you start, but consistency is what takes you to your destination.”
-    </div>
-</div>
+<button onclick="openPanel('about')">
+ABOUT
+</button>
 
-<div class="grid">
+<button onclick="openPanel('workout')">
+WORKOUT
+</button>
 
-<div class="card">
-    <h2>👤 About</h2>
-    <p>Learn about UR PARAMEDIC and the person behind this platform.</p>
-    <button onclick="showPage('about')">Open</button>
-</div>
+<button onclick="openPanel('diet')">
+DIET PLAN
+</button>
 
-<div class="card">
-    <h2>🏋️ Workout</h2>
-    <p>Open the weekly workout routine and select any day.</p>
-    <button onclick="showPage('workout')">Open</button>
-</div>
+<button onclick="openPanel('tips')">
+FITNESS TIPS
+</button>
 
-<div class="card">
-    <h2>🥗 Diet Plan</h2>
-    <p>Nutrition plans and practical healthy eating guidance.</p>
-    <button onclick="showPage('diet')">Open</button>
-</div>
+<button onclick="openPanel('diseases')">
+DISEASES
+</button>
 
-<div class="card">
-    <h2>💪 Fitness Tips</h2>
-    <p>Simple fitness and lifestyle tips.</p>
-    <button onclick="showPage('fitness')">Open</button>
-</div>
+<button onclick="openPanel('blog')">
+MY BLOG
+</button>
 
-<div class="card">
-    <h2>🩺 Common Diseases</h2>
-    <p>Click to explore information about common diseases.</p>
-    <button onclick="showPage('diseases')">Open</button>
-</div>
+<button onclick="openPanel('contact')">
+CONTACT
+</button>
 
-<div class="card">
-    <h2>📖 My Blog / Book</h2>
-    <p>Articles, personal notes, experiences and learning material.</p>
-    <button onclick="showPage('blog')">Open</button>
-</div>
-
-<div class="card">
-    <h2>📩 Contact / Queries</h2>
-    <p>Have a question? Send your query directly.</p>
-    <button onclick="showPage('contact')">Open</button>
-</div>
-
-</div>
-</section>
+</nav>
 
 
-<!-- ABOUT -->
-<section id="about" class="page">
+<main class="container">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
 
-<div class="content">
-<h2>👤 About UR PARAMEDIC</h2>
+<!-- WELCOME -->
+
+<section class="welcome">
+
+<h1>
+Welcome to
+<span class="gold">
+UR PARAMEDIC
+</span>
+</h1>
 
 <p>
-Welcome to <strong>UR PARAMEDIC</strong> — a platform created to share
-fitness knowledge, health awareness, paramedic learning and practical
-information in a simple way.
-</p>
-
-<br>
-
-<p>
-The goal is to make useful knowledge easy to understand and encourage
-people to build discipline, consistency and a healthier lifestyle.
+A personal platform for fitness, health awareness,
+paramedic knowledge, workout routines and practical
+medical information.
 </p>
 
 <div class="quote">
-“Don't aim to be perfect. Aim to be consistent.”
+
+“Motivation may help you start,
+but consistency is what takes you to your destination.”
+
 </div>
 
-<p class="small">
-More personal information and introduction can be added here later.
-</p>
+</section>
+
+
+<!-- SMALL QUERY BUTTON -->
+
+<div class="query-mini">
+
+<button
+class="small-btn"
+onclick="openPanel('contact')">
+
+✉ CONTACT / ASK A QUERY
+
+</button>
+
 </div>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="panel">
+
+<h2>
+👤 About UR PARAMEDIC
+</h2>
+
+<p>
+UR PARAMEDIC is a practical platform focused on
+fitness, health awareness, medical knowledge,
+discipline and everyday learning.
+</p>
+
+<h3>
+Our Focus
+</h3>
+
+<ul>
+
+<li>
+Fitness and workout guidance
+</li>
+
+<li>
+Healthy lifestyle and diet awareness
+</li>
+
+<li>
+Basic paramedic and medical education
+</li>
+
+<li>
+Practical health information
+</li>
+
+<li>
+Discipline and motivation
+</li>
+
+</ul>
+
+<p class="note">
+
+Medical information is for educational purposes only.
+For diagnosis or treatment, consult a qualified healthcare professional.
+
+</p>
 
 </section>
 
 
 <!-- WORKOUT -->
-<section id="workout" class="page">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="workout" class="panel">
 
-<div class="content">
-<h2>🏋️ Weekly Workout</h2>
-<p>Select a day to view that day's workout.</p>
+<h2>
+🏋️ Weekly Workout Routine
+</h2>
 
-<div class="list">
-<button onclick="showDay('sunday')">Sunday</button>
-<button onclick="showDay('monday')">Monday</button>
-<button onclick="showDay('tuesday')">Tuesday</button>
-<button onclick="showDay('wednesday')">Wednesday</button>
-<button onclick="showDay('thursday')">Thursday</button>
-<button onclick="showDay('friday')">Friday</button>
-<button onclick="showDay('saturday')">Saturday</button>
+<p>
+Select a day to view that day's workout.
+</p>
+
+
+<div class="week">
+
+<button class="day-btn"
+onclick="showDay('sun')">
+Sunday
+</button>
+
+<button class="day-btn"
+onclick="showDay('mon')">
+Monday
+</button>
+
+<button class="day-btn"
+onclick="showDay('tue')">
+Tuesday
+</button>
+
+<button class="day-btn"
+onclick="showDay('wed')">
+Wednesday
+</button>
+
+<button class="day-btn"
+onclick="showDay('thu')">
+Thursday
+</button>
+
+<button class="day-btn"
+onclick="showDay('fri')">
+Friday
+</button>
+
+<button class="day-btn"
+onclick="showDay('sat')">
+Saturday
+</button>
+
 </div>
 
-<div id="sunday" class="day-content content">
-<h3>Sunday — Full Body + Cardio</h3>
-<ul>
-<li>Warm-up — 10 minutes</li>
-<li>Bodyweight Squats — 3 × 15</li>
-<li>Push-ups — 3 × 10-15</li>
-<li>Pull-ups / Assisted Pull-ups — 3 sets</li>
-<li>Plank — 3 × 40 seconds</li>
-<li>Brisk Walk / Jog — 20-30 minutes</li>
-</ul>
-</div>
 
-<div id="monday" class="day-content content">
-<h3>Monday — Chest + Triceps</h3>
-<ul>
-<li>Warm-up — 10 minutes</li>
-<li>Push-ups — 4 × 12</li>
-<li>Incline Push-ups — 3 × 12</li>
-<li>Diamond Push-ups — 3 × 8-10</li>
-<li>Triceps Dips — 3 × 10</li>
-<li>Stretching — 5 minutes</li>
-</ul>
-</div>
+<div id="sun" class="day-content">
 
-<div id="tuesday" class="day-content content">
-<h3>Tuesday — Back + Biceps</h3>
-<ul>
-<li>Warm-up — 10 minutes</li>
-<li>Pull-ups — 3 sets</li>
-<li>Australian Rows — 3 × 12</li>
-<li>Back Extensions — 3 × 15</li>
-<li>Biceps Curls — 3 × 12</li>
-<li>Hammer Curls — 3 × 12</li>
-</ul>
-</div>
+<h3>
+Sunday — Recovery & Mobility
+</h3>
 
-<div id="wednesday" class="day-content content">
-<h3>Wednesday — Legs</h3>
 <ul>
-<li>Warm-up — 10 minutes</li>
-<li>Bodyweight Squats — 4 × 15</li>
-<li>Lunges — 3 × 10 each leg</li>
-<li>Glute Bridge — 3 × 15</li>
-<li>Calf Raises — 4 × 20</li>
-<li>Light Jog — 15 minutes</li>
-</ul>
-</div>
 
-<div id="thursday" class="day-content content">
-<h3>Thursday — Shoulders + Core</h3>
-<ul>
-<li>Shoulder warm-up — 5 minutes</li>
-<li>Overhead Press — 3 × 12</li>
-<li>Lateral Raises — 3 × 15</li>
-<li>Front Raises — 3 × 12</li>
-<li>Leg Raises — 3 × 12</li>
-<li>Plank — 3 × 45 seconds</li>
-</ul>
-</div>
-
-<div id="friday" class="day-content content">
-<h3>Friday — Cardio + Abs</h3>
-<ul>
-<li>Brisk Walk / Jog — 25-30 minutes</li>
-<li>Mountain Climbers — 3 × 20</li>
-<li>Leg Raises — 3 × 12</li>
-<li>Bicycle Crunches — 3 × 20</li>
-<li>Plank — 3 × 45 seconds</li>
-</ul>
-</div>
-
-<div id="saturday" class="day-content content">
-<h3>Saturday — Active Recovery</h3>
-<ul>
-<li>Light walking — 20-30 minutes</li>
+<li>10 minute easy walk</li>
 <li>Full body stretching</li>
-<li>Mobility exercises</li>
-<li>Deep breathing</li>
-<li>Rest and recovery</li>
+<li>Shoulder mobility</li>
+<li>Hip mobility</li>
+<li>Back stretching</li>
+<li>Breathing exercises</li>
+
 </ul>
-</div>
 
 </div>
+
+
+<div id="mon" class="day-content">
+
+<h3>
+Monday — Chest & Triceps
+</h3>
+
+<ul>
+
+<li>Push-ups — 4 × 10–15</li>
+
+<li>Incline Push-ups — 3 × 12</li>
+
+<li>Close Grip Push-ups — 3 × 10</li>
+
+<li>Triceps Dips — 3 × 10</li>
+
+<li>Plank — 3 × 45 sec</li>
+
+</ul>
+
+</div>
+
+
+<div id="tue" class="day-content">
+
+<h3>
+Tuesday — Back & Biceps
+</h3>
+
+<ul>
+
+<li>Pull-ups — 4 sets</li>
+
+<li>Backpack Rows — 4 × 12</li>
+
+<li>Biceps Curls — 3 × 12</li>
+
+<li>Reverse Curls — 3 × 12</li>
+
+<li>Dead Hang — 3 × 30 sec</li>
+
+</ul>
+
+</div>
+
+
+<div id="wed" class="day-content">
+
+<h3>
+Wednesday — Legs & Core
+</h3>
+
+<ul>
+
+<li>Squats — 4 × 15</li>
+
+<li>Lunges — 3 × 10 each leg</li>
+
+<li>Glute Bridge — 3 × 15</li>
+
+<li>Calf Raises — 4 × 20</li>
+
+<li>Leg Raises — 3 × 12</li>
+
+</ul>
+
+</div>
+
+
+<div id="thu" class="day-content">
+
+<h3>
+Thursday — Shoulders & Abs
+</h3>
+
+<ul>
+
+<li>Shoulder Press — 4 × 10</li>
+
+<li>Lateral Raises — 3 × 12</li>
+
+<li>Front Raises — 3 × 12</li>
+
+<li>Mountain Climbers — 3 × 30 sec</li>
+
+<li>Plank — 3 × 45 sec</li>
+
+</ul>
+
+</div>
+
+
+<div id="fri" class="day-content">
+
+<h3>
+Friday — Full Body + Cardio
+</h3>
+
+<ul>
+
+<li>Warm-up — 5–10 minutes</li>
+
+<li>Burpees — 3 × 10</li>
+
+<li>Squats — 3 × 15</li>
+
+<li>Push-ups — 3 × 12</li>
+
+<li>Rows — 3 × 12</li>
+
+<li>Brisk Walk/Jog — 20–30 minutes</li>
+
+</ul>
+
+</div>
+
+
+<div id="sat" class="day-content">
+
+<h3>
+Saturday — Cardio + Core
+</h3>
+
+<ul>
+
+<li>Brisk Walk/Jog — 20–30 minutes</li>
+
+<li>Crunches — 3 × 15</li>
+
+<li>Leg Raises — 3 × 12</li>
+
+<li>Russian Twists — 3 × 15</li>
+
+<li>Stretching — 10 minutes</li>
+
+</ul>
+
+</div>
+
 </section>
 
 
 <!-- DIET -->
-<section id="diet" class="page">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="diet" class="panel">
 
-<div class="content">
-<h2>🥗 Diet Plan</h2>
+<h2>
+🥗 Diet Plan
+</h2>
 
-<h3>Morning</h3>
-<ul>
-<li>Water after waking up</li>
-<li>Eggs / oats / fruit depending on your goal</li>
-</ul>
+<div class="card-grid">
 
-<h3>Breakfast</h3>
-<ul>
-<li>Oats with milk</li>
-<li>Eggs / paneer</li>
-<li>One fruit</li>
-</ul>
+<div class="info-card">
 
-<h3>Lunch</h3>
-<ul>
-<li>Rice or roti</li>
-<li>Dal</li>
-<li>Chicken / fish / paneer</li>
-<li>Vegetables + salad</li>
-</ul>
+<h3>
+Breakfast
+</h3>
 
-<h3>Evening</h3>
-<ul>
-<li>Fruit</li>
-<li>Curd / yogurt</li>
-<li>Handful of nuts</li>
-</ul>
-
-<h3>Dinner</h3>
-<ul>
-<li>Protein source</li>
-<li>Vegetables</li>
-<li>Moderate roti/rice according to your goal</li>
-</ul>
-
-<div class="quote">
-Stay hydrated and focus on consistency rather than extreme dieting.
-</div>
-
-<p class="small">
-For medical conditions, pregnancy, kidney/liver disease or other special
-situations, diet should be individualized by a qualified professional.
+<p>
+Eggs / paneer / curd + oats or roti + fruit.
 </p>
 
 </div>
+
+
+<div class="info-card">
+
+<h3>
+Lunch
+</h3>
+
+<p>
+Dal / chicken / fish / paneer +
+vegetables + controlled rice or roti +
+salad.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+Evening Snack
+</h3>
+
+<p>
+Fruit, curd, roasted chana or a small
+portion of nuts.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+Dinner
+</h3>
+
+<p>
+Protein-rich food + vegetables +
+moderate carbohydrates.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+Hydration
+</h3>
+
+<p>
+Drink sufficient water according to
+activity and climate.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- FITNESS -->
-<section id="fitness" class="page">
+<!-- FITNESS TIPS -->
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="tips" class="panel">
 
-<div class="content">
-<h2>💪 Fitness Tips</h2>
+<h2>
+💪 Fitness Tips
+</h2>
 
 <ul>
-<li>Be consistent even when motivation is low.</li>
-<li>Sleep 7-9 hours whenever possible.</li>
-<li>Drink enough water.</li>
-<li>Prioritize protein and whole foods.</li>
-<li>Do not depend only on supplements.</li>
-<li>Increase workout intensity gradually.</li>
-<li>Take rest and recovery seriously.</li>
-<li>Track your progress.</li>
-<li>Warm up before intense exercise.</li>
-<li>Stop exercise if you develop severe pain, chest pain, fainting or breathing difficulty.</li>
+
+<li>Consistency is more important than occasional hard workouts.</li>
+
+<li>Increase exercise gradually.</li>
+
+<li>Get adequate sleep and recovery.</li>
+
+<li>Eat enough protein and vegetables.</li>
+
+<li>Track your weight and waist.</li>
+
+<li>Always warm up before intense exercise.</li>
+
+<li>Keep rest days.</li>
+
+<li>Avoid crash diets.</li>
+
+<li>Stay hydrated.</li>
+
+<li>Listen to your body.</li>
+
 </ul>
 
-<div class="quote">
-Small steps repeated every day create big changes.
-</div>
-
-</div>
 </section>
 
 
 <!-- DISEASES -->
-<section id="diseases" class="page">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="diseases" class="panel">
 
-<div class="content">
-<h2>🩺 Common Diseases</h2>
-<p>Select a disease to view basic information.</p>
+<h2>
+🩺 Common Diseases
+</h2>
 
-<div class="list">
-<button onclick="showDisease('hypertension')">Hypertension</button>
-<button onclick="showDisease('diabetes')">Diabetes</button>
-<button onclick="showDisease('asthma')">Asthma</button>
-<button onclick="showDisease('anemia')">Anemia</button>
-<button onclick="showDisease('malaria')">Malaria</button>
-<button onclick="showDisease('dengue')">Dengue</button>
-<button onclick="showDisease('typhoid')">Typhoid</button>
-<button onclick="showDisease('tb')">Tuberculosis</button>
-<button onclick="showDisease('obesity')">Obesity</button>
-<button onclick="showDisease('migraine')">Migraine</button>
-<button onclick="showDisease('gastritis')">Gastritis</button>
-<button onclick="showDisease('gerd')">GERD</button>
-<button onclick="showDisease('uti')">UTI</button>
-<button onclick="showDisease('arthritis')">Arthritis</button>
-<button onclick="showDisease('cholesterol')">High Cholesterol</button>
-<button onclick="showDisease('fattyliver')">Fatty Liver</button>
-<button onclick="showDisease('kidneystone')">Kidney Stones</button>
-<button onclick="showDisease('constipation')">Constipation</button>
-<button onclick="showDisease('diarrhea')">Diarrhea</button>
-<button onclick="showDisease('commoncold')">Common Cold</button>
-</div>
+<p>
+Click any disease to see basic health and diet awareness information.
+</p>
 
-<div id="hypertension" class="disease-content content">
-<h3>Hypertension</h3>
-<p>High blood pressure that can increase cardiovascular risk.</p>
-<p><strong>General diet:</strong> Reduce excess salt, eat vegetables, fruits, whole grains and appropriate protein. Follow prescribed treatment.</p>
-</div>
 
-<div id="diabetes" class="disease-content content">
-<h3>Diabetes</h3>
-<p>A condition involving elevated blood glucose.</p>
-<p><strong>General diet:</strong> Prefer high-fiber foods, vegetables, controlled portions and minimize sugary drinks.</p>
-</div>
+<div class="diseases">
 
-<div id="asthma" class="disease-content content">
-<h3>Asthma</h3>
-<p>A chronic condition affecting the airways.</p>
-<p><strong>General care:</strong> Identify triggers and follow the prescribed inhaler/action plan.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('hypertension')">
+Hypertension
+</button>
 
-<div id="anemia" class="disease-content content">
-<h3>Anemia</h3>
-<p>A condition in which blood does not carry enough oxygen effectively.</p>
-<p><strong>Nutrition:</strong> Iron-rich foods such as legumes, leafy vegetables and appropriate animal sources may help depending on the cause.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('diabetes')">
+Diabetes
+</button>
 
-<div id="malaria" class="disease-content content">
-<h3>Malaria</h3>
-<p>A mosquito-borne infection requiring appropriate diagnosis and treatment.</p>
-<p><strong>Nutrition:</strong> Maintain fluids and adequate nutritious food during recovery. Treatment must follow medical advice.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('obesity')">
+Obesity
+</button>
 
-<div id="dengue" class="disease-content content">
-<h3>Dengue</h3>
-<p>A viral infection transmitted by mosquitoes.</p>
-<p><strong>Care:</strong> Fluids and medical monitoring are important. Avoid self-medication with medicines that can increase bleeding risk.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('anemia')">
+Anemia
+</button>
 
-<div id="typhoid" class="disease-content content">
-<h3>Typhoid</h3>
-<p>A bacterial infection that requires appropriate medical treatment.</p>
-<p><strong>Diet:</strong> Fluids and easily tolerated nutritious foods may be useful during recovery.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('asthma')">
+Asthma
+</button>
 
-<div id="tb" class="disease-content content">
-<h3>Tuberculosis</h3>
-<p>An infectious disease commonly affecting the lungs.</p>
-<p><strong>Nutrition:</strong> Adequate calories and protein can support recovery alongside the complete prescribed treatment.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('dengue')">
+Dengue
+</button>
 
-<div id="obesity" class="disease-content content">
-<h3>Obesity</h3>
-<p>Excess body fat that can increase health risks.</p>
-<p><strong>Diet:</strong> Focus on sustainable calorie control, protein, vegetables, fiber and regular activity.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('malaria')">
+Malaria
+</button>
 
-<div id="migraine" class="disease-content content">
-<h3>Migraine</h3>
-<p>A neurological condition that can cause recurrent headaches and other symptoms.</p>
-<p><strong>General care:</strong> Regular sleep, hydration and identifying individual triggers may help.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('typhoid')">
+Typhoid
+</button>
 
-<div id="gastritis" class="disease-content content">
-<h3>Gastritis</h3>
-<p>Inflammation of the stomach lining.</p>
-<p><strong>Diet:</strong> Avoid foods that clearly trigger symptoms and follow medical advice.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('cholesterol')">
+High Cholesterol
+</button>
 
-<div id="gerd" class="disease-content content">
-<h3>GERD</h3>
-<p>Acid reflux from the stomach into the esophagus.</p>
-<p><strong>General care:</strong> Avoid large late-night meals and individual trigger foods.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('fatty')">
+Fatty Liver
+</button>
 
-<div id="uti" class="disease-content content">
-<h3>UTI</h3>
-<p>Urinary tract infection requiring appropriate assessment and treatment.</p>
-<p><strong>General care:</strong> Maintain hydration unless a clinician has advised fluid restriction.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('thyroid')">
+Thyroid
+</button>
 
-<div id="arthritis" class="disease-content content">
-<h3>Arthritis</h3>
-<p>A group of conditions causing joint pain and inflammation.</p>
-<p><strong>General care:</strong> Appropriate activity, healthy weight and individualized treatment can help.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('gerd')">
+GERD
+</button>
 
-<div id="cholesterol" class="disease-content content">
-<h3>High Cholesterol</h3>
-<p>Elevated blood lipids that can contribute to cardiovascular risk.</p>
-<p><strong>Diet:</strong> Increase fiber-rich foods and reduce excessive saturated and trans fats.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('constipation')">
+Constipation
+</button>
 
-<div id="fattyliver" class="disease-content content">
-<h3>Fatty Liver</h3>
-<p>Excess fat accumulation in the liver.</p>
-<p><strong>General care:</strong> Weight management, physical activity and limiting alcohol when relevant are important.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('diarrhea')">
+Diarrhea
+</button>
 
-<div id="kidneystone" class="disease-content content">
-<h3>Kidney Stones</h3>
-<p>Hard deposits that can form in the kidneys.</p>
-<p><strong>General care:</strong> Adequate fluid intake is commonly important, but the exact diet depends on stone type.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('migraine')">
+Migraine
+</button>
 
-<div id="constipation" class="disease-content content">
-<h3>Constipation</h3>
-<p>Infrequent or difficult bowel movements.</p>
-<p><strong>Diet:</strong> Gradually increase fiber, fluids and physical activity when appropriate.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('kidney')">
+Kidney Disease
+</button>
 
-<div id="diarrhea" class="disease-content content">
-<h3>Diarrhea</h3>
-<p>Frequent loose or watery stools.</p>
-<p><strong>Care:</strong> Replace fluids and electrolytes. Seek medical care for severe dehydration, blood in stool or persistent symptoms.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('heart')">
+Heart Disease
+</button>
 
-<div id="commoncold" class="disease-content content">
-<h3>Common Cold</h3>
-<p>A common viral respiratory infection.</p>
-<p><strong>Care:</strong> Rest, fluids and symptomatic care can help. Seek medical attention for severe or unusual symptoms.</p>
-</div>
+<button class="disease-btn"
+onclick="showDisease('copd')">
+COPD
+</button>
+
+<button class="disease-btn"
+onclick="showDisease('arthritis')">
+Arthritis
+</button>
+
+<button class="disease-btn"
+onclick="showDisease('ulcer')">
+Peptic Ulcer
+</button>
 
 </div>
+
+
+<div id="diseaseInfo">
+
+
+<div id="hypertension"
+class="disease-content">
+
+<h3>
+Hypertension
+</h3>
+
+<p>
+Reduce excess salt, eat vegetables and whole foods,
+maintain healthy activity and follow prescribed treatment.
+</p>
+
+</div>
+
+
+<div id="diabetes"
+class="disease-content">
+
+<h3>
+Diabetes
+</h3>
+
+<p>
+Control portions, choose high-fibre foods,
+limit added sugar and remain physically active.
+Follow prescribed medicines.
+</p>
+
+</div>
+
+
+<div id="obesity"
+class="disease-content">
+
+<h3>
+Obesity
+</h3>
+
+<p>
+Focus on sustainable calorie control,
+protein-rich foods, vegetables, physical activity
+and adequate sleep.
+</p>
+
+</div>
+
+
+<div id="anemia"
+class="disease-content">
+
+<h3>
+Anemia
+</h3>
+
+<p>
+Iron-rich foods may help, but confirmed anemia
+requires medical evaluation to identify the cause.
+</p>
+
+</div>
+
+
+<div id="asthma"
+class="disease-content">
+
+<h3>
+Asthma
+</h3>
+
+<p>
+Avoid known triggers and use prescribed inhalers
+correctly. Severe breathing difficulty requires
+urgent medical care.
+</p>
+
+</div>
+
+
+<div id="dengue"
+class="disease-content">
+
+<h3>
+Dengue
+</h3>
+
+<p>
+Maintain hydration and medical monitoring.
+Do not self-medicate with aspirin or NSAIDs
+unless specifically advised by a clinician.
+</p>
+
+</div>
+
+
+<div id="malaria"
+class="disease-content">
+
+<h3>
+Malaria
+</h3>
+
+<p>
+Malaria requires appropriate antimalarial treatment
+based on diagnosis and medical guidance.
+</p>
+
+</div>
+
+
+<div id="typhoid"
+class="disease-content">
+
+<h3>
+Typhoid
+</h3>
+
+<p>
+Medical evaluation and appropriate antibiotic
+treatment may be required. Maintain hydration
+and food hygiene.
+</p>
+
+</div>
+
+
+<div id="cholesterol"
+class="disease-content">
+
+<h3>
+High Cholesterol
+</h3>
+
+<p>
+Increase fibre-rich foods, reduce unhealthy
+saturated/trans fats and maintain regular exercise.
+</p>
+
+</div>
+
+
+<div id="fatty"
+class="disease-content">
+
+<h3>
+Fatty Liver
+</h3>
+
+<p>
+Healthy weight management, regular physical
+activity and limiting alcohol can help.
+Follow medical advice.
+</p>
+
+</div>
+
+
+<div id="thyroid"
+class="disease-content">
+
+<h3>
+Thyroid Disorders
+</h3>
+
+<p>
+Diet depends on the specific thyroid condition.
+Take prescribed medicines and attend follow-up tests.
+</p>
+
+</div>
+
+
+<div id="gerd"
+class="disease-content">
+
+<h3>
+GERD / Acidity
+</h3>
+
+<p>
+Smaller meals, avoiding personal trigger foods
+and not lying down immediately after meals may help.
+</p>
+
+</div>
+
+
+<div id="constipation"
+class="disease-content">
+
+<h3>
+Constipation
+</h3>
+
+<p>
+Increase fibre gradually, drink adequate fluids
+and stay physically active.
+</p>
+
+</div>
+
+
+<div id="diarrhea"
+class="disease-content">
+
+<h3>
+Diarrhea
+</h3>
+
+<p>
+Focus on fluids and oral rehydration when appropriate.
+Seek medical care for severe dehydration or persistent symptoms.
+</p>
+
+</div>
+
+
+<div id="migraine"
+class="disease-content">
+
+<h3>
+Migraine
+</h3>
+
+<p>
+Regular sleep, hydration and identifying personal
+triggers may help. Recurrent severe headaches
+need medical assessment.
+</p>
+
+</div>
+
+
+<div id="kidney"
+class="disease-content">
+
+<h3>
+Kidney Disease
+</h3>
+
+<p>
+Diet must be individualised according to kidney
+function, sodium, potassium and protein requirements.
+</p>
+
+</div>
+
+
+<div id="heart"
+class="disease-content">
+
+<h3>
+Heart Disease
+</h3>
+
+<p>
+Follow prescribed medicines, avoid smoking and
+maintain clinician-approved physical activity.
+</p>
+
+</div>
+
+
+<div id="copd"
+class="disease-content">
+
+<h3>
+COPD
+</h3>
+
+<p>
+Avoid smoking and pollutants, use prescribed
+inhalers correctly and seek care for worsening
+breathlessness.
+</p>
+
+</div>
+
+
+<div id="arthritis"
+class="disease-content">
+
+<h3>
+Arthritis
+</h3>
+
+<p>
+Low-impact exercise, strength training and
+healthy weight can support joint function.
+</p>
+
+</div>
+
+
+<div id="ulcer"
+class="disease-content">
+
+<h3>
+Peptic Ulcer
+</h3>
+
+<p>
+Persistent pain or bleeding needs medical evaluation.
+Avoid unnecessary NSAID use.
+</p>
+
+</div>
+
+</div>
+
+
+<p class="note">
+
+This information is for general health education
+and is not a substitute for professional medical care.
+
+</p>
+
 </section>
 
 
 <!-- BLOG -->
-<section id="blog" class="page">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="blog" class="panel">
 
-<div class="content">
+<h2>
+📖 My Blog / Book
+</h2>
 
-<h2>📖 My Blog / Book</h2>
 
-<h3>Consistency Over Motivation</h3>
+<div class="blog">
+
+<h3>
+Consistency: The Real Secret
+</h3>
+
 <p>
-Motivation can get you started, but consistency keeps you moving.
-You will not feel motivated every day. The real transformation happens
-when you continue even on the days when motivation is low.
-</p>
-
-<div class="quote">
-“Success is not about doing something once. It is about showing up again and again.”
-</div>
-
-<h3>Discipline</h3>
-<p>
-Discipline means doing what needs to be done even when you don't feel like doing it.
-Small daily actions eventually become habits.
-</p>
-
-<h3>My Personal Notes</h3>
-<p>
-This section can later contain your own medical notes, experiences,
-fitness journey, paramedic learning material and personal articles.
+Motivation can start a journey, but consistency
+creates the result. Small actions repeated every
+day create habits that last.
 </p>
 
 </div>
+
+
+<div class="blog">
+
+<h3>
+Discipline Over Motivation
+</h3>
+
+<p>
+Some days motivation will be low.
+Discipline means continuing the important work
+while respecting recovery and health.
+</p>
+
+</div>
+
+
+<div class="blog">
+
+<h3>
+Life of a Paramedic
+</h3>
+
+<p>
+A collection of practical experiences,
+learning points and lessons from healthcare
+and emergency care.
+</p>
+
+</div>
+
+
+<p class="note">
+
+More personal blogs and book content can be
+added here later.
+
+</p>
+
 </section>
 
 
 <!-- CONTACT -->
-<section id="contact" class="page">
 
-<button class="back" onclick="showPage('home')">← Back to Home</button>
+<section id="contact" class="panel">
 
-<div class="content">
-
-<h2>📩 Contact / Queries</h2>
+<h2>
+✉ Contact / Queries
+</h2>
 
 <p>
-Have a question, suggestion or feedback?
-Fill the form below. Your message will be sent to me.
+Have a question? Send your query below.
+It will be delivered through Formspree.
 </p>
 
-<form action="https://formspree.io/f/xzeznyjb" method="POST">
 
-<label>Your Name</label>
+<form
+action="https://formspree.io/f/xzeznyjb"
+method="POST"
+>
+
+<label>
+Name
+</label>
+
 <input
 type="text"
 name="name"
-placeholder="Enter your name"
-required>
+placeholder="Your Name"
+required
+>
 
-<label>Your Email</label>
+
+<label>
+Email
+</label>
+
 <input
 type="email"
 name="email"
-placeholder="Enter your email"
-required>
+placeholder="Your Email"
+required
+>
 
-<label>Your Query</label>
+
+<label>
+Your Query
+</label>
+
 <textarea
 name="message"
 placeholder="Write your query here..."
-required></textarea>
+required>
+</textarea>
 
-<button type="submit">Send Query</button>
+
+<button
+class="submit"
+type="submit">
+
+SEND QUERY
+
+</button>
 
 </form>
 
-<p class="small">
-Please do not submit passwords, OTPs or other sensitive personal information.
-</p>
-
-</div>
 </section>
 
-</div>
+
+</main>
+
 
 <footer>
-© 2026 UR PARAMEDIC • Health • Fitness • Medical Knowledge
+
+© 2026 UR PARAMEDIC
+<br>
+Fitness • Health • Medical Knowledge
+
 </footer>
 
 
 <script>
 
-function showPage(pageId){
+/* MAIN MENU */
 
-    document.querySelectorAll(".page").forEach(function(page){
-        page.classList.remove("active");
-    });
+function openPanel(id){
 
-    document.getElementById(pageId).classList.add("active");
+document
+.querySelectorAll(".panel")
+.forEach(function(panel){
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+panel.classList.remove("show");
+
+});
+
+var selected=document.getElementById(id);
+
+if(selected){
+
+selected.classList.add("show");
+
+selected.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+
 }
 
 
-function showDay(dayId){
+/* WORKOUT DAYS */
 
-    document.querySelectorAll(".day-content").forEach(function(day){
-        day.classList.remove("active");
-    });
+function showDay(id){
 
-    document.getElementById(dayId).classList.add("active");
+document
+.querySelectorAll(".day-content")
+.forEach(function(day){
 
-    document.getElementById(dayId).scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+day.classList.remove("show");
+
+});
+
+var selected=document.getElementById(id);
+
+if(selected){
+
+selected.classList.add("show");
+
+}
+
 }
 
 
-function showDisease(diseaseId){
+/* DISEASES */
 
-    document.querySelectorAll(".disease-content").forEach(function(disease){
-        disease.classList.remove("active");
-    });
+function showDisease(id){
 
-    document.getElementById(diseaseId).classList.add("active");
+document
+.querySelectorAll(".disease-content")
+.forEach(function(disease){
 
-    document.getElementById(diseaseId).scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+disease.classList.remove("show");
+
+});
+
+var selected=document.getElementById(id);
+
+if(selected){
+
+selected.classList.add("show");
+
+}
+
 }
 
 </script>
 
+
 </body>
 </html>
+
