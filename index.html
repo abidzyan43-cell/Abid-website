@@ -392,7 +392,14 @@ header.hero {
 </head>
 
 <body>
-
+<div class="top-search">
+    <input
+        type="search"
+        id="searchBox"
+        placeholder="🔎 Search..."
+        onkeyup="searchWebsite()"
+    >
+</div>
 <header class="hero">
     <div class="hero-overlay">
         <h1>UR PARAMEDIC</h1>
@@ -1608,6 +1615,35 @@ selected.classList.add("show");
 .timer-buttons button {
     margin: 5px;
 }
+/* Small Top Search */
+.top-search {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 20;
+}
+
+.top-search input {
+    width: 125px;
+    padding: 7px 10px;
+    border-radius: 20px;
+    border: 1px solid #d4af37;
+    background: rgba(0,0,0,0.35);
+    color: white;
+    font-size: 12px;
+    outline: none;
+}
+
+.top-search input::placeholder {
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .top-search input {
+        width: 105px;
+        font-size: 11px;
+    }
+}
 </style>
 
 <section class="tools-section" id="tools">
@@ -1738,28 +1774,71 @@ selected.classList.add("show");
 
 function searchWebsite() {
 
-    let query = document
+    const query = document
         .getElementById("searchBox")
         .value
-        .toLowerCase()
-        .trim();
+        .trim()
+        .toLowerCase();
 
-    let result = document.getElementById("searchResult");
+    const result = document.getElementById("searchResult");
 
     if (query === "") {
-        result.innerHTML = "Type something to search this page.";
+        result.innerHTML =
+            "🔎 Type something to search.";
         return;
     }
 
-    let text = document.body.innerText.toLowerCase();
+    const sections = document.querySelectorAll(
+        "section, article, .card"
+    );
 
-    if (text.includes(query)) {
+    let found = [];
+    let count = 0;
+
+    sections.forEach(function(section) {
+
+        const text = section.innerText.trim();
+        const lowerText = text.toLowerCase();
+
+        if (lowerText.includes(query)) {
+
+            let title = section.querySelector(
+                "h1, h2, h3, h4"
+            );
+
+            let heading = title
+                ? title.innerText
+                : "UR PARAMEDIC";
+
+            let shortText = text
+                .replace(/\s+/g, " ")
+                .substring(0, 180);
+
+            found.push(
+                "<div style='margin-bottom:15px'>" +
+                "<strong>📌 " + heading + "</strong><br>" +
+                shortText +
+                (text.length > 180 ? "..." : "") +
+                "</div>"
+            );
+
+            count++;
+        }
+    });
+
+    if (count === 0) {
+
         result.innerHTML =
-            "✅ <strong>Found:</strong> \"" + query +
-            "\" appears on this page.";
+            "❌ No result found for <strong>\"" +
+            query +
+            "\"</strong>.";
+
     } else {
+
         result.innerHTML =
-            "❌ No result found for \"" + query + "\".";
+            "✅ Found " + count +
+            " result(s):<br><br>" +
+            found.join("");
     }
 }
 
