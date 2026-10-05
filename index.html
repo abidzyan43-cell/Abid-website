@@ -4,77 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UR PARAMEDIC | Fitness • Health • Medical</title>
+<title>UR PARAMEDIC | Medic Abid</title>
 
 <style>
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#001b15;
-    color:#f5f5f5;
+    background:#021c16;
+    color:#fff;
     line-height:1.6;
 }
 
+button,a{
+    -webkit-tap-highlight-color:transparent;
+}
+
 header{
-    min-height:650px;
+    min-height:570px;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    position:relative;
     background:
-      linear-gradient(rgba(0,25,20,.78),rgba(0,25,20,.94)),
-      url("paramedic-bg.jpg") center/cover no-repeat;
+    linear-gradient(rgba(0,25,20,.70),rgba(0,25,20,.94)),
+    url("paramedic-bg.jpg") center/cover no-repeat;
 }
 
 .hero{
-    padding:30px 20px;
     max-width:850px;
+    padding:30px 20px;
 }
 
 .logo{
-    color:#d8ae25;
-    font-size:52px;
+    font-size:48px;
     font-weight:900;
     letter-spacing:4px;
-    margin-bottom:15px;
+    color:#d9b23f;
+    text-shadow:0 3px 20px #000;
 }
 
-.hero p{
-    font-size:20px;
-    color:#d0d8d5;
-    margin-bottom:30px;
+.tagline{
+    margin:12px 0 25px;
+    color:#d9e2df;
+    font-size:18px;
 }
 
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
+.hero-btn{
     display:inline-block;
-    padding:13px 23px;
+    padding:12px 25px;
     border-radius:30px;
+    border:1px solid #d9b23f;
+    background:#d9b23f;
+    color:#062019;
     text-decoration:none;
     font-weight:bold;
-    border:1px solid #d8ae25;
-    color:#fff;
-    background:#07382d;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-    background:#d8ae25;
-    color:#001b15;
 }
 
 nav{
@@ -82,277 +75,270 @@ nav{
     top:0;
     z-index:1000;
     background:#031f18;
-    border-bottom:1px solid #285447;
+    border-bottom:1px solid #31594e;
 }
 
-.nav-container{
+.navbar{
     max-width:1200px;
     margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
     padding:12px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .nav-logo{
-    color:#d8ae25;
+    color:#d9b23f;
     font-weight:bold;
-    font-size:19px;
 }
 
 .menu{
-    display:flex;
-    gap:22px;
     list-style:none;
+    display:flex;
+    gap:20px;
 }
 
 .menu a{
-    color:#eee;
     text-decoration:none;
+    color:#fff;
+    font-size:13px;
     font-weight:bold;
 }
 
 .menu a:hover{
-    color:#d8ae25;
+    color:#d9b23f;
 }
 
 .menu-btn{
     display:none;
-    font-size:28px;
+    font-size:26px;
     cursor:pointer;
 }
 
 section{
     max-width:1150px;
     margin:auto;
-    padding:75px 20px;
+    padding:60px 20px;
 }
 
 .section-title{
+    color:#d9b23f;
     text-align:center;
-    color:#d8ae25;
-    font-size:34px;
-    margin-bottom:12px;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-.section-subtitle{
+.subtitle{
     text-align:center;
     color:#aebdb8;
-    margin-bottom:40px;
+    margin-bottom:30px;
 }
 
-.about-box{
-    background:#07382d;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid #1d5a4b;
-    text-align:center;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-top:30px;
-}
-
-.stat{
-    background:#062d24;
-    border:1px solid #285b4e;
-    border-radius:16px;
-    padding:22px 10px;
-    text-align:center;
-}
-
-.stat strong{
-    display:block;
-    color:#d8ae25;
-    font-size:28px;
-}
-
-.cards{
+.card-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:18px;
 }
 
 .card{
     background:#07382d;
-    border:1px solid #286052;
-    border-radius:20px;
-    padding:25px;
-    transition:.3s;
+    border:1px solid #2c6254;
+    border-radius:18px;
+    padding:23px;
+    transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    border-color:#d8ae25;
+    transform:translateY(-4px);
+    border-color:#d9b23f;
 }
 
 .card h3{
-    color:#d8ae25;
-    margin-bottom:10px;
+    color:#d9b23f;
+    margin-bottom:8px;
 }
 
 .card p{
-    color:#c5d0cc;
+    color:#c8d2cf;
+    font-size:14px;
 }
 
-.tool-card{
-    background:#062d24;
-    border:1px solid #286052;
+.action-card{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.content-box{
+    background:#07382d;
+    border:1px solid #2c6254;
     border-radius:20px;
     padding:25px;
-    margin-bottom:20px;
 }
 
-.tool-card h3{
-    color:#d8ae25;
-    margin-bottom:18px;
-    font-size:23px;
+.content-box h3{
+    color:#d9b23f;
+    margin:15px 0 8px;
 }
 
-input,select{
-    width:100%;
-    padding:14px;
-    margin:7px 0;
-    border-radius:10px;
-    border:1px solid #407365;
-    background:#001b15;
-    color:#fff;
-    font-size:16px;
-    outline:none;
+.content-box ul{
+    padding-left:20px;
 }
 
-input:focus,select:focus{
-    border-color:#d8ae25;
+.content-box li{
+    margin:5px 0;
 }
 
-button{
-    padding:12px 20px;
-    border:none;
+.back-btn{
+    background:#d9b23f;
+    color:#062019;
+    border:0;
     border-radius:25px;
-    background:#d8ae25;
-    color:#071b16;
+    padding:10px 18px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:10px;
+    margin-bottom:18px;
 }
 
-button:hover{
-    opacity:.85;
-}
-
-.result{
-    background:#073f31;
-    border-radius:12px;
-    padding:15px;
-    margin-top:15px;
-    color:#fff;
-    min-height:25px;
-}
-
-.search-box{
-    max-width:650px;
-    margin:0 auto 30px;
-}
-
-.search-results{
-    max-width:850px;
-    margin:auto;
-}
-
-.search-item{
-    background:#07382d;
-    border-left:4px solid #d8ae25;
-    padding:15px;
-    margin:10px 0;
-    border-radius:8px;
-}
-
-.workout-days{
+.day-buttons{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:10px;
-    margin-bottom:25px;
+    gap:8px;
+    margin-bottom:20px;
 }
 
 .day-btn{
+    padding:10px 15px;
+    border-radius:22px;
+    border:1px solid #52766b;
     background:#07382d;
     color:#fff;
-    border:1px solid #407365;
+    cursor:pointer;
 }
 
 .day-btn.active{
-    background:#d8ae25;
-    color:#001b15;
-}
-
-.workout-content{
-    background:#07382d;
-    border:1px solid #286052;
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
+    background:#d9b23f;
+    color:#062019;
 }
 
 .exercise{
     display:inline-block;
-    background:#06271f;
-    border:1px solid #285447;
-    border-radius:12px;
-    padding:12px;
+    background:#05281f;
+    border:1px solid #31594e;
+    padding:10px 13px;
+    border-radius:10px;
     margin:5px;
+}
+
+input,textarea,select{
+    width:100%;
+    padding:13px;
+    margin:6px 0;
+    border-radius:10px;
+    border:1px solid #47776a;
+    background:#021c16;
+    color:#fff;
+    outline:none;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+input:focus,textarea:focus,select:focus{
+    border-color:#d9b23f;
+}
+
+.primary-btn{
+    padding:12px 20px;
+    background:#d9b23f;
+    color:#062019;
+    border:0;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.result{
+    background:#05281f;
+    border-radius:12px;
+    padding:15px;
+    margin-top:12px;
+}
+
+.search{
+    max-width:650px;
+    margin:0 auto 25px;
+}
+
+.search-results{
+    max-width:800px;
+    margin:auto;
+}
+
+.search-result{
+    background:#07382d;
+    border-left:4px solid #d9b23f;
+    padding:14px;
+    margin:8px 0;
+    border-radius:8px;
+    cursor:pointer;
 }
 
 .timer{
     text-align:center;
     font-size:55px;
-    color:#d8ae25;
+    color:#d9b23f;
     font-weight:bold;
-    margin:15px;
+}
+
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 footer{
+    border-top:1px solid #31594e;
     text-align:center;
-    padding:45px 20px;
-    border-top:1px solid #285447;
-    color:#94a49f;
+    padding:35px 15px;
+    color:#93a49f;
 }
 
-.top{
+footer strong{
+    color:#d9b23f;
+}
+
+.top-btn{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:45px;
-    height:45px;
+    right:18px;
+    bottom:18px;
+    width:44px;
+    height:44px;
     border-radius:50%;
-    background:#d8ae25;
-    color:#001b15;
+    background:#d9b23f;
+    color:#062019;
     display:none;
     align-items:center;
     justify-content:center;
-    font-size:22px;
-    z-index:999;
+    cursor:pointer;
+    font-weight:bold;
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
 
     .logo{
-        font-size:38px;
+        font-size:36px;
     }
 
-    .hero p{
-        font-size:17px;
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .cards{
-        grid-template-columns:1fr;
+    .tagline{
+        font-size:15px;
     }
 
     .menu-btn{
@@ -362,18 +348,26 @@ footer{
     .menu{
         display:none;
         position:absolute;
-        top:58px;
+        top:55px;
         left:0;
         width:100%;
-        background:#031f18;
-        flex-direction:column;
         padding:15px 20px;
-        gap:15px;
-        border-bottom:1px solid #285447;
+        flex-direction:column;
+        background:#031f18;
+        border-bottom:1px solid #31594e;
     }
 
     .menu.show{
         display:flex;
+    }
+
+    .card-grid,
+    .tools-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:45px 15px;
     }
 }
 </style>
@@ -381,32 +375,35 @@ footer{
 
 <body>
 
+<!-- HERO -->
+
 <header id="home">
 
 <div class="hero">
 
 <div class="logo">UR PARAMEDIC</div>
 
-<p>
+<p class="tagline">
 FITNESS • HEALTH • MEDICAL KNOWLEDGE • DISCIPLINE
 </p>
 
-<p>
-Your platform for fitness, practical medical knowledge,
-workouts, nutrition and paramedic awareness.
+<p class="tagline">
+A practical platform for fitness, nutrition,
+paramedic knowledge and a disciplined lifestyle.
 </p>
 
-<div class="hero-buttons">
-<a href="#tools" class="btn">🛠️ EXPLORE TOOLS</a>
-<a href="#workout" class="btn">💪 WORKOUT</a>
-</div>
+<a href="#explore" class="hero-btn">EXPLORE</a>
 
 </div>
+
 </header>
+
+
+<!-- NAVIGATION -->
 
 <nav>
 
-<div class="nav-container">
+<div class="navbar">
 
 <div class="nav-logo">UR PARAMEDIC</div>
 
@@ -415,206 +412,340 @@ workouts, nutrition and paramedic awareness.
 <ul class="menu" id="menu">
 
 <li><a href="#home">HOME</a></li>
-<li><a href="#about">ABOUT</a></li>
-<li><a href="#workout">WORKOUT</a></li>
-<li><a href="#diet">DIET</a></li>
-<li><a href="#medical">MEDICAL</a></li>
+<li><a href="#explore">EXPLORE</a></li>
 <li><a href="#tools">TOOLS</a></li>
 
 </ul>
 
 </div>
+
 </nav>
 
-<section id="about">
+
+<!-- MAIN MENU -->
+
+<section id="explore">
+
+<h2 class="section-title">EXPLORE</h2>
+
+<p class="subtitle">
+Tap a category to explore
+</p>
+
+<div class="card-grid">
+
+<div class="card action-card" onclick="openSection('about')">
+<h3>👨‍⚕️ ABOUT</h3>
+<p>Learn about UR PARAMEDIC.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('workout')">
+<h3>💪 WORKOUT PLAN</h3>
+<p>Open your complete weekly workout plan.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('diet')">
+<h3>🥗 DIET & NUTRITION</h3>
+<p>Fat loss, muscle gain and maintenance.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('medical')">
+<h3>🩺 MEDICAL KNOWLEDGE</h3>
+<p>Practical medical and emergency topics.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('diseases')">
+<h3>🦠 DISEASES</h3>
+<p>Explore common diseases and health guidance.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('blog')">
+<h3>📚 BOOKS & BLOGS</h3>
+<p>Read articles, thoughts and future books.</p>
+</div>
+
+<div class="card action-card" onclick="openSection('contact')">
+<h3>📩 CONTACT / INQUIRIES</h3>
+<p>Send your question or query.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
 
 <h2 class="section-title">ABOUT UR PARAMEDIC</h2>
 
-<p class="section-subtitle">
-Fitness • Health • Medical Knowledge • Discipline
-</p>
-
-<div class="about-box">
+<div class="content-box">
 
 <p>
-UR PARAMEDIC is a practical platform combining fitness,
-nutrition, workout guidance and paramedic knowledge
-in one place.
+UR PARAMEDIC is a platform focused on fitness,
+health awareness, paramedic knowledge, nutrition
+and disciplined living.
 </p>
 
-<div class="stats">
+<h3>Our Mission</h3>
 
-<div class="stat">
-<strong>24/7</strong>
-Medical Awareness
-</div>
+<p>
+To make useful health and fitness information
+simple, practical and accessible.
+</p>
 
-<div class="stat">
-<strong>50+</strong>
-Exercises
-</div>
+<h3>What You Can Find</h3>
 
-<div class="stat">
-<strong>20+</strong>
-Health Topics
-</div>
-
-<div class="stat">
-<strong>FREE</strong>
-Fitness Tools
-</div>
-
-</div>
+<ul>
+<li>Workout routines</li>
+<li>Nutrition guidance</li>
+<li>Fitness calculators</li>
+<li>Medical awareness</li>
+<li>Disease information</li>
+<li>Paramedic learning resources</li>
+</ul>
 
 </div>
 
 </section>
 
 
-<section id="workout">
+<!-- WORKOUT -->
+
+<section id="workout" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
 
 <h2 class="section-title">💪 WORKOUT PLAN</h2>
 
-<p class="section-subtitle">
-Select a day to see your workout
+<p class="subtitle">
+Select a day to see its complete routine
 </p>
 
-<div class="workout-days">
+<div class="day-buttons">
 
-<button class="day-btn active" onclick="showWorkout('monday',this)">MON</button>
-<button class="day-btn" onclick="showWorkout('tuesday',this)">TUE</button>
-<button class="day-btn" onclick="showWorkout('wednesday',this)">WED</button>
-<button class="day-btn" onclick="showWorkout('thursday',this)">THU</button>
-<button class="day-btn" onclick="showWorkout('friday',this)">FRI</button>
-<button class="day-btn" onclick="showWorkout('saturday',this)">SAT</button>
-<button class="day-btn" onclick="showWorkout('sunday',this)">SUN</button>
+<button class="day-btn active" onclick="showWorkout('Monday',this)">Monday</button>
+<button class="day-btn" onclick="showWorkout('Tuesday',this)">Tuesday</button>
+<button class="day-btn" onclick="showWorkout('Wednesday',this)">Wednesday</button>
+<button class="day-btn" onclick="showWorkout('Thursday',this)">Thursday</button>
+<button class="day-btn" onclick="showWorkout('Friday',this)">Friday</button>
+<button class="day-btn" onclick="showWorkout('Saturday',this)">Saturday</button>
+<button class="day-btn" onclick="showWorkout('Sunday',this)">Sunday</button>
 
 </div>
 
-<div id="workoutContent" class="workout-content"></div>
+<div id="workoutContent" class="content-box"></div>
 
 </section>
 
 
-<section id="diet">
+<!-- DIET -->
+
+<section id="diet" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
 
 <h2 class="section-title">🥗 DIET & NUTRITION</h2>
 
-<p class="section-subtitle">
-Choose your fitness goal
+<p class="subtitle">
+Choose your goal
 </p>
 
-<div class="cards">
+<div class="card-grid">
 
-<div class="card">
-<h3>🔥 Fat Loss</h3>
-<p>
-High-protein meals, controlled calories,
-vegetables, fruits and proper hydration.
-</p>
+<div class="card action-card" onclick="showDiet('fatloss')">
+<h3>🔥 FAT LOSS</h3>
+<p>Calorie control and sustainable fat loss.</p>
 </div>
 
-<div class="card">
-<h3>💪 Muscle Gain</h3>
-<p>
-Adequate protein, calories, carbohydrates
-and resistance training.
-</p>
+<div class="card action-card" onclick="showDiet('muscle')">
+<h3>💪 MUSCLE GAIN</h3>
+<p>Protein, calories and strength training.</p>
 </div>
 
-<div class="card">
-<h3>⚖️ Maintenance</h3>
-<p>
-Balanced nutrition with appropriate calories,
-protein and regular physical activity.
-</p>
+<div class="card action-card" onclick="showDiet('maintenance')">
+<h3>⚖️ MAINTENANCE</h3>
+<p>Balanced nutrition for maintaining weight.</p>
 </div>
 
 </div>
+
+<div id="dietContent" class="content-box hidden" style="margin-top:20px;"></div>
 
 </section>
 
 
-<section id="medical">
+<!-- MEDICAL -->
+
+<section id="medical" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
 
 <h2 class="section-title">🩺 MEDICAL KNOWLEDGE</h2>
 
-<p class="section-subtitle">
-Practical paramedic and emergency awareness
+<p class="subtitle">Tap a topic</p>
+
+<div class="card-grid">
+
+<div class="card action-card" onclick="showMedical('firstaid')">
+<h3>🚑 First Aid</h3>
+<p>Basic first-response principles.</p>
+</div>
+
+<div class="card action-card" onclick="showMedical('bleeding')">
+<h3>🩸 Bleeding</h3>
+<p>Basic bleeding-control awareness.</p>
+</div>
+
+<div class="card action-card" onclick="showMedical('burns')">
+<h3>🔥 Burns</h3>
+<p>Immediate first-aid principles.</p>
+</div>
+
+<div class="card action-card" onclick="showMedical('snake')">
+<h3>🐍 Snake Bite</h3>
+<p>What to do and what to avoid.</p>
+</div>
+
+<div class="card action-card" onclick="showMedical('heat')">
+<h3>☀️ Heat Stroke</h3>
+<p>Recognition and emergency response.</p>
+</div>
+
+<div class="card action-card" onclick="showMedical('cardiac')">
+<h3>❤️ Cardiac Emergency</h3>
+<p>Warning signs and emergency action.</p>
+</div>
+
+</div>
+
+<div id="medicalContent" class="content-box hidden" style="margin-top:20px;"></div>
+
+</section>
+
+
+<!-- DISEASES -->
+
+<section id="diseases" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h2 class="section-title">🦠 COMMON DISEASES</h2>
+
+<p class="subtitle">
+Tap a disease to open its information
 </p>
 
-<div class="cards">
+<div class="card-grid" id="diseaseCards"></div>
 
-<div class="card">
-<h3>🚑 Emergency</h3>
-<p>Basic emergency assessment and first-response knowledge.</p>
+<div id="diseaseContent" class="content-box hidden" style="margin-top:20px;"></div>
+
+</section>
+
+
+<!-- BLOG -->
+
+<section id="blog" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h2 class="section-title">📚 BOOKS & BLOGS</h2>
+
+<p class="subtitle">
+Knowledge, experience and useful reads
+</p>
+
+<div class="card-grid">
+
+<div class="card action-card" onclick="openBlog('consistency')">
+<h3>📖 The Power of Consistency</h3>
+<p>Why small daily actions create big results.</p>
 </div>
 
-<div class="card">
-<h3>❤️ Cardiac</h3>
-<p>Heart attack awareness, warning signs and emergency response.</p>
+<div class="card action-card" onclick="openBlog('discipline')">
+<h3>🧠 Discipline Over Motivation</h3>
+<p>A short guide to building discipline.</p>
 </div>
 
-<div class="card">
-<h3>🩸 Bleeding</h3>
-<p>Basic bleeding-control and wound-management principles.</p>
+<div class="card action-card" onclick="openBlog('paramedic')">
+<h3>🚑 Life of a Paramedic</h3>
+<p>Notes, learning and practical experiences.</p>
 </div>
 
-<div class="card">
-<h3>🐍 Snake Bite</h3>
-<p>Important first-aid principles and things to avoid.</p>
 </div>
 
-<div class="card">
-<h3>🦟 Malaria</h3>
-<p>General awareness about symptoms, prevention and testing.</p>
-</div>
+<div id="blogContent" class="content-box hidden" style="margin-top:20px;"></div>
 
-<div class="card">
-<h3>🦟 Dengue</h3>
-<p>Symptoms, warning signs and prevention awareness.</p>
-</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h2 class="section-title">📩 CONTACT / INQUIRIES</h2>
+
+<p class="subtitle">
+Have a question? Send it here.
+</p>
+
+<div class="content-box">
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+name="subject"
+placeholder="Subject">
+
+<textarea
+name="message"
+placeholder="Write your query..."
+required></textarea>
+
+<button class="primary-btn" type="submit">
+SEND QUERY
+</button>
+
+</form>
 
 </div>
 
 </section>
 
 
+<!-- TOOLS -->
+
 <section id="tools">
 
-<h2 class="section-title">🛠️ UR PARAMEDIC TOOLS</h2>
+<h2 class="section-title">🛠️ FITNESS TOOLS</h2>
 
-<p class="section-subtitle">
-Free fitness calculators and useful tools
+<p class="subtitle">
+Useful tools for your fitness journey
 </p>
 
-
-<!-- SEARCH -->
-
-<div class="tool-card">
-
-<h3>🔎 Search Website</h3>
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchBox"
-placeholder="Search workout, diet, fitness, disease..."
-onkeyup="searchWebsite()">
-
-</div>
-
-<div id="searchResult" class="search-results">
-Type something to search this page.
-</div>
-
-</div>
-
+<div class="tools-grid">
 
 <!-- BMI -->
 
-<div class="tool-card">
+<div class="card">
 
 <h3>⚖️ BMI Calculator</h3>
 
@@ -628,10 +759,12 @@ type="number"
 id="bmiHeight"
 placeholder="Height (cm)">
 
-<button onclick="calculateBMI()">Calculate BMI</button>
+<button class="primary-btn" onclick="calculateBMI()">
+Calculate
+</button>
 
 <div id="bmiResult" class="result">
-Your BMI will appear here.
+Result will appear here.
 </div>
 
 </div>
@@ -639,28 +772,28 @@ Your BMI will appear here.
 
 <!-- BMR -->
 
-<div class="tool-card">
+<div class="card">
 
-<h3>🔥 BMR & Daily Calories</h3>
+<h3>🔥 BMR / Calories</h3>
 
-<select id="calGender">
+<select id="gender">
 <option value="male">Male</option>
 <option value="female">Female</option>
 </select>
 
 <input
 type="number"
-id="calAge"
+id="age"
 placeholder="Age">
 
 <input
 type="number"
-id="calWeight"
+id="weight"
 placeholder="Weight (kg)">
 
 <input
 type="number"
-id="calHeight"
+id="height"
 placeholder="Height (cm)">
 
 <select id="activity">
@@ -668,15 +801,14 @@ placeholder="Height (cm)">
 <option value="1.375">Light Activity</option>
 <option value="1.55">Moderate Activity</option>
 <option value="1.725">Very Active</option>
-<option value="1.9">Extremely Active</option>
 </select>
 
-<button onclick="calculateCalories()">
-Calculate BMR & Calories
+<button class="primary-btn" onclick="calculateBMR()">
+Calculate
 </button>
 
-<div id="calResult" class="result">
-Your result will appear here.
+<div id="bmrResult" class="result">
+Result will appear here.
 </div>
 
 </div>
@@ -684,7 +816,7 @@ Your result will appear here.
 
 <!-- TIMER -->
 
-<div class="tool-card">
+<div class="card">
 
 <h3>⏱️ Workout Timer</h3>
 
@@ -692,13 +824,17 @@ Your result will appear here.
 00:30
 </div>
 
-<div style="text-align:center">
+<button class="primary-btn" onclick="startTimer()">
+START
+</button>
 
-<button onclick="startTimer()">▶ START</button>
+<button class="primary-btn" onclick="pauseTimer()">
+PAUSE
+</button>
 
-<button onclick="pauseTimer()">⏸ PAUSE</button>
-
-<button onclick="resetTimer()">↻ RESET</button>
+<button class="primary-btn" onclick="resetTimer()">
+RESET
+</button>
 
 </div>
 
@@ -709,7 +845,7 @@ Your result will appear here.
 
 <footer>
 
-<p>© 2026 UR PARAMEDIC</p>
+<p>© 2026 <strong>Medic Abid</strong></p>
 
 <p>
 Fitness • Health • Medical Knowledge • Discipline
@@ -717,19 +853,707 @@ Fitness • Health • Medical Knowledge • Discipline
 
 </footer>
 
-<div class="top" id="topBtn" onclick="window.scrollTo(0,0)">
+
+<div class="top-btn" id="topBtn" onclick="window.scrollTo(0,0)">
 ↑
 </div>
 
 
 <script>
 
-/* MOBILE MENU */
+/* MENU */
 
 function toggleMenu(){
 
-document.getElementById("menu")
-.classList.toggle("show");
+document.getElementById("menu").classList.toggle("show");
+
+}
+
+
+/* OPEN SECTION */
+
+function openSection(id){
+
+document.querySelectorAll("section").forEach(function(s){
+
+if(s.id !== "tools"){
+s.classList.add("hidden");
+}
+
+});
+
+document.getElementById(id).classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* BACK */
+
+function goBack(){
+
+document.querySelectorAll("section").forEach(function(s){
+
+if(s.id !== "explore" && s.id !== "tools"){
+s.classList.add("hidden");
+}
+
+});
+
+document.getElementById("explore").classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* WORKOUT DATA */
+
+const workoutData = {
+
+Monday:{
+focus:"Chest + Triceps",
+warmup:"5–8 minutes light cardio + shoulder mobility",
+exercises:[
+"Push Ups — 3 × 12–15",
+"Incline Push Ups — 3 × 12",
+"Chest Press — 4 × 10",
+"Triceps Dips — 3 × 10–12",
+"Triceps Extension — 3 × 12"
+],
+finish:"5 minutes stretching",
+duration:"45–55 minutes"
+},
+
+Tuesday:{
+focus:"Back + Biceps",
+warmup:"5–8 minutes cardio + back mobility",
+exercises:[
+"Pull Ups — 3 × max comfortable",
+"Lat Pulldown — 4 × 10",
+"Seated Row — 3 × 12",
+"Biceps Curl — 3 × 12",
+"Hammer Curl — 3 × 12"
+],
+finish:"Back and arm stretching",
+duration:"45–55 minutes"
+},
+
+Wednesday:{
+focus:"Legs",
+warmup:"8 minutes walking + leg mobility",
+exercises:[
+"Bodyweight Squat — 4 × 15",
+"Lunges — 3 × 12 each leg",
+"Leg Press — 3 × 10",
+"Calf Raises — 4 × 15",
+"Glute Bridge — 3 × 15"
+],
+finish:"10 minutes stretching",
+duration:"45–60 minutes"
+},
+
+Thursday:{
+focus:"Shoulders",
+warmup:"5–8 minutes + shoulder mobility",
+exercises:[
+"Shoulder Press — 4 × 10",
+"Lateral Raise — 3 × 15",
+"Front Raise — 3 × 12",
+"Face Pull — 3 × 15",
+"Shrugs — 3 × 12"
+],
+finish:"Shoulder stretching",
+duration:"40–50 minutes"
+},
+
+Friday:{
+focus:"Arms + Core",
+warmup:"5 minutes light cardio",
+exercises:[
+"Biceps Curl — 3 × 12",
+"Hammer Curl — 3 × 12",
+"Triceps Extension — 3 × 12",
+"Diamond Push Ups — 3 × 10",
+"Plank — 3 × 45 seconds",
+"Leg Raises — 3 × 12"
+],
+finish:"Full-body stretching",
+duration:"40–50 minutes"
+},
+
+Saturday:{
+focus:"Cardio + Conditioning",
+warmup:"5 minutes easy walk",
+exercises:[
+"Jog/Run — 20 minutes",
+"Burpees — 3 × 10",
+"Mountain Climbers — 3 × 20",
+"Jumping Jacks — 3 × 30",
+"Plank — 3 × 45 seconds"
+],
+finish:"Slow walk + stretching",
+duration:"30–45 minutes"
+},
+
+Sunday:{
+focus:"Recovery",
+warmup:"Easy walk",
+exercises:[
+"Walking — 20–30 minutes",
+"Full Body Stretch — 15 minutes",
+"Hip Mobility — 5 minutes",
+"Shoulder Mobility — 5 minutes",
+"Deep Breathing — 5 minutes"
+],
+finish:"Recovery and hydration",
+duration:"30–45 minutes"
+}
+
+};
+
+
+function showWorkout(day,btn){
+
+document.querySelectorAll(".day-btn")
+.forEach(function(b){
+b.classList.remove("active");
+});
+
+btn.classList.add("active");
+
+let d = workoutData[day];
+
+let html = `
+<h2>${day} — ${d.focus}</h2>
+
+<h3>🔥 Warm-up</h3>
+<p>${d.warmup}</p>
+
+<h3>💪 Main Workout</h3>
+`;
+
+d.exercises.forEach(function(ex){
+
+html += `<div class="exercise">${ex}</div>`;
+
+});
+
+html += `
+<h3>🧘 Cool Down</h3>
+<p>${d.finish}</p>
+
+<h3>⏱️ Duration</h3>
+<p>${d.duration}</p>
+`;
+
+document.getElementById("workoutContent").innerHTML=html;
+
+}
+
+
+/* DIET */
+
+const dietData={
+
+fatloss:`
+<h2>🔥 Fat Loss Plan</h2>
+
+<h3>Morning</h3>
+<p>Water after waking. Tea/coffee without excessive added sugar if desired.</p>
+
+<h3>Breakfast</h3>
+<p>Eggs or oats + fruit + a protein source.</p>
+
+<h3>Lunch</h3>
+<p>Roti/rice in controlled portions + dal/chicken/fish + vegetables + salad.</p>
+
+<h3>Evening</h3>
+<p>Fruit, curd or another protein-rich light snack.</p>
+
+<h3>Dinner</h3>
+<p>Protein + vegetables. Keep portions controlled.</p>
+
+<h3>Limit</h3>
+<p>Frequent sugary drinks, deep-fried foods, excess sweets and highly processed snacks.</p>
+
+<h3>Key Rule</h3>
+<p>Fat loss depends mainly on maintaining a sustainable calorie deficit while keeping protein and activity adequate.</p>
+`,
+
+muscle:`
+<h2>💪 Muscle Gain Plan</h2>
+
+<h3>Breakfast</h3>
+<p>Eggs/oats/milk/curd + fruit + whole grains.</p>
+
+<h3>Lunch</h3>
+<p>Rice or roti + chicken/fish/eggs/dal + vegetables.</p>
+
+<h3>Pre-Workout</h3>
+<p>Fruit + a carbohydrate/protein source according to your tolerance.</p>
+
+<h3>Post-Workout</h3>
+<p>A protein-rich meal or snack with adequate carbohydrates.</p>
+
+<h3>Dinner</h3>
+<p>Protein source + vegetables + appropriate carbohydrate portion.</p>
+
+<h3>Key Rule</h3>
+<p>Progressive resistance training, adequate protein, calories and recovery are the foundation of muscle gain.</p>
+`,
+
+maintenance:`
+<h2>⚖️ Maintenance Plan</h2>
+
+<h3>Breakfast</h3>
+<p>Balanced meal containing protein, whole grains and fruit.</p>
+
+<h3>Lunch</h3>
+<p>Protein + vegetables + rice/roti in a suitable portion.</p>
+
+<h3>Snack</h3>
+<p>Fruit, curd, nuts or another balanced option.</p>
+
+<h3>Dinner</h3>
+<p>Balanced protein, vegetables and carbohydrates.</p>
+
+<h3>Key Rule</h3>
+<p>Match food intake with your activity and maintain a consistent exercise routine.</p>
+`
+
+};
+
+
+function showDiet(type){
+
+let box=document.getElementById("dietContent");
+
+box.innerHTML=dietData[type];
+
+box.classList.remove("hidden");
+
+box.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* MEDICAL */
+
+const medicalData={
+
+firstaid:`
+<h2>🚑 First Aid</h2>
+<p>First aid is immediate care provided until appropriate medical help is available.</p>
+<h3>Basic Principles</h3>
+<ul>
+<li>Ensure scene safety.</li>
+<li>Assess responsiveness and breathing.</li>
+<li>Call emergency medical services when required.</li>
+<li>Control serious bleeding.</li>
+<li>Do not give food or drink to an unconscious person.</li>
+</ul>
+`,
+
+bleeding:`
+<h2>🩸 Bleeding</h2>
+<p>Severe bleeding can become life-threatening quickly.</p>
+<h3>Basic Response</h3>
+<ul>
+<li>Use gloves/barrier protection if available.</li>
+<li>Apply firm direct pressure.</li>
+<li>Use appropriate dressing or gauze.</li>
+<li>Seek urgent medical care for severe bleeding.</li>
+</ul>
+`,
+
+burns:`
+<h2>🔥 Burns</h2>
+<p>For a minor thermal burn, cool the area under cool running water for about 20 minutes.</p>
+<h3>Avoid</h3>
+<ul>
+<li>Ice directly on the burn.</li>
+<li>Butter or toothpaste.</li>
+<li>Breaking blisters.</li>
+</ul>
+`,
+
+snake:`
+<h2>🐍 Snake Bite</h2>
+<p>Keep the person calm and seek emergency medical care immediately.</p>
+<h3>Avoid</h3>
+<ul>
+<li>Do not cut the wound.</li>
+<li>Do not suck venom.</li>
+<li>Do not apply a tight tourniquet.</li>
+<li>Do not attempt to catch the snake.</li>
+</ul>
+`,
+
+heat:`
+<h2>☀️ Heat Stroke</h2>
+<p>Heat stroke is a medical emergency. Rapid cooling and emergency medical assistance are important.</p>
+<h3>Warning Signs</h3>
+<ul>
+<li>Very high body temperature</li>
+<li>Confusion or altered behaviour</li>
+<li>Collapse or loss of consciousness</li>
+</ul>
+`,
+
+cardiac:`
+<h2>❤️ Cardiac Emergency</h2>
+<p>Chest pressure/pain, shortness of breath, sweating, nausea or pain spreading to the arm/jaw can be warning signs.</p>
+<h3>Action</h3>
+<ul>
+<li>Call emergency medical services immediately.</li>
+<li>Keep the person resting and monitored.</li>
+<li>If they become unresponsive and are not breathing normally, begin CPR and use an AED if available.</li>
+</ul>
+`
+
+};
+
+
+function showMedical(type){
+
+let box=document.getElementById("medicalContent");
+
+box.innerHTML=medicalData[type];
+
+box.classList.remove("hidden");
+
+box.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* DISEASES */
+
+const diseases={
+
+Diabetes:{
+icon:"🩸",
+info:"A condition in which blood glucose remains abnormally high.",
+food:"Vegetables, whole grains, pulses, appropriate protein and controlled portions.",
+avoid:"Excess sugary drinks and frequent highly processed foods.",
+prevention:"Healthy weight, regular activity, balanced diet and routine screening when appropriate.",
+warning:"Seek medical care for very high glucose symptoms, severe weakness, confusion or vomiting."
+},
+
+Hypertension:{
+icon:"❤️",
+info:"Persistently elevated blood pressure increases cardiovascular risk.",
+food:"Vegetables, fruits, whole grains, pulses and lower-sodium foods.",
+avoid:"Excess salt, highly processed foods and excessive alcohol.",
+prevention:"Regular exercise, healthy weight, sleep and blood-pressure monitoring.",
+warning:"Very high BP with chest pain, severe headache, weakness or breathing difficulty needs urgent evaluation."
+},
+
+Obesity:{
+icon:"⚖️",
+info:"Excess body fat that can increase the risk of several health conditions.",
+food:"Protein-rich foods, vegetables, fruits and high-fibre whole foods.",
+avoid:"Frequent calorie-dense processed foods and sugary beverages.",
+prevention:"Regular activity, portion control and sustainable eating habits.",
+warning:"Seek professional guidance for significant unexplained weight changes."
+},
+
+Anemia:{
+icon:"🩸",
+info:"A condition involving reduced healthy red blood cells or haemoglobin.",
+food:"Iron-rich foods such as legumes, leafy greens and appropriate animal sources.",
+avoid:"Do not self-start iron medication without appropriate evaluation.",
+prevention:"Adequate nutrition and evaluation of persistent symptoms.",
+warning:"Severe breathlessness, fainting or chest pain requires urgent care."
+},
+
+Dengue:{
+icon:"🦟",
+info:"A mosquito-borne viral illness.",
+food:"Adequate fluids and nutritious foods as tolerated.",
+avoid:"Avoid self-medication with medicines that can increase bleeding risk unless advised by a clinician.",
+prevention:"Mosquito-bite prevention and elimination of breeding sites.",
+warning:"Bleeding, severe abdominal pain, persistent vomiting, extreme weakness or breathing difficulty require urgent medical care."
+},
+
+Malaria:{
+icon:"🦟",
+info:"A mosquito-borne parasitic disease.",
+food:"Adequate fluids and balanced nutrition.",
+avoid:"Do not delay testing or treatment based on home remedies.",
+prevention:"Mosquito protection and appropriate preventive measures in risk areas.",
+warning:"Confusion, breathing difficulty, severe weakness or altered consciousness require emergency care."
+},
+
+Asthma:{
+icon:"🫁",
+info:"A condition causing episodes of airway narrowing and breathing difficulty.",
+food:"Maintain a balanced diet and identify individual triggers.",
+avoid:"Known personal triggers such as smoke and irritants.",
+prevention:"Trigger avoidance and following the prescribed asthma action plan.",
+warning:"Severe breathlessness, inability to speak normally or bluish lips require emergency care."
+},
+
+COPD:{
+icon:"🫁",
+info:"A chronic lung disease associated with persistent airflow limitation.",
+food:"Balanced nutrition and adequate protein as appropriate.",
+avoid:"Smoking and exposure to respiratory irritants.",
+prevention:"Avoid tobacco and harmful occupational/environmental exposure.",
+warning:"Sudden severe breathing difficulty needs urgent assessment."
+},
+
+HighCholesterol:{
+icon:"❤️",
+info:"High levels of certain blood lipids can increase cardiovascular risk.",
+food:"High-fibre foods, vegetables, fruits and healthier unsaturated fats.",
+avoid:"Frequent trans fats and excessive saturated-fat-rich processed foods.",
+prevention:"Exercise, healthy weight and appropriate lipid testing.",
+warning:"Chest pain or severe breathlessness needs urgent medical attention."
+},
+
+FattyLiver:{
+icon:"🫀",
+info:"Fat accumulation in the liver can be associated with metabolic risk factors.",
+food:"Vegetables, whole grains, adequate protein and balanced portions.",
+avoid:"Excess alcohol and frequent high-sugar/high-calorie foods.",
+prevention:"Healthy weight, physical activity and metabolic risk management.",
+warning:"Discuss persistent abnormal liver tests or symptoms with a clinician."
+},
+
+Thyroid:{
+icon:"🦋",
+info:"Thyroid disorders can affect metabolism and many body functions.",
+food:"Balanced diet; specific dietary changes depend on the diagnosis.",
+avoid:"Avoid taking thyroid supplements or iodine products without medical advice.",
+prevention:"Appropriate medical evaluation when symptoms persist.",
+warning:"Severe symptoms or rapid changes require medical assessment."
+},
+
+Gastritis:{
+icon:"🫃",
+info:"Inflammation or irritation of the stomach lining.",
+food:"Smaller balanced meals and foods that are well tolerated.",
+avoid:"Personal triggers such as excessive spicy foods, alcohol or NSAID overuse.",
+prevention:"Avoid unnecessary stomach-irritating medicines and seek evaluation for persistent symptoms.",
+warning:"Vomiting blood, black stools or severe abdominal pain needs urgent care."
+},
+
+GERD:{
+icon:"🔥",
+info:"Acid from the stomach frequently flows back into the oesophagus.",
+food:"Smaller meals and avoiding individual trigger foods.",
+avoid:"Large late-night meals and lying down immediately after eating.",
+prevention:"Healthy weight and appropriate meal timing.",
+warning:"Difficulty swallowing, vomiting blood or unexplained weight loss needs medical evaluation."
+},
+
+KidneyDisease:{
+icon:"🫘",
+info:"Kidney disease can reduce the kidneys' ability to perform normal functions.",
+food:"Diet depends strongly on kidney function and laboratory results.",
+avoid:"Do not make major protein, potassium or fluid changes without professional advice.",
+prevention:"Control blood pressure, diabetes and avoid unnecessary nephrotoxic medicines.",
+warning:"Marked reduction in urine, swelling or severe weakness needs medical assessment."
+},
+
+HeartDisease:{
+icon:"❤️",
+info:"A group of conditions affecting the heart and blood vessels.",
+food:"Vegetables, whole grains, pulses, fish/lean proteins and healthier fats.",
+avoid:"Smoking, excess sodium and highly processed foods.",
+prevention:"Exercise, healthy weight, blood pressure and lipid management.",
+warning:"Chest pressure, sweating, breathlessness or collapse is an emergency."
+},
+
+Osteoporosis:{
+icon:"🦴",
+info:"Reduced bone strength can increase fracture risk.",
+food:"Adequate calcium and vitamin D from appropriate dietary sources.",
+avoid:"Smoking and excessive alcohol.",
+prevention:"Weight-bearing exercise and appropriate medical assessment.",
+warning:"Suspected fracture needs medical evaluation."
+},
+
+Arthritis:{
+icon:"🦴",
+info:"Arthritis refers to conditions causing joint pain and inflammation or degeneration.",
+food:"Balanced diet supporting healthy body weight.",
+avoid:"Avoid assuming one specific food cures arthritis.",
+prevention:"Healthy weight, appropriate exercise and joint protection.",
+warning:"A hot, very swollen joint with fever requires urgent evaluation."
+},
+
+Migraine:{
+icon:"🧠",
+info:"A neurological condition that can cause recurrent headaches and other symptoms.",
+food:"Regular meals and adequate hydration can help some people.",
+avoid:"Identify personal triggers rather than following a universal food restriction.",
+prevention:"Regular sleep, hydration and trigger tracking.",
+warning:"Sudden worst-ever headache or headache with neurological deficits requires urgent care."
+},
+
+Tuberculosis:{
+icon:"🫁",
+info:"A bacterial infection that commonly affects the lungs but can affect other organs.",
+food:"Adequate calories and protein as tolerated.",
+avoid:"Do not stop prescribed treatment without medical advice.",
+prevention:"Early diagnosis, appropriate treatment and infection-control measures.",
+warning:"Persistent cough, coughing blood, weight loss or prolonged fever needs medical evaluation."
+},
+
+VitaminD:{
+icon:"☀️",
+info:"Vitamin D deficiency can affect bones and other body functions.",
+food:"Dietary sources of vitamin D and appropriate fortified foods.",
+avoid:"Avoid high-dose supplementation without medical advice.",
+prevention:"Appropriate sunlight exposure, diet and testing when indicated.",
+warning:"Persistent bone pain or muscle weakness should be assessed."
+}
+
+};
+
+
+const diseaseCards =
+document.getElementById("diseaseCards");
+
+Object.keys(diseases).forEach(function(name){
+
+let d=diseases[name];
+
+let card=document.createElement("div");
+
+card.className="card action-card";
+
+card.innerHTML=`
+<h3>${d.icon} ${name}</h3>
+<p>Tap to view complete information.</p>
+`;
+
+card.onclick=function(){
+
+let box=document.getElementById("diseaseContent");
+
+box.innerHTML=`
+<h2>${d.icon} ${name}</h2>
+
+<h3>What is it?</h3>
+<p>${d.info}</p>
+
+<h3>🥗 Food / Lifestyle</h3>
+<p>${d.food}</p>
+
+<h3>⚠️ What to limit/avoid</h3>
+<p>${d.avoid}</p>
+
+<h3>🛡️ Prevention / Management</h3>
+<p>${d.prevention}</p>
+
+<h3>🚨 Warning Signs</h3>
+<p>${d.warning}</p>
+`;
+
+box.classList.remove("hidden");
+
+box.scrollIntoView({
+behavior:"smooth"
+});
+
+};
+
+diseaseCards.appendChild(card);
+
+});
+
+
+/* BLOGS */
+
+const blogs={
+
+consistency:`
+<h2>📖 The Power of Consistency</h2>
+
+<p>
+Consistency is not about being perfect every day.
+It is about continuing even when motivation is low.
+</p>
+
+<h3>Small actions matter</h3>
+
+<p>
+Ten minutes of exercise, one healthy meal and one
+productive decision repeated every day can create
+a major change over time.
+</p>
+
+<h3>The rule</h3>
+
+<p>
+Do not focus only on today's result.
+Focus on becoming the person who does the right
+things consistently.
+</p>
+`,
+
+discipline:`
+<h2>🧠 Discipline Over Motivation</h2>
+
+<p>
+Motivation comes and goes. Discipline creates a system
+that allows you to continue even when motivation disappears.
+</p>
+
+<h3>Build a routine</h3>
+
+<p>
+Choose a fixed time for exercise, study, sleep and
+important daily tasks.
+</p>
+`,
+
+paramedic:`
+<h2>🚑 Life of a Paramedic</h2>
+
+<p>
+A paramedic needs knowledge, calmness, communication,
+teamwork and the ability to act responsibly during
+stressful situations.
+</p>
+
+<h3>Keep learning</h3>
+
+<p>
+Every case can teach something. Regular revision,
+practice and reflection help improve professional skills.
+</p>
+`
+
+};
+
+
+function openBlog(type){
+
+let box=document.getElementById("blogContent");
+
+box.innerHTML=blogs[type];
+
+box.classList.remove("hidden");
+
+box.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
@@ -738,72 +1562,61 @@ document.getElementById("menu")
 
 function calculateBMI(){
 
-let weight =
+let weight=
 parseFloat(document.getElementById("bmiWeight").value);
 
-let height =
+let height=
 parseFloat(document.getElementById("bmiHeight").value);
 
 if(!weight || !height){
 
-document.getElementById("bmiResult").innerHTML =
-"⚠️ Please enter weight and height.";
+document.getElementById("bmiResult").innerHTML=
+"⚠️ Enter weight and height.";
 
 return;
 
 }
 
-height = height / 100;
+height/=100;
 
-let bmi = weight / (height * height);
+let bmi=weight/(height*height);
 
-let category = "";
+let category;
 
-if(bmi < 18.5)
-category = "Underweight";
-
-else if(bmi < 25)
-category = "Normal";
-
-else if(bmi < 30)
-category = "Overweight";
-
+if(bmi<18.5)
+category="Underweight";
+else if(bmi<25)
+category="Normal";
+else if(bmi<30)
+category="Overweight";
 else
-category = "Obesity";
+category="Obesity";
 
-document.getElementById("bmiResult").innerHTML =
-"Your BMI: <strong>" +
-bmi.toFixed(1) +
-"</strong><br>Category: <strong>" +
-category +
-"</strong>";
+document.getElementById("bmiResult").innerHTML=
+`BMI: <strong>${bmi.toFixed(1)}</strong><br>
+Category: <strong>${category}</strong>`;
 
 }
 
 
-/* BMR + CALORIES */
+/* BMR */
 
-function calculateCalories(){
+function calculateBMR(){
 
-let gender =
-document.getElementById("calGender").value;
+let gender=document.getElementById("gender").value;
 
-let age =
-parseFloat(document.getElementById("calAge").value);
+let age=parseFloat(document.getElementById("age").value);
 
-let weight =
-parseFloat(document.getElementById("calWeight").value);
+let weight=parseFloat(document.getElementById("weight").value);
 
-let height =
-parseFloat(document.getElementById("calHeight").value);
+let height=parseFloat(document.getElementById("height").value);
 
-let activity =
-parseFloat(document.getElementById("activity").value);
+let activity=parseFloat(document.getElementById("activity").value);
 
 if(!age || !weight || !height){
 
-document.getElementById("calResult").innerHTML =
-"⚠️ Please enter all details.";
+document.getElementById("bmrResult").innerHTML=
+"⚠️ Enter all details.";
 
 return;
 
@@ -811,233 +1624,61 @@ return;
 
 let bmr;
 
-if(gender === "male"){
+if(gender==="male"){
 
-bmr =
-10 * weight +
-6.25 * height -
-5 * age +
+bmr=
+10*weight+
+6.25*height-
+5*age+
 5;
 
 }else{
 
-bmr =
-10 * weight +
-6.25 * height -
-5 * age -
+bmr=
+10*weight+
+6.25*height-
+5*age-
 161;
 
 }
 
-let calories = bmr * activity;
+let calories=bmr*activity;
 
-document.getElementById("calResult").innerHTML =
-"BMR: <strong>" +
-Math.round(bmr) +
-" kcal/day</strong><br>" +
-"Estimated maintenance calories: <strong>" +
-Math.round(calories) +
-" kcal/day</strong>";
-
-}
-
-
-/* WORKOUT */
-
-const workouts = {
-
-monday:[
-"Chest Press – 4 × 10",
-"Push Ups – 3 × 15",
-"Incline Push Ups – 3 × 12",
-"Triceps Dips – 3 × 12"
-],
-
-tuesday:[
-"Lat Pulldown – 4 × 10",
-"Seated Row – 3 × 12",
-"Pull Ups – 3 × Max",
-"Back Extension – 3 × 15"
-],
-
-wednesday:[
-"Squats – 4 × 12",
-"Lunges – 3 × 12",
-"Leg Press – 3 × 10",
-"Calf Raises – 4 × 15"
-],
-
-thursday:[
-"Shoulder Press – 4 × 10",
-"Lateral Raise – 3 × 15",
-"Front Raise – 3 × 12",
-"Face Pull – 3 × 15"
-],
-
-friday:[
-"Bicep Curl – 3 × 12",
-"Hammer Curl – 3 × 12",
-"Tricep Extension – 3 × 12",
-"Diamond Push Ups – 3 × 10"
-],
-
-saturday:[
-"Running – 20 min",
-"Burpees – 3 × 10",
-"Mountain Climbers – 3 × 20",
-"Plank – 3 × 45 sec"
-],
-
-sunday:[
-"Walking – 30 min",
-"Stretching – 15 min",
-"Mobility – 10 min",
-"Recovery"
-]
-
-};
-
-
-function showWorkout(day,button){
-
-document
-.querySelectorAll(".day-btn")
-.forEach(b => b.classList.remove("active"));
-
-button.classList.add("active");
-
-let list = workouts[day];
-
-let html = "<h3>" +
-day.toUpperCase() +
-"</h3>";
-
-list.forEach(function(exercise){
-
-html +=
-'<div class="exercise">' +
-exercise +
-'</div>';
-
-});
-
-document.getElementById("workoutContent").innerHTML = html;
-
-}
-
-showWorkout(
-"monday",
-document.querySelector(".day-btn")
-);
-
-
-/* SEARCH */
-
-function searchWebsite(){
-
-let query =
-document.getElementById("searchBox")
-.value
-.toLowerCase()
-.trim();
-
-let result =
-document.getElementById("searchResult");
-
-if(query === ""){
-
-result.innerHTML =
-"Type something to search this page.";
-
-return;
-
-}
-
-let sections =
-document.querySelectorAll(
-"section, .card"
-);
-
-let found = [];
-
-sections.forEach(function(section){
-
-let text =
-section.innerText.toLowerCase();
-
-if(text.includes(query)){
-
-let heading =
-section.querySelector(
-"h1,h2,h3,h4"
-);
-
-let title =
-heading ?
-heading.innerText :
-"UR PARAMEDIC";
-
-found.push(
-"<div class='search-item'>" +
-"<strong>📌 " +
-title +
-"</strong><br>" +
-"Found information related to: " +
-query +
-"</div>"
-);
-
-}
-
-});
-
-if(found.length === 0){
-
-result.innerHTML =
-"❌ No result found for <strong>" +
-query +
-"</strong>";
-
-}else{
-
-result.innerHTML =
-found.slice(0,8).join("");
-
-}
+document.getElementById("bmrResult").innerHTML=
+`BMR: <strong>${Math.round(bmr)} kcal/day</strong><br>
+Estimated maintenance calories:
+<strong>${Math.round(calories)} kcal/day</strong>`;
 
 }
 
 
 /* TIMER */
 
-let timerSeconds = 30;
-let timerInterval = null;
+let seconds=30;
+let timerInterval=null;
 
 function updateTimer(){
 
-let min =
-Math.floor(timerSeconds / 60);
+let m=Math.floor(seconds/60);
 
-let sec =
-timerSeconds % 60;
+let s=seconds%60;
 
-document.getElementById("timer").innerText =
-String(min).padStart(2,"0") +
-":" +
-String(sec).padStart(2,"0");
+document.getElementById("timer").innerText=
+String(m).padStart(2,"0")+
+":"+
+String(s).padStart(2,"0");
 
 }
 
 function startTimer(){
 
-if(timerInterval) return;
+if(timerInterval)return;
 
-timerInterval =
-setInterval(function(){
+timerInterval=setInterval(function(){
 
-if(timerSeconds > 0){
+if(seconds>0){
 
-timerSeconds--;
+seconds--;
 
 updateTimer();
 
@@ -1045,9 +1686,9 @@ updateTimer();
 
 clearInterval(timerInterval);
 
-timerInterval = null;
+timerInterval=null;
 
-alert("⏱️ Workout time completed!");
+alert("Workout time completed!");
 
 }
 
@@ -1059,7 +1700,7 @@ function pauseTimer(){
 
 clearInterval(timerInterval);
 
-timerInterval = null;
+timerInterval=null;
 
 }
 
@@ -1067,35 +1708,131 @@ function resetTimer(){
 
 clearInterval(timerInterval);
 
-timerInterval = null;
+timerInterval=null;
 
-timerSeconds = 30;
+seconds=30;
 
 updateTimer();
 
 }
 
 updateTimer();
+
+
+/* SEARCH */
+
+function searchWebsite(){
+
+let q=document
+.getElementById("searchBox")
+.value
+.toLowerCase()
+.trim();
+
+let result=document.getElementById("searchResults");
+
+if(!q){
+
+result.innerHTML="";
+return;
+
+}
+
+let matches=[];
+
+const searchable={
+
+"workout":"workout",
+"diet":"diet",
+"nutrition":"diet",
+"fat loss":"diet",
+"muscle gain":"diet",
+"diabetes":"diseases",
+"hypertension":"diseases",
+"dengue":"diseases",
+"malaria":"diseases",
+"anemia":"diseases",
+"asthma":"diseases",
+"copd":"diseases",
+"heart":"medical",
+"bleeding":"medical",
+"burn":"medical",
+"snake":"medical",
+"first aid":"medical",
+"blog":"blog",
+"book":"blog",
+"about":"about",
+"contact":"contact",
+"query":"contact",
+"bmi":"tools",
+"bmr":"tools",
+"calories":"tools",
+"timer":"tools"
+};
+
+Object.keys(searchable).forEach(function(word){
+
+if(word.includes(q) || q.includes(word)){
+
+matches.push({
+name:word,
+section:searchable[word]
+});
+
+}
+
+});
+
+if(matches.length===0){
+
+result.innerHTML=
+"<div class='search-result'>❌ No result found.</div>";
+
+return;
+
+}
+
+result.innerHTML=matches.map(function(item){
+
+return `
+<div class="search-result"
+onclick="openSection('${item.section}')">
+🔎 <strong>${item.name}</strong>
+<br>
+Tap to open
+</div>
+`;
+
+}).join("");
+
+}
 
 
 /* TOP BUTTON */
 
 window.addEventListener("scroll",function(){
 
-let btn =
-document.getElementById("topBtn");
+let b=document.getElementById("topBtn");
 
-if(window.scrollY > 400){
+if(window.scrollY>500){
 
-btn.style.display = "flex";
+b.style.display="flex";
 
 }else{
 
-btn.style.display = "none";
+b.style.display="none";
 
 }
 
 });
+
+
+/* DEFAULT WORKOUT */
+
+showWorkout(
+"Monday",
+document.querySelector(".day-btn")
+);
 
 </script>
 
