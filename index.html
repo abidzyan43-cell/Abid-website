@@ -8,419 +8,495 @@
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#021c16;
-    color:#fff;
-    line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#021c16;
+color:#fff;
+line-height:1.6;
 }
 
 button,a{
-    -webkit-tap-highlight-color:transparent;
+-webkit-tap-highlight-color:transparent;
 }
 
 header{
-    min-height:570px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:
-    linear-gradient(rgba(0,25,20,.70),rgba(0,25,20,.94)),
-    url("paramedic-bg.jpg") center/cover no-repeat;
+min-height:570px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,25,20,.70),rgba(0,25,20,.94)),
+url("paramedic-bg.jpg") center/cover no-repeat;
 }
 
 .hero{
-    max-width:850px;
-    padding:30px 20px;
+max-width:850px;
+padding:30px 20px;
 }
 
 .logo{
-    font-size:48px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:#d9b23f;
-    text-shadow:0 3px 20px #000;
+font-size:48px;
+font-weight:900;
+letter-spacing:4px;
+color:#d9b23f;
+text-shadow:0 3px 20px #000;
 }
 
 .tagline{
-    margin:12px 0 25px;
-    color:#d9e2df;
-    font-size:18px;
+margin:12px 0 25px;
+color:#d9e2df;
+font-size:18px;
 }
 
 .hero-btn{
-    display:inline-block;
-    padding:12px 25px;
-    border-radius:30px;
-    border:1px solid #d9b23f;
-    background:#d9b23f;
-    color:#062019;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+padding:12px 25px;
+border-radius:30px;
+border:1px solid #d9b23f;
+background:#d9b23f;
+color:#062019;
+text-decoration:none;
+font-weight:bold;
 }
 
 nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#031f18;
-    border-bottom:1px solid #31594e;
+position:sticky;
+top:0;
+z-index:1000;
+background:#031f18;
+border-bottom:1px solid #31594e;
 }
 
 .navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:12px 18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+max-width:1200px;
+margin:auto;
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .nav-logo{
-    color:#d9b23f;
-    font-weight:bold;
+color:#d9b23f;
+font-weight:bold;
 }
 
 .menu{
-    list-style:none;
-    display:flex;
-    gap:20px;
+list-style:none;
+display:flex;
+gap:20px;
 }
 
 .menu a{
-    text-decoration:none;
-    color:#fff;
-    font-size:13px;
-    font-weight:bold;
+text-decoration:none;
+color:#fff;
+font-size:13px;
+font-weight:bold;
 }
 
 .menu a:hover{
-    color:#d9b23f;
+color:#d9b23f;
 }
 
 .menu-btn{
-    display:none;
-    font-size:26px;
-    cursor:pointer;
+display:none;
+font-size:26px;
+cursor:pointer;
 }
 
 section{
-    max-width:1150px;
-    margin:auto;
-    padding:60px 20px;
+max-width:1150px;
+margin:auto;
+padding:60px 20px;
 }
 
 .section-title{
-    color:#d9b23f;
-    text-align:center;
-    font-size:32px;
-    margin-bottom:10px;
+color:#d9b23f;
+text-align:center;
+font-size:32px;
+margin-bottom:10px;
 }
 
 .subtitle{
-    text-align:center;
-    color:#aebdb8;
-    margin-bottom:30px;
+text-align:center;
+color:#aebdb8;
+margin-bottom:30px;
 }
 
 .card-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-/* COMPACT TOP MENU BUTTONS */
-
-#explore .card-grid{
-    display:flex;
-    flex-wrap:nowrap;
-    gap:8px;
-    overflow-x:auto;
-    justify-content:center;
-    padding:5px 2px 10px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
-#explore .card{
-    flex:0 0 auto;
-    padding:9px 13px;
-    border-radius:20px;
-    min-width:auto;
-    cursor:pointer;
-    white-space:nowrap;
-}
-
-#explore .card h3{
-    font-size:12px;
-    margin:0;
-}
-
-#explore .card p{
-    display:none;
-}
-
-#explore .card:hover{
-    transform:translateY(-2px);
-}
-
-@media(max-width:800px){
-
-    #explore .card-grid{
-        justify-content:flex-start;
-        overflow-x:auto;
-        scrollbar-width:none;
-    }
-
-    #explore .card-grid::-webkit-scrollbar{
-        display:none;
-    }
-
-    #explore .card{
-        padding:8px 11px;
-    }
-
-    #explore .card h3{
-        font-size:11px;
-    }
-}
 .card{
-    background:#07382d;
-    border:1px solid #2c6254;
-    border-radius:18px;
-    padding:23px;
-    transition:.25s;
+background:#07382d;
+border:1px solid #2c6254;
+border-radius:18px;
+padding:23px;
+transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
-    border-color:#d9b23f;
+transform:translateY(-4px);
+border-color:#d9b23f;
 }
 
 .card h3{
-    color:#d9b23f;
-    margin-bottom:8px;
+color:#d9b23f;
+margin-bottom:8px;
 }
 
 .card p{
-    color:#c8d2cf;
-    font-size:14px;
+color:#c8d2cf;
+font-size:14px;
 }
 
 .action-card{
-    cursor:pointer;
+cursor:pointer;
 }
 
 .hidden{
-    display:none !important;
+display:none!important;
 }
 
 .content-box{
-    background:#07382d;
-    border:1px solid #2c6254;
-    border-radius:20px;
-    padding:25px;
+background:#07382d;
+border:1px solid #2c6254;
+border-radius:20px;
+padding:25px;
 }
 
 .content-box h3{
-    color:#d9b23f;
-    margin:15px 0 8px;
+color:#d9b23f;
+margin:15px 0 8px;
 }
 
 .content-box ul{
-    padding-left:20px;
+padding-left:20px;
 }
 
 .content-box li{
-    margin:5px 0;
+margin:5px 0;
 }
 
 .back-btn{
-    background:#d9b23f;
-    color:#062019;
-    border:0;
-    border-radius:25px;
-    padding:10px 18px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-bottom:18px;
+background:#d9b23f;
+color:#062019;
+border:0;
+border-radius:25px;
+padding:10px 18px;
+font-weight:bold;
+cursor:pointer;
+margin-bottom:18px;
 }
 
 .day-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-    margin-bottom:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+margin-bottom:20px;
 }
 
 .day-btn{
-    padding:10px 15px;
-    border-radius:22px;
-    border:1px solid #52766b;
-    background:#07382d;
-    color:#fff;
-    cursor:pointer;
+padding:10px 15px;
+border-radius:22px;
+border:1px solid #52766b;
+background:#07382d;
+color:#fff;
+cursor:pointer;
 }
 
 .day-btn.active{
-    background:#d9b23f;
-    color:#062019;
+background:#d9b23f;
+color:#062019;
 }
 
 .exercise{
-    display:inline-block;
-    background:#05281f;
-    border:1px solid #31594e;
-    padding:10px 13px;
-    border-radius:10px;
-    margin:5px;
+display:inline-block;
+background:#05281f;
+border:1px solid #31594e;
+padding:10px 13px;
+border-radius:10px;
+margin:5px;
 }
 
 input,textarea,select{
-    width:100%;
-    padding:13px;
-    margin:6px 0;
-    border-radius:10px;
-    border:1px solid #47776a;
-    background:#021c16;
-    color:#fff;
-    outline:none;
+width:100%;
+padding:13px;
+margin:6px 0;
+border-radius:10px;
+border:1px solid #47776a;
+background:#021c16;
+color:#fff;
+outline:none;
 }
 
 textarea{
-    min-height:130px;
-    resize:vertical;
+min-height:130px;
+resize:vertical;
 }
 
 input:focus,textarea:focus,select:focus{
-    border-color:#d9b23f;
+border-color:#d9b23f;
 }
 
 .primary-btn{
-    padding:12px 20px;
-    background:#d9b23f;
-    color:#062019;
-    border:0;
-    border-radius:25px;
-    font-weight:bold;
-    cursor:pointer;
+padding:12px 20px;
+background:#d9b23f;
+color:#062019;
+border:0;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+margin:3px;
 }
 
 .result{
-    background:#05281f;
-    border-radius:12px;
-    padding:15px;
-    margin-top:12px;
+background:#05281f;
+border-radius:12px;
+padding:15px;
+margin-top:12px;
 }
 
 .search{
-    max-width:650px;
-    margin:0 auto 25px;
+max-width:500px;
+margin:0 auto 25px;
+}
+
+.search input{
+font-size:14px;
+padding:10px 13px;
 }
 
 .search-results{
-    max-width:800px;
-    margin:auto;
+max-width:800px;
+margin:auto;
 }
 
 .search-result{
-    background:#07382d;
-    border-left:4px solid #d9b23f;
-    padding:14px;
-    margin:8px 0;
-    border-radius:8px;
-    cursor:pointer;
+background:#07382d;
+border-left:4px solid #d9b23f;
+padding:14px;
+margin:8px 0;
+border-radius:8px;
+cursor:pointer;
 }
 
 .timer{
-    text-align:center;
-    font-size:55px;
-    color:#d9b23f;
-    font-weight:bold;
+text-align:center;
+font-size:55px;
+color:#d9b23f;
+font-weight:bold;
 }
 
 .tools-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.extra-tools{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.tool-icon{
+font-size:30px;
+margin-bottom:8px;
+}
+
+.plan-item{
+background:#05281f;
+border:1px solid #31594e;
+border-radius:12px;
+padding:14px;
+margin:8px 0;
+}
+
+.plan-item strong{
+color:#d9b23f;
+}
+
+.tool-menu{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+margin-bottom:25px;
+}
+
+.tool-tab{
+background:#07382d;
+border:1px solid #52766b;
+color:#fff;
+border-radius:20px;
+padding:8px 13px;
+font-size:12px;
+cursor:pointer;
+}
+
+.tool-tab:hover{
+background:#d9b23f;
+color:#062019;
+}
+
+.learn-menu{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+margin-bottom:25px;
+}
+
+.learn-tab{
+background:#07382d;
+border:1px solid #52766b;
+color:#fff;
+border-radius:20px;
+padding:8px 13px;
+font-size:12px;
+cursor:pointer;
+}
+
+.learn-tab:hover{
+background:#d9b23f;
+color:#062019;
 }
 
 footer{
-    border-top:1px solid #31594e;
-    text-align:center;
-    padding:35px 15px;
-    color:#93a49f;
+border-top:1px solid #31594e;
+text-align:center;
+padding:35px 15px;
+color:#93a49f;
 }
 
 footer strong{
-    color:#d9b23f;
+color:#d9b23f;
 }
 
 .top-btn{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    background:#d9b23f;
-    color:#062019;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-weight:bold;
+position:fixed;
+right:18px;
+bottom:18px;
+width:44px;
+height:44px;
+border-radius:50%;
+background:#d9b23f;
+color:#062019;
+display:none;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* COMPACT MAIN MENU */
+
+#explore .card-grid{
+display:flex;
+flex-wrap:nowrap;
+gap:8px;
+overflow-x:auto;
+justify-content:center;
+padding:5px 2px 10px;
+}
+
+#explore .card{
+flex:0 0 auto;
+padding:9px 13px;
+border-radius:20px;
+min-width:auto;
+cursor:pointer;
+white-space:nowrap;
+}
+
+#explore .card h3{
+font-size:12px;
+margin:0;
+}
+
+#explore .card p{
+display:none;
+}
+
+#explore .card:hover{
+transform:translateY(-2px);
 }
 
 /* MOBILE */
 
 @media(max-width:800px){
 
-    .logo{
-        font-size:36px;
-    }
+.logo{
+font-size:36px;
+}
 
-    .tagline{
-        font-size:15px;
-    }
+.tagline{
+font-size:15px;
+}
 
-    .menu-btn{
-        display:block;
-    }
+.menu-btn{
+display:block;
+}
 
-    .menu{
-        display:none;
-        position:absolute;
-        top:55px;
-        left:0;
-        width:100%;
-        padding:15px 20px;
-        flex-direction:column;
-        background:#031f18;
-        border-bottom:1px solid #31594e;
-    }
+.menu{
+display:none;
+position:absolute;
+top:55px;
+left:0;
+width:100%;
+padding:15px 20px;
+flex-direction:column;
+background:#031f18;
+border-bottom:1px solid #31594e;
+}
 
-    .menu.show{
-        display:flex;
-    }
+.menu.show{
+display:flex;
+}
 
-    .card-grid,
-    .tools-grid{
-        grid-template-columns:1fr;
-    }
+.card-grid,
+.tools-grid,
+.extra-tools{
+grid-template-columns:1fr;
+}
 
-    section{
-        padding:45px 15px;
-    }
+section{
+padding:45px 15px;
+}
+
+#explore .card-grid{
+justify-content:flex-start;
+overflow-x:auto;
+scrollbar-width:none;
+}
+
+#explore .card-grid::-webkit-scrollbar{
+display:none;
+}
+
+#explore .card{
+padding:8px 11px;
+}
+
+#explore .card h3{
+font-size:11px;
+}
+
 }
 </style>
 </head>
@@ -466,6 +542,7 @@ paramedic knowledge and a disciplined lifestyle.
 <li><a href="#home">HOME</a></li>
 <li><a href="#explore">EXPLORE</a></li>
 <li><a href="#tools">TOOLS</a></li>
+<li><a href="#learn">LEARN</a></li>
 
 </ul>
 
@@ -480,9 +557,7 @@ paramedic knowledge and a disciplined lifestyle.
 
 <h2 class="section-title">EXPLORE</h2>
 
-<p class="subtitle">
-Tap a category to explore
-</p>
+<p class="subtitle">Tap a category to explore</p>
 
 <div class="card-grid">
 
@@ -492,33 +567,33 @@ Tap a category to explore
 </div>
 
 <div class="card action-card" onclick="openSection('workout')">
-<h3>💪 WORKOUT PLAN</h3>
-<p>Open your complete weekly workout plan.</p>
+<h3>💪 WORKOUT</h3>
+<p>Complete weekly workout.</p>
 </div>
 
 <div class="card action-card" onclick="openSection('diet')">
-<h3>🥗 DIET & NUTRITION</h3>
-<p>Fat loss, muscle gain and maintenance.</p>
+<h3>🥗 DIET</h3>
+<p>Nutrition plans.</p>
 </div>
 
 <div class="card action-card" onclick="openSection('medical')">
-<h3>🩺 MEDICAL KNOWLEDGE</h3>
-<p>Practical medical and emergency topics.</p>
+<h3>🩺 MEDICAL</h3>
+<p>Medical knowledge.</p>
 </div>
 
 <div class="card action-card" onclick="openSection('diseases')">
 <h3>🦠 DISEASES</h3>
-<p>Explore common diseases and health guidance.</p>
+<p>Health information.</p>
 </div>
 
 <div class="card action-card" onclick="openSection('blog')">
-<h3>📚 BOOKS & BLOGS</h3>
-<p>Read articles, thoughts and future books.</p>
+<h3>📚 BLOGS</h3>
+<p>Articles and books.</p>
 </div>
 
 <div class="card action-card" onclick="openSection('contact')">
-<h3>📩 CONTACT / INQUIRIES</h3>
-<p>Send your question or query.</p>
+<h3>📩 CONTACT</h3>
+<p>Send a query.</p>
 </div>
 
 </div>
@@ -573,9 +648,7 @@ simple, practical and accessible.
 
 <h2 class="section-title">💪 WORKOUT PLAN</h2>
 
-<p class="subtitle">
-Select a day to see its complete routine
-</p>
+<p class="subtitle">Select a day to see its complete routine</p>
 
 <div class="day-buttons">
 
@@ -602,9 +675,7 @@ Select a day to see its complete routine
 
 <h2 class="section-title">🥗 DIET & NUTRITION</h2>
 
-<p class="subtitle">
-Choose your goal
-</p>
+<p class="subtitle">Choose your goal</p>
 
 <div class="card-grid">
 
@@ -620,7 +691,7 @@ Choose your goal
 
 <div class="card action-card" onclick="showDiet('maintenance')">
 <h3>⚖️ MAINTENANCE</h3>
-<p>Balanced nutrition for maintaining weight.</p>
+<p>Balanced nutrition.</p>
 </div>
 
 </div>
@@ -644,32 +715,32 @@ Choose your goal
 
 <div class="card action-card" onclick="showMedical('firstaid')">
 <h3>🚑 First Aid</h3>
-<p>Basic first-response principles.</p>
+<p>First-response principles.</p>
 </div>
 
 <div class="card action-card" onclick="showMedical('bleeding')">
 <h3>🩸 Bleeding</h3>
-<p>Basic bleeding-control awareness.</p>
+<p>Bleeding-control awareness.</p>
 </div>
 
 <div class="card action-card" onclick="showMedical('burns')">
 <h3>🔥 Burns</h3>
-<p>Immediate first-aid principles.</p>
+<p>Burn first aid.</p>
 </div>
 
 <div class="card action-card" onclick="showMedical('snake')">
 <h3>🐍 Snake Bite</h3>
-<p>What to do and what to avoid.</p>
+<p>Emergency principles.</p>
 </div>
 
 <div class="card action-card" onclick="showMedical('heat')">
 <h3>☀️ Heat Stroke</h3>
-<p>Recognition and emergency response.</p>
+<p>Recognition and response.</p>
 </div>
 
 <div class="card action-card" onclick="showMedical('cardiac')">
 <h3>❤️ Cardiac Emergency</h3>
-<p>Warning signs and emergency action.</p>
+<p>Warning signs.</p>
 </div>
 
 </div>
@@ -687,9 +758,7 @@ Choose your goal
 
 <h2 class="section-title">🦠 COMMON DISEASES</h2>
 
-<p class="subtitle">
-Tap a disease to open its information
-</p>
+<p class="subtitle">Tap a disease to open its information</p>
 
 <div class="card-grid" id="diseaseCards"></div>
 
@@ -706,25 +775,23 @@ Tap a disease to open its information
 
 <h2 class="section-title">📚 BOOKS & BLOGS</h2>
 
-<p class="subtitle">
-Knowledge, experience and useful reads
-</p>
+<p class="subtitle">Knowledge, experience and useful reads</p>
 
 <div class="card-grid">
 
 <div class="card action-card" onclick="openBlog('consistency')">
 <h3>📖 The Power of Consistency</h3>
-<p>Why small daily actions create big results.</p>
+<p>Small daily actions.</p>
 </div>
 
 <div class="card action-card" onclick="openBlog('discipline')">
 <h3>🧠 Discipline Over Motivation</h3>
-<p>A short guide to building discipline.</p>
+<p>Building discipline.</p>
 </div>
 
 <div class="card action-card" onclick="openBlog('paramedic')">
 <h3>🚑 Life of a Paramedic</h3>
-<p>Notes, learning and practical experiences.</p>
+<p>Practical experiences.</p>
 </div>
 
 </div>
@@ -742,9 +809,7 @@ Knowledge, experience and useful reads
 
 <h2 class="section-title">📩 CONTACT / INQUIRIES</h2>
 
-<p class="subtitle">
-Have a question? Send it here.
-</p>
+<p class="subtitle">Have a question? Send it here.</p>
 
 <div class="content-box">
 
@@ -789,30 +854,32 @@ SEND QUERY
 
 <h2 class="section-title">🛠️ FITNESS TOOLS</h2>
 
-<p class="subtitle">
-Useful tools for your fitness journey
-</p>
+<p class="subtitle">Choose a tool</p>
 
-<div class="tools-grid">
+<div class="tool-menu">
+
+<button class="tool-tab" onclick="showTool('bmiTool')">BMI</button>
+<button class="tool-tab" onclick="showTool('bmrTool')">BMR / CALORIES</button>
+<button class="tool-tab" onclick="showTool('waterTool')">WATER</button>
+<button class="tool-tab" onclick="showTool('proteinTool')">PROTEIN</button>
+<button class="tool-tab" onclick="showTool('burnTool')">CALORIE BURN</button>
+<button class="tool-tab" onclick="showTool('timerTool')">TIMER</button>
+
+</div>
+
 
 <!-- BMI -->
 
-<div class="card">
+<div id="bmiTool" class="content-box tool-panel">
 
 <h3>⚖️ BMI Calculator</h3>
 
-<input
-type="number"
-id="bmiWeight"
-placeholder="Weight (kg)">
+<input type="number" id="bmiWeight" placeholder="Weight (kg)">
 
-<input
-type="number"
-id="bmiHeight"
-placeholder="Height (cm)">
+<input type="number" id="bmiHeight" placeholder="Height (cm)">
 
 <button class="primary-btn" onclick="calculateBMI()">
-Calculate
+Calculate BMI
 </button>
 
 <div id="bmiResult" class="result">
@@ -824,35 +891,28 @@ Result will appear here.
 
 <!-- BMR -->
 
-<div class="card">
+<div id="bmrTool" class="content-box tool-panel hidden">
 
-<h3>🔥 BMR / Calories</h3>
+<h3>🔥 BMR / Daily Calories</h3>
 
 <select id="gender">
 <option value="male">Male</option>
 <option value="female">Female</option>
 </select>
 
-<input
-type="number"
-id="age"
-placeholder="Age">
+<input type="number" id="age" placeholder="Age">
 
-<input
-type="number"
-id="weight"
-placeholder="Weight (kg)">
+<input type="number" id="weight" placeholder="Weight (kg)">
 
-<input
-type="number"
-id="height"
-placeholder="Height (cm)">
+<input type="number" id="height" placeholder="Height (cm)">
 
 <select id="activity">
+
 <option value="1.2">Sedentary</option>
 <option value="1.375">Light Activity</option>
 <option value="1.55">Moderate Activity</option>
 <option value="1.725">Very Active</option>
+
 </select>
 
 <button class="primary-btn" onclick="calculateBMR()">
@@ -866,9 +926,93 @@ Result will appear here.
 </div>
 
 
+<!-- WATER -->
+
+<div id="waterTool" class="content-box tool-panel hidden">
+
+<h3>💧 Water Intake Calculator</h3>
+
+<p class="small-note">
+A general estimate only. Needs vary with activity,
+climate and health conditions.
+</p>
+
+<input type="number" id="waterWeight" placeholder="Weight (kg)">
+
+<button class="primary-btn" onclick="calculateWater()">
+Calculate
+</button>
+
+<div id="waterResult" class="result">
+Result will appear here.
+</div>
+
+</div>
+
+
+<!-- PROTEIN -->
+
+<div id="proteinTool" class="content-box tool-panel hidden">
+
+<h3>🍗 Protein Calculator</h3>
+
+<input type="number" id="proteinWeight" placeholder="Weight (kg)">
+
+<select id="proteinGoal">
+
+<option value="1.2">General Fitness</option>
+<option value="1.6">Fat Loss</option>
+<option value="1.8">Maintenance</option>
+<option value="2">Muscle Gain</option>
+
+</select>
+
+<button class="primary-btn" onclick="calculateProtein()">
+Calculate
+</button>
+
+<div id="proteinResult" class="result">
+Result will appear here.
+</div>
+
+</div>
+
+
+<!-- CALORIE BURN -->
+
+<div id="burnTool" class="content-box tool-panel hidden">
+
+<h3>🔥 Calorie Burn Calculator</h3>
+
+<input type="number" id="burnWeight" placeholder="Weight (kg)">
+
+<select id="exerciseType">
+
+<option value="3.5">Walking</option>
+<option value="7">Jogging</option>
+<option value="9.8">Running</option>
+<option value="8">Cycling</option>
+<option value="5">Strength Training</option>
+<option value="10">HIIT</option>
+
+</select>
+
+<input type="number" id="exerciseMinutes" placeholder="Duration (minutes)">
+
+<button class="primary-btn" onclick="calculateBurn()">
+Calculate
+</button>
+
+<div id="burnResult" class="result">
+Result will appear here.
+</div>
+
+</div>
+
+
 <!-- TIMER -->
 
-<div class="card">
+<div id="timerTool" class="content-box tool-panel hidden">
 
 <h3>⏱️ Workout Timer</h3>
 
@@ -876,21 +1020,204 @@ Result will appear here.
 00:30
 </div>
 
-<button class="primary-btn" onclick="startTimer()">
-START
+<button class="primary-btn" onclick="startTimer()">START</button>
+
+<button class="primary-btn" onclick="pauseTimer()">PAUSE</button>
+
+<button class="primary-btn" onclick="resetTimer()">RESET</button>
+
+</div>
+
+</section>
+
+
+<!-- LEARN -->
+
+<section id="learn">
+
+<h2 class="section-title">📖 LEARN</h2>
+
+<p class="subtitle">Choose a learning category</p>
+
+<div class="learn-menu">
+
+<button class="learn-tab" onclick="openSection('medical')">
+🩺 MEDICAL
 </button>
 
-<button class="primary-btn" onclick="pauseTimer()">
-PAUSE
+<button class="learn-tab" onclick="openSection('diseases')">
+🦠 DISEASES
 </button>
 
-<button class="primary-btn" onclick="resetTimer()">
-RESET
+<button class="learn-tab" onclick="openSection('paramedicCorner')">
+🚑 PARAMEDIC CORNER
+</button>
+
+<button class="learn-tab" onclick="openSection('runningPlan')">
+🏃 1600M PLAN
 </button>
 
 </div>
 
+</section>
+
+
+<!-- RUNNING PLAN -->
+
+<section id="runningPlan" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h2 class="section-title">🏃 1600M RUNNING PLAN</h2>
+
+<p class="subtitle">
+Build endurance, speed and running discipline
+</p>
+
+<div class="content-box">
+
+<div class="plan-item">
+<strong>DAY 1</strong><br>
+Easy run 15–20 min + 4 × 100m relaxed strides.
 </div>
+
+<div class="plan-item">
+<strong>DAY 2</strong><br>
+6 × 200m intervals with controlled recovery.
+</div>
+
+<div class="plan-item">
+<strong>DAY 3</strong><br>
+Recovery walk + mobility + light stretching.
+</div>
+
+<div class="plan-item">
+<strong>DAY 4</strong><br>
+Tempo run 15–20 minutes at controlled effort.
+</div>
+
+<div class="plan-item">
+<strong>DAY 5</strong><br>
+Rest or easy 20-minute walk.
+</div>
+
+<div class="plan-item">
+<strong>DAY 6</strong><br>
+4 × 400m intervals with adequate recovery.
+</div>
+
+<div class="plan-item">
+<strong>DAY 7</strong><br>
+Easy recovery run + stretching.
+</div>
+
+<div class="plan-item">
+<strong>DAY 8</strong><br>
+6 × 200m faster intervals. Focus on form.
+</div>
+
+<div class="plan-item">
+<strong>DAY 9</strong><br>
+Very easy jog/walk. Prioritise recovery.
+</div>
+
+<div class="plan-item">
+<strong>DAY 10</strong><br>
+1600m practice/test after a proper warm-up.
+</div>
+
+<h3>⚠️ Safety</h3>
+
+<p>
+Training should progress gradually. Stop exercise and seek
+medical attention for chest pain, fainting, severe breathlessness
+or other concerning symptoms.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PARAMEDIC CORNER -->
+
+<section id="paramedicCorner" class="hidden">
+
+<button class="back-btn" onclick="goBack()">← Back</button>
+
+<h2 class="section-title">🚑 PARAMEDIC CORNER</h2>
+
+<p class="subtitle">
+Practical learning resources for paramedics and healthcare learners
+</p>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>🩺 Vital Signs</h3>
+<p>
+Blood pressure, pulse, respiratory rate, temperature,
+SpO₂ and patient assessment.
+</p>
+</div>
+
+<div class="card">
+<h3>🚨 Emergency Assessment</h3>
+<p>
+ABCDE approach, observation and recognition of danger signs.
+</p>
+</div>
+
+<div class="card">
+<h3>🩹 Wound Management</h3>
+<p>
+Basic wound assessment, cleaning, dressing and infection prevention.
+</p>
+</div>
+
+<div class="card">
+<h3>❤️ CPR & AED</h3>
+<p>
+Basic awareness of CPR and AED use according to recognised guidance.
+</p>
+</div>
+
+<div class="card">
+<h3>💊 Medicine Knowledge</h3>
+<p>
+Medicine classes, common uses and important safety considerations.
+</p>
+</div>
+
+<div class="card">
+<h3>📋 Documentation</h3>
+<p>
+Patient assessment, vital records and clinical handover principles.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section id="searchSection">
+
+<h2 class="section-title">🔎 SEARCH</h2>
+
+<div class="search">
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search workout, diabetes, BMI, medical..."
+oninput="searchWebsite()">
+
+</div>
+
+<div id="searchResults" class="search-results"></div>
 
 </section>
 
@@ -899,14 +1226,12 @@ RESET
 
 <p>© 2026 <strong>Medic Abid</strong></p>
 
-<p>
-Fitness • Health • Medical Knowledge • Discipline
-</p>
+<p>Fitness • Health • Medical Knowledge • Discipline</p>
 
 </footer>
 
 
-<div class="top-btn" id="topBtn" onclick="window.scrollTo(0,0)">
+<div class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </div>
 
@@ -928,18 +1253,31 @@ function openSection(id){
 
 document.querySelectorAll("section").forEach(function(s){
 
-if(s.id !== "tools"){
+if(s.id !== "tools" &&
+s.id !== "learn" &&
+s.id !== "explore" &&
+s.id !== "searchSection"){
+
 s.classList.add("hidden");
+
 }
 
 });
 
-document.getElementById(id).classList.remove("hidden");
+let target=document.getElementById(id);
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+if(target){
+
+target.classList.remove("hidden");
+
+target.scrollIntoView({
+behavior:"smooth",
+block:"start"
 });
+
+}
+
+document.getElementById("menu").classList.remove("show");
 
 }
 
@@ -950,17 +1288,42 @@ function goBack(){
 
 document.querySelectorAll("section").forEach(function(s){
 
-if(s.id !== "explore" && s.id !== "tools"){
+if(
+s.id !== "explore" &&
+s.id !== "tools" &&
+s.id !== "learn" &&
+s.id !== "searchSection"
+){
+
 s.classList.add("hidden");
+
 }
 
 });
 
-document.getElementById("explore").classList.remove("hidden");
-
-window.scrollTo({
-top:0,
+document.getElementById("explore").scrollIntoView({
 behavior:"smooth"
+});
+
+}
+
+
+/* TOOL SWITCHER */
+
+function showTool(id){
+
+document.querySelectorAll(".tool-panel")
+.forEach(function(panel){
+
+panel.classList.add("hidden");
+
+});
+
+document.getElementById(id).classList.remove("hidden");
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth",
+block:"center"
 });
 
 }
@@ -968,7 +1331,7 @@ behavior:"smooth"
 
 /* WORKOUT DATA */
 
-const workoutData = {
+const workoutData={
 
 Monday:{
 focus:"Chest + Triceps",
@@ -988,7 +1351,7 @@ Tuesday:{
 focus:"Back + Biceps",
 warmup:"5–8 minutes cardio + back mobility",
 exercises:[
-"Pull Ups — 3 × max comfortable",
+"Pull Ups — 3 × comfortable maximum",
 "Lat Pulldown — 4 × 10",
 "Seated Row — 3 × 12",
 "Biceps Curl — 3 × 12",
@@ -1079,11 +1442,11 @@ document.querySelectorAll(".day-btn")
 b.classList.remove("active");
 });
 
-btn.classList.add("active");
+if(btn)btn.classList.add("active");
 
-let d = workoutData[day];
+let d=workoutData[day];
 
-let html = `
+let html=`
 <h2>${day} — ${d.focus}</h2>
 
 <h3>🔥 Warm-up</h3>
@@ -1094,11 +1457,11 @@ let html = `
 
 d.exercises.forEach(function(ex){
 
-html += `<div class="exercise">${ex}</div>`;
+html+=`<div class="exercise">${ex}</div>`;
 
 });
 
-html += `
+html+=`
 <h3>🧘 Cool Down</h3>
 <p>${d.finish}</p>
 
@@ -1119,7 +1482,7 @@ fatloss:`
 <h2>🔥 Fat Loss Plan</h2>
 
 <h3>Morning</h3>
-<p>Water after waking. Tea/coffee without excessive added sugar if desired.</p>
+<p>Start with water. Tea/coffee without excessive added sugar if desired.</p>
 
 <h3>Breakfast</h3>
 <p>Eggs or oats + fruit + a protein source.</p>
@@ -1131,13 +1494,13 @@ fatloss:`
 <p>Fruit, curd or another protein-rich light snack.</p>
 
 <h3>Dinner</h3>
-<p>Protein + vegetables. Keep portions controlled.</p>
+<p>Protein + vegetables with a controlled carbohydrate portion.</p>
 
 <h3>Limit</h3>
-<p>Frequent sugary drinks, deep-fried foods, excess sweets and highly processed snacks.</p>
+<p>Sugary drinks, deep-fried foods, excess sweets and highly processed snacks.</p>
 
 <h3>Key Rule</h3>
-<p>Fat loss depends mainly on maintaining a sustainable calorie deficit while keeping protein and activity adequate.</p>
+<p>A sustainable calorie deficit, adequate protein and regular activity are the foundation of fat loss.</p>
 `,
 
 muscle:`
@@ -1150,16 +1513,16 @@ muscle:`
 <p>Rice or roti + chicken/fish/eggs/dal + vegetables.</p>
 
 <h3>Pre-Workout</h3>
-<p>Fruit + a carbohydrate/protein source according to your tolerance.</p>
+<p>Fruit + a carbohydrate/protein source according to tolerance.</p>
 
 <h3>Post-Workout</h3>
 <p>A protein-rich meal or snack with adequate carbohydrates.</p>
 
 <h3>Dinner</h3>
-<p>Protein source + vegetables + appropriate carbohydrate portion.</p>
+<p>Protein + vegetables + appropriate carbohydrate portion.</p>
 
 <h3>Key Rule</h3>
-<p>Progressive resistance training, adequate protein, calories and recovery are the foundation of muscle gain.</p>
+<p>Progressive resistance training, adequate protein, calories and recovery support muscle gain.</p>
 `,
 
 maintenance:`
@@ -1178,7 +1541,7 @@ maintenance:`
 <p>Balanced protein, vegetables and carbohydrates.</p>
 
 <h3>Key Rule</h3>
-<p>Match food intake with your activity and maintain a consistent exercise routine.</p>
+<p>Match food intake with activity and maintain a consistent exercise routine.</p>
 `
 
 };
@@ -1206,7 +1569,9 @@ const medicalData={
 firstaid:`
 <h2>🚑 First Aid</h2>
 <p>First aid is immediate care provided until appropriate medical help is available.</p>
+
 <h3>Basic Principles</h3>
+
 <ul>
 <li>Ensure scene safety.</li>
 <li>Assess responsiveness and breathing.</li>
@@ -1218,8 +1583,11 @@ firstaid:`
 
 bleeding:`
 <h2>🩸 Bleeding</h2>
+
 <p>Severe bleeding can become life-threatening quickly.</p>
+
 <h3>Basic Response</h3>
+
 <ul>
 <li>Use gloves/barrier protection if available.</li>
 <li>Apply firm direct pressure.</li>
@@ -1230,8 +1598,11 @@ bleeding:`
 
 burns:`
 <h2>🔥 Burns</h2>
+
 <p>For a minor thermal burn, cool the area under cool running water for about 20 minutes.</p>
+
 <h3>Avoid</h3>
+
 <ul>
 <li>Ice directly on the burn.</li>
 <li>Butter or toothpaste.</li>
@@ -1241,8 +1612,11 @@ burns:`
 
 snake:`
 <h2>🐍 Snake Bite</h2>
+
 <p>Keep the person calm and seek emergency medical care immediately.</p>
+
 <h3>Avoid</h3>
+
 <ul>
 <li>Do not cut the wound.</li>
 <li>Do not suck venom.</li>
@@ -1253,8 +1627,11 @@ snake:`
 
 heat:`
 <h2>☀️ Heat Stroke</h2>
+
 <p>Heat stroke is a medical emergency. Rapid cooling and emergency medical assistance are important.</p>
+
 <h3>Warning Signs</h3>
+
 <ul>
 <li>Very high body temperature</li>
 <li>Confusion or altered behaviour</li>
@@ -1264,12 +1641,15 @@ heat:`
 
 cardiac:`
 <h2>❤️ Cardiac Emergency</h2>
+
 <p>Chest pressure/pain, shortness of breath, sweating, nausea or pain spreading to the arm/jaw can be warning signs.</p>
+
 <h3>Action</h3>
+
 <ul>
 <li>Call emergency medical services immediately.</li>
 <li>Keep the person resting and monitored.</li>
-<li>If they become unresponsive and are not breathing normally, begin CPR and use an AED if available.</li>
+<li>If unresponsive and not breathing normally, begin CPR and use an AED if available.</li>
 </ul>
 `
 
@@ -1300,15 +1680,15 @@ icon:"🩸",
 info:"A condition in which blood glucose remains abnormally high.",
 food:"Vegetables, whole grains, pulses, appropriate protein and controlled portions.",
 avoid:"Excess sugary drinks and frequent highly processed foods.",
-prevention:"Healthy weight, regular activity, balanced diet and routine screening when appropriate.",
-warning:"Seek medical care for very high glucose symptoms, severe weakness, confusion or vomiting."
+prevention:"Healthy weight, regular activity, balanced diet and appropriate screening.",
+warning:"Severe weakness, confusion, vomiting or other concerning symptoms require medical assessment."
 },
 
 Hypertension:{
 icon:"❤️",
 info:"Persistently elevated blood pressure increases cardiovascular risk.",
 food:"Vegetables, fruits, whole grains, pulses and lower-sodium foods.",
-avoid:"Excess salt, highly processed foods and excessive alcohol.",
+avoid:"Excess salt and highly processed foods.",
 prevention:"Regular exercise, healthy weight, sleep and blood-pressure monitoring.",
 warning:"Very high BP with chest pain, severe headache, weakness or breathing difficulty needs urgent evaluation."
 },
@@ -1337,7 +1717,7 @@ info:"A mosquito-borne viral illness.",
 food:"Adequate fluids and nutritious foods as tolerated.",
 avoid:"Avoid self-medication with medicines that can increase bleeding risk unless advised by a clinician.",
 prevention:"Mosquito-bite prevention and elimination of breeding sites.",
-warning:"Bleeding, severe abdominal pain, persistent vomiting, extreme weakness or breathing difficulty require urgent medical care."
+warning:"Bleeding, severe abdominal pain, persistent vomiting, extreme weakness or breathing difficulty require urgent care."
 },
 
 Malaria:{
@@ -1362,8 +1742,8 @@ COPD:{
 icon:"🫁",
 info:"A chronic lung disease associated with persistent airflow limitation.",
 food:"Balanced nutrition and adequate protein as appropriate.",
-avoid:"Smoking and exposure to respiratory irritants.",
-prevention:"Avoid tobacco and harmful occupational/environmental exposure.",
+avoid:"Smoking and respiratory irritants.",
+prevention:"Avoid tobacco and harmful exposure.",
 warning:"Sudden severe breathing difficulty needs urgent assessment."
 },
 
@@ -1382,7 +1762,7 @@ info:"Fat accumulation in the liver can be associated with metabolic risk factor
 food:"Vegetables, whole grains, adequate protein and balanced portions.",
 avoid:"Excess alcohol and frequent high-sugar/high-calorie foods.",
 prevention:"Healthy weight, physical activity and metabolic risk management.",
-warning:"Discuss persistent abnormal liver tests or symptoms with a clinician."
+warning:"Persistent abnormal liver tests or concerning symptoms should be assessed."
 },
 
 Thyroid:{
@@ -1391,7 +1771,7 @@ info:"Thyroid disorders can affect metabolism and many body functions.",
 food:"Balanced diet; specific dietary changes depend on the diagnosis.",
 avoid:"Avoid taking thyroid supplements or iodine products without medical advice.",
 prevention:"Appropriate medical evaluation when symptoms persist.",
-warning:"Severe symptoms or rapid changes require medical assessment."
+warning:"Significant or rapidly changing symptoms require medical assessment."
 },
 
 Gastritis:{
@@ -1417,7 +1797,7 @@ icon:"🫘",
 info:"Kidney disease can reduce the kidneys' ability to perform normal functions.",
 food:"Diet depends strongly on kidney function and laboratory results.",
 avoid:"Do not make major protein, potassium or fluid changes without professional advice.",
-prevention:"Control blood pressure, diabetes and avoid unnecessary nephrotoxic medicines.",
+prevention:"Control blood pressure and diabetes and avoid unnecessary nephrotoxic medicines.",
 warning:"Marked reduction in urine, swelling or severe weakness needs medical assessment."
 },
 
@@ -1452,7 +1832,7 @@ Migraine:{
 icon:"🧠",
 info:"A neurological condition that can cause recurrent headaches and other symptoms.",
 food:"Regular meals and adequate hydration can help some people.",
-avoid:"Identify personal triggers rather than following a universal food restriction.",
+avoid:"Identify personal triggers rather than following universal restrictions.",
 prevention:"Regular sleep, hydration and trigger tracking.",
 warning:"Sudden worst-ever headache or headache with neurological deficits requires urgent care."
 },
@@ -1478,8 +1858,7 @@ warning:"Persistent bone pain or muscle weakness should be assessed."
 };
 
 
-const diseaseCards =
-document.getElementById("diseaseCards");
+const diseaseCards=document.getElementById("diseaseCards");
 
 Object.keys(diseases).forEach(function(name){
 
@@ -1547,15 +1926,7 @@ It is about continuing even when motivation is low.
 <p>
 Ten minutes of exercise, one healthy meal and one
 productive decision repeated every day can create
-a major change over time.
-</p>
-
-<h3>The rule</h3>
-
-<p>
-Do not focus only on today's result.
-Focus on becoming the person who does the right
-things consistently.
+major change over time.
 </p>
 `,
 
@@ -1570,7 +1941,7 @@ that allows you to continue even when motivation disappears.
 <h3>Build a routine</h3>
 
 <p>
-Choose a fixed time for exercise, study, sleep and
+Choose fixed times for exercise, study, sleep and
 important daily tasks.
 </p>
 `,
@@ -1584,7 +1955,7 @@ teamwork and the ability to act responsibly during
 stressful situations.
 </p>
 
-<h3>Keep learning</h3>
+<h3>Keep Learning</h3>
 
 <p>
 Every case can teach something. Regular revision,
@@ -1614,11 +1985,13 @@ behavior:"smooth"
 
 function calculateBMI(){
 
-let weight=
-parseFloat(document.getElementById("bmiWeight").value);
+let weight=parseFloat(
+document.getElementById("bmiWeight").value
+);
 
-let height=
-parseFloat(document.getElementById("bmiHeight").value);
+let height=parseFloat(
+document.getElementById("bmiHeight").value
+);
 
 if(!weight || !height){
 
@@ -1678,19 +2051,11 @@ let bmr;
 
 if(gender==="male"){
 
-bmr=
-10*weight+
-6.25*height-
-5*age+
-5;
+bmr=10*weight+6.25*height-5*age+5;
 
 }else{
 
-bmr=
-10*weight+
-6.25*height-
-5*age-
-161;
+bmr=10*weight+6.25*height-5*age-161;
 
 }
 
@@ -1704,9 +2069,106 @@ Estimated maintenance calories:
 }
 
 
+/* WATER */
+
+function calculateWater(){
+
+let weight=parseFloat(
+document.getElementById("waterWeight").value
+);
+
+let result=document.getElementById("waterResult");
+
+if(!weight || weight<=0){
+
+result.innerHTML="⚠️ Enter a valid weight.";
+
+return;
+
+}
+
+let litres=(weight*35)/1000;
+
+result.innerHTML=
+`Estimated daily water:
+<strong>${litres.toFixed(1)} litres</strong><br>
+<small>Needs vary with activity, climate and health.</small>`;
+
+}
+
+
+/* PROTEIN */
+
+function calculateProtein(){
+
+let weight=parseFloat(
+document.getElementById("proteinWeight").value
+);
+
+let factor=parseFloat(
+document.getElementById("proteinGoal").value
+);
+
+let result=document.getElementById("proteinResult");
+
+if(!weight || weight<=0){
+
+result.innerHTML="⚠️ Enter a valid weight.";
+
+return;
+
+}
+
+let protein=weight*factor;
+
+result.innerHTML=
+`Estimated protein:
+<strong>${Math.round(protein)} g/day</strong><br>
+<small>General estimate only.</small>`;
+
+}
+
+
+/* CALORIE BURN */
+
+function calculateBurn(){
+
+let weight=parseFloat(
+document.getElementById("burnWeight").value
+);
+
+let met=parseFloat(
+document.getElementById("exerciseType").value
+);
+
+let minutes=parseFloat(
+document.getElementById("exerciseMinutes").value
+);
+
+let result=document.getElementById("burnResult");
+
+if(!weight || !minutes || weight<=0 || minutes<=0){
+
+result.innerHTML="⚠️ Enter valid weight and duration.";
+
+return;
+
+}
+
+let calories=met*3.5*weight/200*minutes;
+
+result.innerHTML=
+`Estimated calories burned:
+<strong>${Math.round(calories)} kcal</strong><br>
+<small>Actual expenditure varies between individuals.</small>`;
+
+}
+
+
 /* TIMER */
 
 let seconds=30;
+
 let timerInterval=null;
 
 function updateTimer(){
@@ -1819,7 +2281,14 @@ const searchable={
 "bmi":"tools",
 "bmr":"tools",
 "calories":"tools",
-"timer":"tools"
+"timer":"tools",
+"water":"tools",
+"protein":"tools",
+"running":"runningPlan",
+"1600":"runningPlan",
+"paramedic":"paramedicCorner",
+"vital":"paramedicCorner",
+"cpr":"paramedicCorner"
 };
 
 Object.keys(searchable).forEach(function(word){
@@ -1879,7 +2348,7 @@ b.style.display="none";
 });
 
 
-/* DEFAULT WORKOUT */
+/* DEFAULT */
 
 showWorkout(
 "Monday",
