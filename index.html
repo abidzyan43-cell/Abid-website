@@ -662,10 +662,24 @@ footer{
 }
 
 </style>
+
+<style>
+/* PHASE 2 — PERSONAL + PARAMEDIC HUB */
+.growth-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.growth-card{padding:18px;border:1px solid rgba(244,201,93,.22);border-radius:18px;background:linear-gradient(145deg,rgba(10,54,42,.9),rgba(4,28,22,.94));box-shadow:0 12px 30px rgba(0,0,0,.18);cursor:pointer;transition:.22s}
+.growth-card:hover{transform:translateY(-3px);border-color:rgba(244,201,93,.55)}
+.growth-icon{font-size:28px}.growth-card h4{margin:9px 0 4px}.growth-card p{margin:0;color:var(--muted);font-size:13px}
+.profile-row{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.xp-box{display:flex;align-items:center;justify-content:space-between;gap:14px}.level-orb{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--gold);background:rgba(244,201,93,.08);font-weight:900;color:var(--gold);text-align:center;line-height:1.05}
+.mini-progress{height:9px;border-radius:20px;background:rgba(255,255,255,.08);overflow:hidden}.mini-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#cda63c,#f4d477);transition:.4s}
+.challenge-day{font-size:38px;font-weight:900;color:var(--gold);line-height:1}.challenge-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:14px 0}.challenge-item{padding:12px;border-radius:13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+.mode-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mode-card{padding:15px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid rgba(244,201,93,.14);cursor:pointer}.mode-card h4{margin:0 0 5px}.mode-content{margin-top:14px}
+.quiz-score{font-size:34px;font-weight:900;color:var(--gold);text-align:center;margin:8px 0}.xp-pill{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(244,201,93,.1);color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.5px}
+@media(max-width:720px){.growth-grid,.profile-row,.mode-grid,.challenge-list{grid-template-columns:1fr}.growth-card{padding:15px}.level-orb{width:64px;height:64px}}
+</style>
 </head>
 <body>
 <header id="home"><div class="hero"><div class="logo">UR PARAMEDIC</div><p class="tagline">FITNESS • HEALTH • MEDICAL KNOWLEDGE • DISCIPLINE</p><p class="tagline">A practical platform for fitness, nutrition, paramedic learning and a disciplined lifestyle.</p><a href="#explore" class="hero-btn">EXPLORE</a></div></header>
-<nav><div class="navbar"><div class="nav-logo">UR PARAMEDIC</div><div class="menu-btn" onclick="toggleMenu()">☰</div><ul class="menu" id="menu"><li><a href="javascript:void(0)" onclick="goBack()">🏠 HOME</a></li><li><a href="javascript:void(0)" onclick="openSection('explore')">📚 EXPLORE</a></li><li><a href="javascript:void(0)" onclick="openSection('tools')">🧰 TOOLS</a></li><li><a href="javascript:void(0)" onclick="openSection('dashboard')">📊 DASHBOARD</a></li></ul></div></nav>
+<nav><div class="navbar"><div class="nav-logo">UR PARAMEDIC</div><div class="menu-btn" onclick="toggleMenu()">☰</div><ul class="menu" id="menu"><li><a href="javascript:void(0)" onclick="goBack()">🏠 HOME</a></li><li><a href="javascript:void(0)" onclick="openSection('explore')">📚 EXPLORE</a></li><li><a href="javascript:void(0)" onclick="openSection('tools')">🧰 TOOLS</a></li><li><a href="javascript:void(0)" onclick="openSection('dashboard')">📊 DASHBOARD</a></li><li><a href="javascript:void(0)" onclick="openSection('growth')">🏆 GROWTH</a></li><li><a href="javascript:void(0)" onclick="openSection('paramedic')">🚑 PARAMEDIC</a></li></ul></div></nav>
 
 <section id="explore" class="hidden">
 <div class="explore-heading">
@@ -715,6 +729,13 @@ footer{
 </div>
 </div>
 <div class="launch-group">
+<div class="launch-group-label">Progress & Paramedic</div>
+<div class="launch-grid">
+<div class="launch-card" onclick="openSection('growth')"><div class="launch-icon">🏆</div><h4>Growth Hub</h4><p>XP & 30-day challenge</p></div>
+<div class="launch-card" onclick="openSection('paramedic')"><div class="launch-icon">🚑</div><h4>Paramedic Mode</h4><p>Quick field revision</p></div>
+</div>
+</div>
+<div class="launch-group">
 <div class="launch-group-label">Learn & Connect</div>
 <div class="launch-grid">
 <div class="launch-card" onclick="openSection('blog')"><div class="launch-icon">📚</div><h4>Books & Blogs</h4><p>Learning notes</p></div>
@@ -733,6 +754,27 @@ footer{
 <section id="diseases" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">🦠 COMMON DISEASES</h2><p class="subtitle">Tap a disease for an overview, lifestyle guidance and warning signs.</p><div class="card-grid" id="diseaseCards"></div><div id="diseaseContent" class="content-box hidden"></div></section>
 <section id="blog" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">📚 BOOKS & BLOGS</h2><p class="subtitle">Useful reads and original learning notes.</p><div class="card-grid" id="blogCards"></div><div id="blogContent" class="content-box hidden"></div></section>
 <section id="contact" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">📩 CONTACT / INQUIRIES</h2><p class="subtitle">Send your question or feedback.</p><div class="content-box"><form action="https://formspree.io/f/xzeznyjb" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><input type="text" name="subject" placeholder="Subject"><textarea name="message" placeholder="Write your query..." required></textarea><button class="primary-btn" type="submit">SEND QUERY</button></form></div></section>
+
+
+<section id="growth" class="hidden">
+<button class="back-btn" onclick="goBack()">← Back</button>
+<div class="premium-eyebrow">✦ LEVEL UP YOUR ROUTINE</div>
+<h2 class="section-title">🏆 GROWTH HUB</h2>
+<p class="subtitle">Personal profile, XP, 30-day challenge and achievement tracking.</p>
+<div class="profile-row">
+<div class="content-box"><h3>👤 Personal Profile</h3><input id="profileName" type="text" placeholder="Enter your name"><button class="primary-btn" onclick="saveProfile()">SAVE PROFILE</button><p id="profileWelcome" class="quote">Your profile stays on this device.</p></div>
+<div class="content-box xp-box"><div><span class="xp-pill">XP SYSTEM</span><h3 id="levelTitle">Level 1 — Starter</h3><p><span id="xpValue">0</span> XP</p><div class="mini-progress"><span id="xpBar"></span></div><small id="xpNext">100 XP to next level</small></div><div class="level-orb">LV<br><span id="levelNum">1</span></div></div>
+</div>
+<div class="content-box"><h3>🔥 30-DAY PARAMEDIC CHALLENGE</h3><p>Complete all 5 daily dashboard goals to count a challenge day.</p><div style="display:flex;gap:18px;align-items:center;margin:14px 0"><div class="challenge-day"><span id="challengeDays">0</span><small style="display:block;font-size:12px;color:var(--muted)">days complete</small></div><div style="flex:1"><div class="mini-progress"><span id="challengeBar"></span></div><p id="challengeText" style="margin:8px 0 0;color:var(--muted)">0 / 30 days</p></div></div><div class="challenge-list"><div class="challenge-item">💪 Workout</div><div class="challenge-item">🚶 30-min walk</div><div class="challenge-item">💧 8 glasses water</div><div class="challenge-item">😴 6–8h sleep</div><div class="challenge-item">🧠 Daily paramedic quiz</div><div class="challenge-item">🏅 Build consistency</div></div><button class="primary-btn" onclick="startChallenge()">START / CONTINUE CHALLENGE</button><button class="primary-btn" onclick="resetChallenge()">RESET CHALLENGE</button><div id="challengeMsg" class="result">Your challenge progress is stored locally.</div></div>
+<div class="content-box"><h3>🏅 Achievement Board</h3><div id="achievementBoard"></div></div>
+</section>
+
+<section id="paramedic" class="hidden">
+<button class="back-btn" onclick="goBack()">← Back</button>
+<div class="premium-eyebrow">✦ FIELD LEARNING MODE</div>
+<h2 class="section-title">🚑 PARAMEDIC MODE</h2><p class="subtitle">Quick-reference learning topics for revision. Follow your local protocols and clinical supervision.</p>
+<div class="mode-grid" id="paramedicModeCards"></div><div id="paramedicModeContent" class="content-box mode-content hidden"></div>
+</section>
 
 <section id="tools" class="hidden"><h2 class="section-title">🧰 FITNESS TOOLS</h2><p class="subtitle">Tap a tool to open it. Keep the homepage clean.</p><div class="tools-grid"><div class="card action-card" onclick="openTool('bmi')"><div class="tool-icon">⚖️</div><h3>BMI Calculator</h3><p>Check BMI and category.</p></div><div class="card action-card" onclick="openTool('bmr')"><div class="tool-icon">🔥</div><h3>BMR & Calories</h3><p>Estimate daily energy needs.</p></div><div class="card action-card" onclick="openTool('macro')"><div class="tool-icon">🥩</div><h3>Protein & Macros</h3><p>Simple macro estimate.</p></div><div class="card action-card" onclick="openTool('ideal')"><div class="tool-icon">📏</div><h3>Ideal Weight</h3><p>Height-based estimate.</p></div><div class="card action-card" onclick="openTool('deficit')"><div class="tool-icon">📉</div><h3>Calorie Deficit</h3><p>Choose a sustainable target.</p></div><div class="card action-card" onclick="openTool('pace')"><div class="tool-icon">🏃</div><h3>Running Pace</h3><p>Calculate pace per km.</p></div><div class="card action-card" onclick="openTool('hr')"><div class="tool-icon">❤️</div><h3>Heart Rate Zones</h3><p>Estimate training zones.</p></div><div class="card action-card" onclick="openTool('timer')"><div class="tool-icon">⏱️</div><h3>Workout Timer</h3><p>30-second interval timer.</p></div><div class="card action-card" onclick="openTool('water')"><div class="tool-icon">💧</div><h3>Water Reminder</h3><p>2-hour reminder while page is active.</p></div></div><div id="toolBox" class="content-box hidden"></div></section>
 
@@ -845,6 +887,40 @@ if(localStorage.getItem('waterReminder')==='on')scheduleWater();
 const quiz=[['What is the best first action for severe external bleeding?',['Firm direct pressure','Give water','Massage the wound','Apply toothpaste'],0],['FAST is commonly used to recognize what?',['Stroke','Fracture','Diabetes','Burn'],0],['Which is appropriate for a thermal burn?',['Cool running water','Ice directly','Butter','Break blisters'],0],['A person who is unresponsive and not breathing normally may need what?',['CPR/AED and emergency help','Food','Water','Walking'],0],['What is an important principle before first aid?',['Scene safety','Run away immediately','Give medication to everyone','Ignore PPE'],0]];
 function startQuiz(){let box=document.getElementById('quizBox');if(!box){box=document.createElement('div');box.id='quizBox';box.className='content-box';document.getElementById('dashboard').appendChild(box)}let i=0,score=0;function q(){if(i>=quiz.length){box.innerHTML=`<h2>🧠 Quiz Complete</h2><p class="score">${score}/${quiz.length}</p><p>${score===quiz.length?'Excellent!':'Good attempt — revise and try again.'}</p><button class="primary-btn" onclick="state.quiz=true;saveDash();startQuiz()">Retake</button>`;return}let x=quiz[i];box.innerHTML=`<h2>🧠 Daily Paramedic Quiz</h2><p><strong>Question ${i+1}/${quiz.length}</strong></p><h3>${x[0]}</h3>${x[1].map((o,j)=>`<button class="quiz-option" onclick="answerQuiz(${j})">${o}</button>`).join('')}`;window.answerQuiz=j=>{if(j===x[2])score++;i++;q()}}q()}
 const quizCard=document.createElement('div');quizCard.className='card action-card';quizCard.innerHTML='<h3>🧠 Daily Paramedic Quiz</h3><p>5 questions • track completion on dashboard.</p>';quizCard.onclick=()=>{openSection('dashboard');startQuiz()};document.getElementById('explore').appendChild(quizCard);renderDash();
-function searchWebsite(){let q=document.getElementById('searchBox').value.toLowerCase().trim(),r=document.getElementById('searchResults');if(!q){r.innerHTML='';return}let map={'workout':'workout','diet':'diet','nutrition':'diet','fat loss':'diet','muscle gain':'diet','diabetes':'diseases','hypertension':'diseases','dengue':'diseases','malaria':'diseases','asthma':'diseases','copd':'diseases','heart':'medical','bleeding':'medical','burn':'medical','snake':'medical','first aid':'medical','stroke':'medical','blog':'blog','book':'blog','about':'about','contact':'contact','query':'contact','dashboard':'dashboard','quiz':'dashboard','bmi':'tools','bmr':'tools','calories':'tools','timer':'tools','water':'tools','protein':'tools','pace':'tools'};let hits=Object.keys(map).filter(k=>k.includes(q)||q.includes(k));r.innerHTML=hits.length?hits.map(k=>`<div class="search-result" onclick="openSection('${map[k]}')">🔎 <strong>${k}</strong><br>Tap to open</div>`).join(''):`<div class="search-result">❌ No result found.</div>`}
+
+/* PHASE 2 FEATURES */
+const GROWTH_KEY='urParamedicGrowthV1';
+let growthState=JSON.parse(localStorage.getItem(GROWTH_KEY)||'{"xp":0,"challengeDays":0,"challengeStarted":false,"completedDates":[]}');
+function saveGrowth(){localStorage.setItem(GROWTH_KEY,JSON.stringify(growthState));renderGrowth()}
+function levelInfo(xp){let level=Math.floor((xp||0)/100)+1;let current=(xp||0)%100;return {level,current}}
+function renderGrowth(){
+ let li=levelInfo(growthState.xp||0), names=['Starter','Foundation','Consistent','Performer','Responder','Leader','Elite'];
+ document.getElementById('xpValue').textContent=growthState.xp||0;document.getElementById('levelNum').textContent=li.level;
+ document.getElementById('levelTitle').textContent='Level '+li.level+' — '+(names[Math.min(li.level-1,names.length-1)]);
+ document.getElementById('xpBar').style.width=li.current+'%';document.getElementById('xpNext').textContent=(100-li.current)+' XP to next level';
+ document.getElementById('challengeDays').textContent=growthState.challengeDays||0;document.getElementById('challengeBar').style.width=Math.min(100,(growthState.challengeDays||0)/30*100)+'%';document.getElementById('challengeText').textContent=(growthState.challengeDays||0)+' / 30 days';
+ let n=localStorage.getItem('urParamedicProfileName')||'';document.getElementById('profileName').value=n;document.getElementById('profileWelcome').textContent=n?'Welcome back, '+n+' 👋':'Your profile stays on this device.';
+ let d=growthState.challengeDays||0;document.getElementById('challengeMsg').textContent=growthState.challengeStarted?(d>=30?'🏆 Challenge complete! Your 30-day consistency record is finished.':'🔥 Challenge active — complete today’s 5 dashboard goals to count another day.'):'Start when you are ready.';
+ let a=[];if((growthState.xp||0)>=100)a.push('⭐ Level Up');if((growthState.challengeDays||0)>=7)a.push('🔥 7-Day Warrior');if((growthState.challengeDays||0)>=30)a.push('🏆 30-Day Finisher');if(state.water>=8)a.push('💧 Hydration Hero');if(state.workout)a.push('💪 Workout Done');if(state.quiz)a.push('🧠 Quiz Completed');document.getElementById('achievementBoard').innerHTML=a.length?a.map(x=>'<span class="badge">'+x+'</span>').join(''):'<span class="badge">🌱 Your first badge is waiting</span>';
+}
+function saveProfile(){let n=document.getElementById('profileName').value.trim();if(n)localStorage.setItem('urParamedicProfileName',n);renderGrowth()}
+function startChallenge(){growthState.challengeStarted=true;saveGrowth()}
+function resetChallenge(){if(confirm('Reset 30-day challenge progress?')){growthState.challengeDays=0;growthState.challengeStarted=false;growthState.completedDates=[];saveGrowth()}}
+function awardDailyXP(){let goals=[state.workout,state.walk,state.sleep,state.quiz,(state.water||0)>=8],done=goals.filter(Boolean).length;if(done){let base=done*10;let today=new Date().toISOString().slice(0,10);if(!growthState.completedDates.includes(today)){growthState.xp=(growthState.xp||0)+base;growthState.completedDates.push(today);if(done===5 && growthState.challengeStarted){growthState.challengeDays=Math.min(30,(growthState.challengeDays||0)+1);growthState.xp+=25}}saveGrowth()}}
+const paramedicMode={
+ABCDE:['🩺','ABCDE Primary Survey','A — Airway: assess and protect the airway. B — Breathing: assess breathing and oxygenation. C — Circulation: assess pulse, perfusion and major bleeding. D — Disability: neurological status, pupils and glucose where appropriate. E — Exposure: look for injuries while preventing heat loss. Escalate according to local protocol.'],
+FAST:['🧠','FAST Stroke Check','Face: ask for a smile. Arms: assess for new weakness. Speech: check for new speech difficulty. Time: note the time last known well and activate emergency pathways promptly when stroke is suspected.'],
+CPR:['❤️','CPR / AED Revision','For an unresponsive person who is not breathing normally, activate emergency help and begin CPR according to your training/local protocol. Use an AED as soon as available and follow its prompts.'],
+Bleeding:['🩸','Severe Bleeding','Prioritize scene safety and PPE. Apply firm direct pressure with an appropriate dressing. Escalate severe bleeding urgently and reassess the patient continuously. Follow your service protocol for advanced bleeding control.'],
+Burns:['🔥','Thermal Burns','Remove the person from the source when safe. Cool a thermal burn with cool running water for about 20 minutes when appropriate. Avoid ice, butter, toothpaste and breaking blisters. Seek medical assessment for serious burns.'],
+Snake:['🐍','Snake Bite','Keep the person calm and limit movement of the affected limb as appropriate. Arrange urgent medical assessment. Do not cut the wound, suck venom, apply ice or use a tight tourniquet. Follow local snakebite protocol.'],
+Shock:['⚠️','Shock Recognition','Think about shock with signs such as altered mental status, pale/clammy skin, weakness or abnormal pulse/breathing in the right context. Treat the cause where within scope, support ABCs and seek urgent medical care.'],
+Vitals:['📋','Vital Signs & Documentation','Record temperature, pulse, respiratory rate, blood pressure, SpO₂ and level of consciousness when clinically indicated. Document time, trends, interventions and response clearly. Recheck when the patient’s condition changes.']
+};
+Object.entries(paramedicMode).forEach(([k,v])=>{let c=document.createElement('div');c.className='mode-card';c.innerHTML='<h4>'+v[0]+' '+v[1]+'</h4><p>Tap for quick revision.</p>';c.onclick=()=>{let b=document.getElementById('paramedicModeContent');b.innerHTML='<h2>'+v[0]+' '+v[1]+'</h2><p>'+v[2]+'</p><p style="color:var(--muted);margin-top:12px">Educational reference only — use your training, scope of practice and current local/department protocol.</p>';b.classList.remove('hidden');b.scrollIntoView({behavior:'smooth'})};document.getElementById('paramedicModeCards').appendChild(c)});
+const oldSaveDash=saveDash;saveDash=function(){oldSaveDash();awardDailyXP()};
+renderGrowth();
+
+function searchWebsite(){let q=document.getElementById('searchBox').value.toLowerCase().trim(),r=document.getElementById('searchResults');if(!q){r.innerHTML='';return}let map={'workout':'workout','diet':'diet','nutrition':'diet','fat loss':'diet','muscle gain':'diet','diabetes':'diseases','hypertension':'diseases','dengue':'diseases','malaria':'diseases','asthma':'diseases','copd':'diseases','heart':'medical','bleeding':'medical','burn':'medical','snake':'medical','first aid':'medical','stroke':'medical','blog':'blog','book':'blog','about':'about','contact':'contact','query':'contact','dashboard':'dashboard','quiz':'dashboard','bmi':'tools','bmr':'tools','calories':'tools','timer':'tools','water':'tools','protein':'tools','pace':'tools','growth':'growth','challenge':'growth','xp':'growth','paramedic':'paramedic','abcde':'paramedic','cpr':'paramedic','aed':'paramedic','fast':'paramedic','shock':'paramedic','vitals':'paramedic'};let hits=Object.keys(map).filter(k=>k.includes(q)||q.includes(k));r.innerHTML=hits.length?hits.map(k=>`<div class="search-result" onclick="openSection('${map[k]}')">🔎 <strong>${k}</strong><br>Tap to open</div>`).join(''):`<div class="search-result">❌ No result found.</div>`}
 window.addEventListener('scroll',()=>{document.getElementById('topBtn').style.display=scrollY>500?'flex':'none'});
 </script></body></html>
