@@ -69,84 +69,75 @@ input,textarea,select{width:100%;padding:12px;margin:6px 0;border-radius:10px;bo
 }
 
 
-/* ===== UR PARAMEDIC UNIQUE CATEGORY MENU ===== */
+
+/* ===== UR PARAMEDIC SYSTEMATIC UI ===== */
+.explore-heading{max-width:1050px;margin:0 auto 22px;padding:0 4px}
+.explore-heading h2{color:var(--gold);margin-bottom:5px}
+.explore-heading p{color:var(--muted)}
+
 #explore .card-grid{
     display:grid;
-    grid-template-columns:1fr;
-    gap:0;
-    max-width:920px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    max-width:1050px;
     margin:0 auto 28px;
-    border-top:1px solid var(--line);
 }
 #explore .card{
     position:relative;
     display:flex;
-    align-items:center;
-    min-height:72px;
-    padding:14px 48px 14px 18px;
-    border:0;
-    border-bottom:1px solid var(--line);
-    border-radius:0;
-    background:transparent;
-    box-shadow:none;
+    flex-direction:column;
+    justify-content:center;
+    min-height:88px;
+    padding:16px 48px 16px 18px;
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:linear-gradient(135deg,var(--card),var(--card2));
+    box-shadow:0 5px 16px rgba(0,0,0,.12);
     transform:none;
 }
-#explore .card:hover{
-    transform:none;
-    border-color:var(--line);
-    background:rgba(7,56,45,.55);
-}
-#explore .card h3{
-    margin:0;
-    color:#fff;
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:.2px;
-}
-#explore .card p{
-    display:block;
-    margin:3px 0 0;
-    color:var(--muted);
-    font-size:12px;
-}
+#explore .card:hover{transform:translateY(-2px);border-color:var(--gold)}
+#explore .card h3{margin:0;color:#fff;font-size:15px;font-weight:800}
+#explore .card p{display:block;margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.4}
 #explore .card::after{
-    content:"›";
+    content:"→";
     position:absolute;
-    right:16px;
+    right:17px;
     top:50%;
     transform:translateY(-50%);
     color:var(--gold);
-    font-size:34px;
-    line-height:1;
-    font-weight:300;
+    font-size:25px;
+    font-weight:700;
 }
-#explore .card h3::first-letter{
-    font-size:22px;
+.dashboard-launcher{max-width:1050px;margin:22px auto 0}
+.dashboard-launcher-title{color:var(--gold);font-size:20px;margin-bottom:12px}
+.launch-group{margin:0 0 16px}
+.launch-group-label{color:var(--muted);font-size:11px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 7px 3px}
+.launch-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.launch-card{
+    position:relative;
+    min-height:72px;
+    padding:13px 38px 12px 14px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:var(--card2);
+    cursor:pointer;
+    transition:.2s;
 }
-#explore .card.action-card:active{
-    background:rgba(217,178,63,.08);
-}
-.explore-heading{
-    max-width:920px;
-    margin:0 auto 18px;
-}
-.explore-heading h2{
-    color:var(--gold);
-    margin-bottom:4px;
-}
-.explore-heading p{
-    color:var(--muted);
-}
+.launch-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.launch-card .launch-icon{font-size:21px;margin-bottom:3px}
+.launch-card h4{color:#fff;font-size:13px;margin:0}
+.launch-card p{color:var(--muted);font-size:10px;margin-top:2px}
+.launch-card::after{content:"›";position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:25px}
 @media(max-width:800px){
-    #explore .card{
-        min-height:66px;
-        padding:12px 44px 12px 14px;
-    }
-    #explore .card h3{font-size:15px}
-    #explore .card p{font-size:11px}
-    #explore .card::after{right:12px;font-size:30px}
+    #explore .card-grid{grid-template-columns:1fr;gap:9px}
+    #explore .card{min-height:76px;padding:13px 42px 13px 15px}
+    #explore .card h3{font-size:14px}
+    #explore .card p{font-size:10.5px}
+    .launch-grid{grid-template-columns:1fr 1fr;gap:8px}
+    .launch-card{min-height:70px;padding:12px 32px 11px 12px}
+    .launch-card h4{font-size:12px}
 }
-
+@media(max-width:430px){.launch-grid{grid-template-columns:1fr}}
 
 /* ===== ORIGINAL HERO FINISH ===== */
 .hero{
@@ -189,7 +180,35 @@ input,textarea,select{width:100%;padding:12px;margin:6px 0;border-radius:10px;bo
 <div class="ticker-label">💡 FITNESS TIPS</div>
 <div class="ticker-window"><div id="healthTickerTrack" class="ticker-track"></div></div>
 </div>
-<p class="subtitle">Your daily fitness, hydration, sleep and paramedic-learning progress. Your progress is stored on this device.</p><div class="stat-grid"><div class="stat"><span>🔥 Streak</span><b id="streak">0</b> days</div><div class="stat"><span>💧 Water</span><b id="water">0/8</b> glasses</div><div class="stat"><span>⭐ Score</span><b id="score">0%</b></div></div><div class="content-box"><h3>Today's Progress</h3><div class="progress"><div id="progressBar"></div></div><p id="progressText">0/5 goals completed</p><label class="check"><input type="checkbox" id="workoutDone" onchange="saveDash()"> 🏋️ Workout completed</label><label class="check"><input type="checkbox" id="walkDone" onchange="saveDash()"> 🚶 30-minute walk completed</label><label class="check"><input type="checkbox" id="sleepDone" onchange="saveDash()"> 😴 6–8 hours sleep</label><label class="check"><input type="checkbox" id="quizDone" onchange="saveDash()"> 🧠 Daily paramedic quiz completed</label><button class="primary-btn" onclick="openWater()">💧 Add water</button> <button class="primary-btn" onclick="resetDash()">Reset today</button> <button class="primary-btn" onclick="startQuiz()">🧠 Daily Quiz</button><div class="result" id="waterMsg">Water goal: 8 glasses. A glass is counted manually.</div></div><div class="content-box"><h3>🏆 Badges</h3><div id="badges"><span class="badge">Start today</span></div></div></section>
+<p class="subtitle">Your daily fitness, hydration, sleep and paramedic-learning progress. Your progress is stored on this device.</p><div class="stat-grid"><div class="stat"><span>🔥 Streak</span><b id="streak">0</b> days</div><div class="stat"><span>💧 Water</span><b id="water">0/8</b> glasses</div><div class="stat"><span>⭐ Score</span><b id="score">0%</b></div></div>
+<div class="dashboard-launcher">
+<h3 class="dashboard-launcher-title">⚡ QUICK ACCESS</h3>
+<div class="launch-group">
+<div class="launch-group-label">Fitness</div>
+<div class="launch-grid">
+<div class="launch-card" onclick="openSection('workout')"><div class="launch-icon">💪</div><h4>Workout Plan</h4><p>Weekly routine</p></div>
+<div class="launch-card" onclick="openSection('diet')"><div class="launch-icon">🥗</div><h4>Diet & Nutrition</h4><p>Fat loss & muscle</p></div>
+<div class="launch-card" onclick="openSection('tools')"><div class="launch-icon">🧰</div><h4>Fitness Tools</h4><p>9 useful calculators</p></div>
+</div>
+</div>
+<div class="launch-group">
+<div class="launch-group-label">Medical Learning</div>
+<div class="launch-grid">
+<div class="launch-card" onclick="openSection('medical')"><div class="launch-icon">🩺</div><h4>Medical Knowledge</h4><p>First aid & emergencies</p></div>
+<div class="launch-card" onclick="openSection('diseases')"><div class="launch-icon">🦠</div><h4>Diseases</h4><p>Common conditions</p></div>
+<div class="launch-card" onclick="startQuiz()"><div class="launch-icon">🧠</div><h4>Daily Quiz</h4><p>5 paramedic questions</p></div>
+</div>
+</div>
+<div class="launch-group">
+<div class="launch-group-label">Learn & Connect</div>
+<div class="launch-grid">
+<div class="launch-card" onclick="openSection('blog')"><div class="launch-icon">📚</div><h4>Books & Blogs</h4><p>Learning notes</p></div>
+<div class="launch-card" onclick="openSection('about')"><div class="launch-icon">👨‍⚕️</div><h4>About</h4><p>About UR PARAMEDIC</p></div>
+<div class="launch-card" onclick="openSection('contact')"><div class="launch-icon">📩</div><h4>Contact</h4><p>Send a query</p></div>
+</div>
+</div>
+</div>
+<div class="content-box"><h3>Today's Progress</h3><div class="progress"><div id="progressBar"></div></div><p id="progressText">0/5 goals completed</p><label class="check"><input type="checkbox" id="workoutDone" onchange="saveDash()"> 🏋️ Workout completed</label><label class="check"><input type="checkbox" id="walkDone" onchange="saveDash()"> 🚶 30-minute walk completed</label><label class="check"><input type="checkbox" id="sleepDone" onchange="saveDash()"> 😴 6–8 hours sleep</label><label class="check"><input type="checkbox" id="quizDone" onchange="saveDash()"> 🧠 Daily paramedic quiz completed</label><button class="primary-btn" onclick="openWater()">💧 Add water</button> <button class="primary-btn" onclick="resetDash()">Reset today</button> <button class="primary-btn" onclick="startQuiz()">🧠 Daily Quiz</button><div class="result" id="waterMsg">Water goal: 8 glasses. A glass is counted manually.</div></div><div class="content-box"><h3>🏆 Badges</h3><div id="badges"><span class="badge">Start today</span></div></div></section>
 
 <section id="workout" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">💪 WORKOUT PLAN</h2><p class="subtitle">Select a day for a structured routine.</p><div class="day-buttons" id="dayButtons"></div><div id="workoutContent" class="content-box"></div></section>
 
