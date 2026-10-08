@@ -676,6 +676,11 @@ footer{
 .quiz-score{font-size:34px;font-weight:900;color:var(--gold);text-align:center;margin:8px 0}.xp-pill{display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(244,201,93,.1);color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.5px}
 @media(max-width:720px){.growth-grid,.profile-row,.mode-grid,.challenge-list{grid-template-columns:1fr}.growth-card{padding:15px}.level-orb{width:64px;height:64px}}
 </style>
+
+<style>
+/* ===== V3 MEGA DASHBOARD ===== */
+.v3-hero-card{display:grid;grid-template-columns:1fr 190px;gap:18px;padding:26px;border:1px solid rgba(217,178,63,.42);border-radius:24px;background:radial-gradient(circle at 85% 20%,rgba(217,178,63,.14),transparent 30%),linear-gradient(135deg,#0b4a3b,#05251e 72%);box-shadow:0 18px 50px rgba(0,0,0,.28);margin:0 0 16px;overflow:hidden;position:relative}.v3-hero-card:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(217,178,63,.12);border-radius:50%;right:-55px;top:-70px}.v3-kicker{font-size:10px;letter-spacing:2px;color:#e8c85c;font-weight:900}.v3-hero-main h1{font-size:clamp(28px,6vw,48px);margin:8px 0 5px}.v3-hero-main p{color:#b8cbc5;margin:0 0 18px}.v3-actions{display:flex;flex-wrap:wrap;gap:8px}.v3-actions button{border:1px solid rgba(217,178,63,.45);background:rgba(2,28,22,.72);color:#fff;border-radius:12px;padding:10px 13px;font-weight:800;cursor:pointer}.v3-actions button:hover{background:#d9b23f;color:#062019}.v3-level{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-left:1px solid rgba(255,255,255,.1);padding-left:15px}.v3-ring{width:112px;height:112px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;border:7px solid #d9b23f;box-shadow:0 0 28px rgba(217,178,63,.16);font-size:31px;font-weight:900}.v3-ring small{font-size:8px;letter-spacing:2px;color:#b8cbc5}.v3-level b{margin-top:9px;color:#e8c85c}.v3-level span{font-size:10px;color:#9fb5ae}.v3-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 16px}.v3-metrics>div{background:linear-gradient(145deg,#093d31,#062a22);border:1px solid #235c4e;border-radius:16px;padding:13px 14px}.v3-metrics span,.v3-metrics small{display:block;color:#9fb5ae;font-size:9px;font-weight:800;letter-spacing:.8px}.v3-metrics b{display:inline-block;font-size:25px;margin:5px 4px 0 0;color:#fff}.v3-command{padding:18px;border:1px solid #2a6657;border-radius:20px;background:#05281f;margin-bottom:16px}.v3-command-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.v3-command-head h3{margin:5px 0 0}.v3-score{font-size:22px;font-weight:900;color:#e8c85c}.v3-goals{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}.v3-goals button{min-height:70px;border:1px solid #245b4d;background:#07382d;color:#fff;border-radius:13px;padding:8px;text-align:left;cursor:pointer}.v3-goals button.done{border-color:#55d18a;background:linear-gradient(145deg,#0d4b38,#07382d)}.v3-goals span{display:block;font-size:11px;font-weight:800;margin-top:5px}.v3-goals i{font-style:normal;float:right;color:#8fa9a1}.v3-goals .done i{color:#55d18a}.v3-progress{height:8px;border-radius:20px;background:#0b1714;overflow:hidden}.v3-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#d9b23f,#55d18a);transition:.35s}.v3-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}.v3-feature-grid>div{cursor:pointer;padding:16px;border:1px solid #235c4e;border-radius:16px;background:linear-gradient(145deg,#0a4235,#062b23);transition:.2s}.v3-feature-grid>div:hover{transform:translateY(-3px);border-color:#d9b23f}.v3-feature-grid strong{display:block;font-size:12px}.v3-feature-grid span{display:block;color:#9fb5ae;font-size:10px;margin-top:6px;line-height:1.4}@media(max-width:720px){.v3-hero-card{grid-template-columns:1fr;padding:20px}.v3-level{border-left:0;border-top:1px solid rgba(255,255,255,.1);padding:15px 0 0;flex-direction:row;gap:12px}.v3-ring{width:76px;height:76px;font-size:22px;border-width:5px}.v3-goals{grid-template-columns:1fr 1fr}.v3-feature-grid{grid-template-columns:1fr 1fr}.v3-metrics{grid-template-columns:1fr 1fr}}@media(max-width:390px){.v3-feature-grid{grid-template-columns:1fr}.v3-goals{grid-template-columns:1fr}.v3-actions button{width:100%}}
+</style>
 </head>
 <body>
 <header id="home"><div class="hero"><div class="logo">UR PARAMEDIC</div><p class="tagline">FITNESS • HEALTH • MEDICAL KNOWLEDGE • DISCIPLINE</p><p class="tagline">A practical platform for fitness, nutrition, paramedic learning and a disciplined lifestyle.</p><a href="#explore" class="hero-btn">EXPLORE</a></div></header>
@@ -705,6 +710,39 @@ footer{
 
 <section id="dashboard">
 <div class="premium-eyebrow">✦ YOUR DAILY PERFORMANCE HUB</div><h2 class="section-title">📊 MY DAILY DASHBOARD</h2>
+<div class="v3-hero-card">
+  <div class="v3-hero-main">
+    <div class="v3-kicker">MEDIC ABID • PERSONAL COMMAND CENTER</div>
+    <h1>Welcome, <span id="v3Name">Medic</span> 👋</h1>
+    <p>Build fitness. Sharpen medical skills. Stay consistent.</p>
+    <div class="v3-actions"><button onclick="openSection('workout')">💪 Start Workout</button><button onclick="startQuiz()">🧠 Daily Quiz</button><button onclick="openSection('paramedic')">🚑 Field Mode</button></div>
+  </div>
+  <div class="v3-level"><div class="v3-ring"><span id="v3Level">1</span><small>LEVEL</small></div><b id="v3XP">0 XP</b><span>Personal Progress</span></div>
+</div>
+<div class="v3-metrics">
+ <div><span>🔥 STREAK</span><b id="v3Streak">0</b><small>days</small></div>
+ <div><span>🎯 TODAY</span><b id="v3Today">0%</b><small>complete</small></div>
+ <div><span>💧 WATER</span><b id="v3Water">0/8</b><small>glasses</small></div>
+ <div><span>🏆 CHALLENGE</span><b id="v3Challenge">0/30</b><small>days</small></div>
+</div>
+<div class="v3-command">
+ <div class="v3-command-head"><div><span class="v3-kicker">TODAY'S COMMAND</span><h3>Complete your 5-point routine</h3></div><span class="v3-score" id="v3Score">0/5</span></div>
+ <div class="v3-goals">
+  <button id="v3g1" onclick="v3Toggle('workoutDone')">💪 <span>Workout</span><i>○</i></button>
+  <button id="v3g2" onclick="v3Toggle('walkDone')">🚶 <span>30-min Walk</span><i>○</i></button>
+  <button id="v3g3" onclick="v3Toggle('sleepDone')">😴 <span>6–8h Sleep</span><i>○</i></button>
+  <button id="v3g4" onclick="v3Toggle('quizDone')">🧠 <span>Daily Quiz</span><i>○</i></button>
+  <button id="v3g5" onclick="openWater()">💧 <span>8 Glasses</span><i>○</i></button>
+ </div>
+ <div class="v3-progress"><span id="v3Progress"></span></div>
+</div>
+<div class="v3-feature-grid">
+ <div onclick="openSection('growth')"><strong>🏆 GROWTH HUB</strong><span>XP • Levels • 30-day challenge</span></div>
+ <div onclick="openSection('paramedic')"><strong>🚑 PARAMEDIC MODE</strong><span>ABCDE • FAST • CPR • Trauma</span></div>
+ <div onclick="openSection('tools')"><strong>🧰 FITNESS TOOLS</strong><span>BMI • BMR • Pace • Heart Rate</span></div>
+ <div onclick="openSection('diseases')"><strong>🦠 DISEASE LIBRARY</strong><span>Quick revision & health knowledge</span></div>
+</div>
+
 <div class="health-ticker" aria-label="Daily Fitness and Health Tips">
 <div class="ticker-label">💡 FITNESS TIPS</div>
 <div class="ticker-window"><div id="healthTickerTrack" class="ticker-track"></div></div>
@@ -923,4 +961,10 @@ renderGrowth();
 
 function searchWebsite(){let q=document.getElementById('searchBox').value.toLowerCase().trim(),r=document.getElementById('searchResults');if(!q){r.innerHTML='';return}let map={'workout':'workout','diet':'diet','nutrition':'diet','fat loss':'diet','muscle gain':'diet','diabetes':'diseases','hypertension':'diseases','dengue':'diseases','malaria':'diseases','asthma':'diseases','copd':'diseases','heart':'medical','bleeding':'medical','burn':'medical','snake':'medical','first aid':'medical','stroke':'medical','blog':'blog','book':'blog','about':'about','contact':'contact','query':'contact','dashboard':'dashboard','quiz':'dashboard','bmi':'tools','bmr':'tools','calories':'tools','timer':'tools','water':'tools','protein':'tools','pace':'tools','growth':'growth','challenge':'growth','xp':'growth','paramedic':'paramedic','abcde':'paramedic','cpr':'paramedic','aed':'paramedic','fast':'paramedic','shock':'paramedic','vitals':'paramedic'};let hits=Object.keys(map).filter(k=>k.includes(q)||q.includes(k));r.innerHTML=hits.length?hits.map(k=>`<div class="search-result" onclick="openSection('${map[k]}')">🔎 <strong>${k}</strong><br>Tap to open</div>`).join(''):`<div class="search-result">❌ No result found.</div>`}
 window.addEventListener('scroll',()=>{document.getElementById('topBtn').style.display=scrollY>500?'flex':'none'});
-</script></body></html>
+</script>
+<script>
+function v3Toggle(id){const el=document.getElementById(id);if(el){el.checked=!el.checked;saveDash();v3Render();}}
+function v3Render(){try{let st=state||{};let goals=[!!st.workout,!!st.walk,!!st.sleep,!!st.quiz,(st.water||0)>=8],done=goals.filter(Boolean).length;document.getElementById('v3Score').textContent=done+'/5';document.getElementById('v3Today').textContent=Math.round(done/5*100)+'%';document.getElementById('v3Water').textContent=(st.water||0)+'/8';document.getElementById('v3Streak').textContent=document.getElementById('streak')?.textContent||'0';document.getElementById('v3Progress').style.width=(done/5*100)+'%';goals.forEach((x,i)=>{let b=document.getElementById('v3g'+(i+1));if(b){b.classList.toggle('done',x);b.querySelector('i').textContent=x?'✓':'○';}});let g=typeof growthState!=='undefined'?growthState:{};document.getElementById('v3XP').textContent=(g.xp||0)+' XP';document.getElementById('v3Challenge').textContent=(g.challengeDays||0)+'/30';let li=typeof levelInfo==='function'?levelInfo(g.xp||0):{level:1};document.getElementById('v3Level').textContent=li.level||1;let n=localStorage.getItem('urParamedicProfileName');document.getElementById('v3Name').textContent=n||'Medic';}catch(e){}}
+setTimeout(v3Render,300);setInterval(v3Render,1000);
+</script>
+</body></html>
