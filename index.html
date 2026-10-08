@@ -466,6 +466,201 @@ nav{
     }
 }
 
+
+/* PREMIUM FITNESS TIPS TICKER */
+.health-ticker{
+ position:relative;display:flex;align-items:center;width:100%;max-width:1120px;height:58px;
+ margin:0 auto 24px;overflow:hidden;border:1px solid rgba(242,193,78,.38)!important;
+ border-radius:18px!important;
+ background:linear-gradient(90deg,rgba(242,193,78,.10),rgba(7,56,46,.96) 22%,rgba(6,43,35,.96) 78%,rgba(53,201,154,.08));
+ box-shadow:0 8px 28px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.04)
+}
+.health-ticker:before,.health-ticker:after{content:"";position:absolute;top:0;bottom:0;width:52px;z-index:3;pointer-events:none}
+.health-ticker:before{left:0;background:linear-gradient(90deg,#031c16,transparent)}
+.health-ticker:after{right:0;background:linear-gradient(270deg,#062b23,transparent)}
+.ticker-label{
+ position:relative;z-index:5;flex:0 0 170px!important;height:100%;display:flex!important;align-items:center;
+ justify-content:center;gap:7px;padding:0 12px!important;background:linear-gradient(135deg,#ffd86b,#f2c14e)!important;
+ color:#062019!important;font-size:11px!important;font-weight:1000!important;letter-spacing:.5px;
+ box-shadow:5px 0 18px rgba(0,0,0,.18);clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%)
+}
+.ticker-label:before{content:"💡";font-size:16px}
+.ticker-window{position:relative;z-index:2;min-width:0;height:100%;flex:1;display:flex;align-items:center;overflow:hidden}
+.ticker-track{display:inline-flex!important;align-items:center;min-width:max-content;height:100%;animation:premiumTicker 82s linear infinite!important;will-change:transform}
+.ticker-item{position:relative;display:inline-flex!important;align-items:center;height:100%;white-space:nowrap;padding:0 34px!important;color:#eaf4f0!important;font-size:12px!important}
+.ticker-item:after{content:"•";position:absolute;right:7px;color:#f2c14e;font-size:18px}
+.ticker-item b{color:#ffd86b!important;margin-right:4px}
+.health-ticker:hover .ticker-track{animation-play-state:paused!important}
+@keyframes premiumTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(max-width:600px){
+ .health-ticker{height:54px;border-radius:15px!important;margin-bottom:20px}
+ .ticker-label{flex:0 0 128px!important;font-size:9.5px!important;padding:0 7px!important}
+ .ticker-label:before{font-size:14px}
+ .ticker-item{font-size:11px!important;padding:0 27px!important}
+}
+@media(max-width:390px){.ticker-label{flex-basis:116px!important}.ticker-item{font-size:10.5px!important}}
+
+
+/* ===== UR PARAMEDIC SIGNATURE PREMIUM UI ===== */
+:root{
+ --gold:#f4c95d;--gold2:#ffe08a;--emerald:#18b88a;--emerald2:#0b8068;
+ --glass:rgba(7,45,37,.72);--glass2:rgba(5,31,26,.88);
+}
+body{
+ background:
+ radial-gradient(circle at 15% 8%,rgba(24,184,138,.13),transparent 28%),
+ radial-gradient(circle at 90% 18%,rgba(244,201,93,.10),transparent 25%),
+ linear-gradient(135deg,#02130f,#031f18 48%,#021711);
+}
+nav{
+ background:rgba(2,19,15,.88)!important;
+ border-bottom:1px solid rgba(244,201,93,.18)!important;
+ box-shadow:0 8px 30px rgba(0,0,0,.18);
+}
+.nav-logo{font-size:18px!important;letter-spacing:1.2px}
+#dashboard{max-width:1180px}
+#dashboard .section-title{
+ font-weight:950;
+ letter-spacing:-.8px;
+ text-shadow:0 2px 18px rgba(244,201,93,.13);
+}
+#dashboard .subtitle{
+ max-width:760px;margin-left:auto;margin-right:auto;
+}
+.health-ticker{
+ border:1px solid rgba(244,201,93,.30)!important;
+ background:linear-gradient(100deg,rgba(8,67,54,.88),rgba(3,35,29,.94))!important;
+ box-shadow:0 12px 35px rgba(0,0,0,.25),0 0 35px rgba(24,184,138,.05);
+}
+.ticker-label{
+ background:linear-gradient(135deg,#ffe08a,#eab63f)!important;
+ box-shadow:8px 0 25px rgba(0,0,0,.24);
+}
+.dashboard-grid{
+ gap:14px!important;
+}
+.dash-stat,.stat{
+ position:relative;
+ overflow:hidden;
+ border:1px solid rgba(24,184,138,.30)!important;
+ background:linear-gradient(145deg,rgba(10,70,57,.78),rgba(4,40,33,.90))!important;
+ border-radius:18px!important;
+ box-shadow:0 10px 28px rgba(0,0,0,.16)!important;
+}
+.dash-stat:before,.stat:before{
+ content:"";position:absolute;left:0;top:0;right:0;height:2px;
+ background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.dash-stat b,.stat b{color:var(--gold2)!important;font-size:24px}
+.content-box{
+ background:linear-gradient(145deg,rgba(7,53,44,.82),rgba(3,31,26,.90))!important;
+ border:1px solid rgba(24,184,138,.27)!important;
+ border-radius:20px!important;
+ box-shadow:0 14px 35px rgba(0,0,0,.20)!important;
+ backdrop-filter:blur(12px);
+}
+.content-box h3{color:var(--gold2)!important}
+.checkrow{
+ background:rgba(255,255,255,.025);
+ border:1px solid rgba(24,184,138,.12);
+ border-radius:12px;
+ padding:10px 12px;
+ margin:7px 0;
+}
+.checkrow input{accent-color:var(--gold)}
+.progress{
+ height:13px!important;border-radius:999px!important;
+ background:#021712!important;border:1px solid rgba(24,184,138,.22)!important;
+ overflow:hidden;
+}
+.progress span{
+ display:block;height:100%;
+ background:linear-gradient(90deg,#12a97f,#f4c95d)!important;
+ box-shadow:0 0 14px rgba(244,201,93,.18);
+ border-radius:999px;
+}
+.dashboard-launcher{
+ margin-top:24px;
+}
+.dashboard-launcher-title{
+ font-size:24px!important;
+ color:var(--gold2)!important;
+}
+.launch-group{
+ background:linear-gradient(145deg,rgba(5,38,31,.62),rgba(2,25,21,.78))!important;
+ border:1px solid rgba(24,184,138,.18)!important;
+ border-radius:22px!important;
+ box-shadow:0 12px 28px rgba(0,0,0,.13);
+}
+.launch-group-label{
+ font-size:12px!important;
+ color:#dcefe9!important;
+}
+.launch-card{
+ min-height:88px!important;
+ border:1px solid rgba(24,184,138,.27)!important;
+ background:linear-gradient(145deg,rgba(10,72,58,.88),rgba(4,43,35,.94))!important;
+ border-radius:17px!important;
+ box-shadow:0 8px 20px rgba(0,0,0,.13);
+}
+.launch-card:hover{
+ border-color:rgba(244,201,93,.70)!important;
+ box-shadow:0 10px 28px rgba(244,201,93,.10);
+}
+.launch-icon{
+ width:42px!important;height:42px!important;
+ background:linear-gradient(145deg,rgba(244,201,93,.16),rgba(24,184,138,.10))!important;
+ border:1px solid rgba(244,201,93,.25)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.launch-card h4{font-size:13px!important}
+.launch-card p{color:#9ebbb3!important}
+.primary-btn,.hero-btn{
+ border-radius:999px!important;
+ padding:12px 22px!important;
+ background:linear-gradient(135deg,#ffe08a,#eab63f)!important;
+ box-shadow:0 8px 22px rgba(244,201,93,.18)!important;
+}
+.primary-btn:active,.hero-btn:active{transform:scale(.98)}
+.back-btn{
+ border-radius:999px!important;
+ background:rgba(244,201,93,.07)!important;
+}
+.card{
+ background:linear-gradient(145deg,rgba(8,59,48,.86),rgba(4,36,30,.92))!important;
+ border-radius:18px!important;
+ border-color:rgba(24,184,138,.25)!important;
+ box-shadow:0 10px 25px rgba(0,0,0,.16);
+}
+.card:hover{border-color:rgba(244,201,93,.65)!important}
+#tools .card:before{
+ background:linear-gradient(#ffe08a,#18b88a)!important;
+}
+footer{
+ background:rgba(2,18,14,.50);
+ padding-top:28px!important;
+}
+.top-btn{
+ width:48px!important;height:48px!important;
+ border-radius:50%!important;
+ box-shadow:0 8px 22px rgba(244,201,93,.20)!important;
+}
+@media(max-width:600px){
+ #dashboard .section-title{font-size:28px!important}
+ .dashboard-launcher-title{font-size:21px!important}
+ .launch-group{padding:10px!important;border-radius:18px!important}
+ .launch-card{min-height:82px!important;border-radius:15px!important}
+ .content-box{border-radius:17px!important}
+}
+
+
+.premium-eyebrow{
+ width:max-content;max-width:100%;margin:0 auto 10px;padding:6px 12px;
+ border:1px solid rgba(244,201,93,.22);border-radius:999px;
+ color:#b8d8ce;background:rgba(244,201,93,.045);
+ font-size:10px;font-weight:900;letter-spacing:1.5px;
+}
+
 </style>
 </head>
 <body>
@@ -494,7 +689,8 @@ nav{
 
 <section id="about" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">ABOUT UR PARAMEDIC</h2><div class="content-box"><p>UR PARAMEDIC is a practical platform focused on fitness, health awareness, nutrition, paramedic learning and disciplined living.</p><h3>Mission</h3><p>Make useful health and fitness information simple, practical and accessible.</p><h3>What you can find</h3><ul><li>Weekly workout routines</li><li>Fat-loss, muscle-gain and maintenance nutrition</li><li>Fitness calculators and tools</li><li>Medical awareness and first-aid topics</li><li>Disease information</li><li>Paramedic quiz and daily learning</li><li>Personal fitness dashboard</li></ul></div></section>
 
-<section id="dashboard"><h2 class="section-title">📊 MY DAILY DASHBOARD</h2>
+<section id="dashboard">
+<div class="premium-eyebrow">✦ YOUR DAILY PERFORMANCE HUB</div><h2 class="section-title">📊 MY DAILY DASHBOARD</h2>
 <div class="health-ticker" aria-label="Daily Fitness and Health Tips">
 <div class="ticker-label">💡 FITNESS TIPS</div>
 <div class="ticker-window"><div id="healthTickerTrack" class="ticker-track"></div></div>
