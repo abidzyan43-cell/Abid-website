@@ -322,6 +322,150 @@ footer strong{color:var(--gold2)!important}
     color:#062019!important;
 }
 
+
+/* ===== FINAL MOBILE SYSTEMATIC FIXES ===== */
+
+/* Dashboard is the landing screen */
+header{
+    display:none !important;
+}
+
+/* Keep the navigation compact and clean */
+nav{
+    min-height:58px !important;
+}
+.navbar{
+    min-height:58px !important;
+    padding:8px 14px !important;
+}
+.nav-logo{
+    font-size:17px !important;
+}
+
+/* Dashboard heading scales properly on phones */
+#dashboard .section-title{
+    font-size:clamp(26px,7vw,42px);
+    line-height:1.15;
+    margin-bottom:16px;
+}
+
+/* Fitness ticker: label stays fixed, tips never sit underneath it */
+.health-ticker{
+    position:relative;
+    height:52px;
+}
+.ticker-label{
+    position:relative;
+    flex:0 0 150px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    white-space:nowrap;
+}
+.ticker-window{
+    min-width:0;
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding-left:8px;
+}
+.ticker-track{
+    align-items:center;
+    will-change:transform;
+    animation-duration:75s !important;
+}
+.ticker-item{
+    white-space:nowrap;
+    padding:0 34px 0 10px;
+    line-height:52px;
+}
+
+/* Quick Access becomes tighter and easier to scan */
+.dashboard-launcher{
+    margin-top:20px;
+}
+.launch-group{
+    padding:11px;
+    margin-bottom:12px;
+}
+.launch-grid{
+    gap:8px;
+}
+.launch-card{
+    min-height:78px;
+    padding:11px 34px 10px 12px;
+}
+.launch-card .launch-icon{
+    width:34px;
+    height:34px;
+    font-size:18px;
+    margin-bottom:4px;
+}
+.launch-card h4{
+    font-size:12px;
+}
+.launch-card p{
+    font-size:10px;
+}
+
+/* Mobile: clean single-column navigation cards */
+@media(max-width:600px){
+    section{
+        padding:24px 14px !important;
+    }
+    #dashboard{
+        padding-top:20px !important;
+    }
+    #dashboard .section-title{
+        text-align:left;
+        font-size:29px;
+    }
+    .health-ticker{
+        height:48px;
+        border-radius:12px;
+    }
+    .ticker-label{
+        flex-basis:132px;
+        font-size:10px;
+        padding:0 8px;
+    }
+    .ticker-item{
+        font-size:11px;
+        line-height:48px;
+        padding-right:28px;
+    }
+    .launch-grid{
+        grid-template-columns:1fr 1fr;
+    }
+    .launch-card{
+        min-height:74px;
+    }
+}
+
+/* Very small phones */
+@media(max-width:390px){
+    .launch-grid{
+        grid-template-columns:1fr;
+    }
+    .ticker-label{
+        flex-basis:118px;
+    }
+    #dashboard .section-title{
+        font-size:27px;
+    }
+}
+
+/* Explore cards remain systematic */
+#explore .card-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+@media(max-width:600px){
+    #explore .card-grid{
+        grid-template-columns:1fr;
+    }
+}
+
 </style>
 </head>
 <body>
