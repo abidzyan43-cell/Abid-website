@@ -1,10 +1,11 @@
 {
-  "name":"UR PARAMEDIC | Medic Abid",
-  "short_name":"UR PARAMEDIC",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#021c16",
-  "theme_color":"#031f18",
-  "description":"Personal fitness and field paramedic command center.",
-  "icons":[]
+  "name": "UR PARAMEDIC | Medic Abid",
+  "short_name": "UR PARAMEDIC",
+  "description": "Personal fitness, nutrition and field paramedic learning hub.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#021c16",
+  "theme_color": "#031f18",
+  "lang": "en"
 }
