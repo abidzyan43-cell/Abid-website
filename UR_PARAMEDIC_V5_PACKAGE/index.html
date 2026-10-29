@@ -705,7 +705,21 @@ footer{
 @media(max-width:900px){.v4-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.v4-stat-row{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.v4-grid{grid-template-columns:1fr}.v4-section{padding:30px 14px}.v4-big-number{font-size:36px}.v4-card{padding:17px}}
 </style>
-<style>.v4-controls{display:flex;gap:6px;align-items:center}.v4-controls button{background:transparent;color:#fff;border:1px solid var(--line);border-radius:18px;padding:6px 9px;font-size:11px}.light-mode{--bg:#eef5f2;--nav:#ffffff;--card:#ffffff;--card2:#e6f0ec;--text:#10231d;--muted:#52655e;--line:#b4cfc4}.light-mode .menu a,.light-mode .v4-card p,.light-mode .subtitle{color:#253b34}.light-mode input,.light-mode textarea,.light-mode select{color:#10231d;background:#fff}</style></head>
+<style>.v4-controls{display:flex;gap:6px;align-items:center}.v4-controls button{background:transparent;color:#fff;border:1px solid var(--line);border-radius:18px;padding:6px 9px;font-size:11px}.light-mode{--bg:#eef5f2;--nav:#ffffff;--card:#ffffff;--card2:#e6f0ec;--text:#10231d;--muted:#52655e;--line:#b4cfc4}.light-mode .menu a,.light-mode .v4-card p,.light-mode .subtitle{color:#253b34}.light-mode input,.light-mode textarea,.light-mode select{color:#10231d;background:#fff}</style>
+<style>
+/* V5 Personal Plan Studio — added without changing the top brand/menu/language controls */
+.personal-plan-shell{max-width:1050px;margin:20px auto 26px;padding:clamp(16px,3vw,28px);border:1px solid var(--gold);border-radius:24px;background:radial-gradient(circle at top right,rgba(217,178,63,.12),transparent 36%),linear-gradient(145deg,#07382d,#031f18 75%);box-shadow:0 18px 45px rgba(0,0,0,.2)}
+.plan-heading{text-align:center;margin-bottom:18px}.plan-kicker{display:inline-block;color:var(--gold);font-weight:900;letter-spacing:2px;font-size:11px;margin-bottom:7px}.plan-heading h2{color:var(--gold);font-size:clamp(23px,4vw,34px);line-height:1.2}.plan-heading p{color:var(--muted);margin:9px auto 0;max-width:680px}
+.plan-input-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.plan-input-grid label{font-size:12px;font-weight:800;color:#dfe9e5;background:rgba(0,0,0,.14);padding:10px;border:1px solid var(--line);border-radius:13px}.plan-input-grid input,.plan-input-grid select{font-size:14px;margin:5px 0 0;padding:11px 9px;min-width:0}.plan-generate{display:block;width:100%;margin:15px 0 0;padding:14px 18px;border:0;border-radius:15px;background:linear-gradient(90deg,#e7c65b,#f7df8c);color:#09261d;font-weight:900;letter-spacing:.4px;box-shadow:0 7px 22px rgba(217,178,63,.16)}
+.personal-plan-result{margin-top:17px}.plan-empty-art{text-align:center;font-size:35px;padding:15px}.personal-plan-result>h3,.personal-plan-result>p{text-align:center}.plan-summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:15px 0}.plan-stat{padding:13px 9px;text-align:center;background:#05291f;border:1px solid #28604e;border-radius:15px}.plan-stat b{display:block;color:var(--gold);font-size:clamp(19px,3vw,28px)}.plan-stat span{font-size:11px;color:#c2d2cc}.plan-alert{padding:12px 14px;border-radius:12px;background:#102e25;border:1px solid var(--line);font-size:13px;margin:12px 0;color:#d9e6e0}
+.plan-result-columns{display:grid;grid-template-columns:1.1fr .9fr;gap:13px}.plan-panel{border:1px solid var(--line);border-radius:18px;padding:15px;background:rgba(0,0,0,.14);min-width:0}.plan-panel h3{color:var(--gold);margin-bottom:11px}.meal-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.meal-card{overflow:hidden;border:1px solid #2c6b56;border-radius:15px;background:#05291f}.meal-art{height:88px;display:flex;align-items:center;justify-content:center;font-size:43px;background:linear-gradient(135deg,#165642,#092e23)}.meal-card h4{padding:8px 10px 0;color:#f3d879;font-size:13px}.meal-card p{padding:2px 10px 11px;color:#d2e0da;font-size:12px;line-height:1.45}.workout-plan-list{display:grid;gap:9px}.workout-plan-card{display:grid;grid-template-columns:58px 1fr;gap:10px;align-items:center;padding:10px;border-radius:14px;border:1px solid #28604e;background:#05291f}.workout-art{height:55px;border-radius:12px;background:linear-gradient(135deg,#1b5c46,#082a20);display:flex;align-items:center;justify-content:center;font-size:27px}.workout-plan-card h4{color:#f3d879;font-size:13px}.workout-plan-card p{font-size:12px;color:#d2e0da;line-height:1.45}.plan-disclaimer{font-size:11px;color:var(--muted);margin-top:14px;line-height:1.55}
+/* Keep the requested cards lower, after Quick Access */
+.v3-feature-grid{margin-top:24px!important}
+@media(max-width:800px){.plan-input-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plan-result-columns{grid-template-columns:1fr}}
+@media(max-width:420px){.plan-input-grid{grid-template-columns:1fr}.meal-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.personal-plan-shell{padding:13px}}
+</style>
+
+</head>
 <body>
 <header id="home"><div class="hero"><div class="logo">UR PARAMEDIC</div><p class="tagline">FITNESS • HEALTH • MEDICAL KNOWLEDGE • DISCIPLINE</p><p class="tagline">A practical platform for fitness, nutrition, paramedic learning and a disciplined lifestyle.</p><a href="#explore" class="hero-btn">EXPLORE</a></div></header>
 <nav><div class="navbar"><div class="nav-logo">UR PARAMEDIC</div><div class="menu-btn" onclick="toggleMenu()">☰</div><ul class="menu" id="menu"><li><a href="javascript:void(0)" onclick="goBack()">🏠 HOME</a></li><li><a href="javascript:void(0)" onclick="openSection('explore')">📚 EXPLORE</a></li><li><a href="javascript:void(0)" onclick="openSection('tools')">🧰 TOOLS</a></li><li><a href="javascript:void(0)" onclick="openSection('dashboard')">📊 DASHBOARD</a></li><li><a href="javascript:void(0)" onclick="openSection('growth')">🏆 GROWTH</a></li><li><a href="javascript:void(0)" onclick="openSection('paramedic')">🚑 PARAMEDIC</a></li><li><a href="javascript:void(0)" onclick="openSection('field')">🚑 FIELD MODE</a></li><li><a href="javascript:void(0)" onclick="openSection('walking')">🚶 WALK</a></li><li><a href="javascript:void(0)" onclick="openSection('patient')">📋 PATIENT</a></li><li><a href="javascript:void(0)" onclick="openSection('checklist')">✅ CHECKLIST</a></li><li><a href="javascript:void(0)" onclick="openSection('library')">📚 LIBRARY</a></li><li><a href="javascript:void(0)" onclick="openSection('progress')">📈 PROGRESS</a></li></ul><div class="v4-controls"><button onclick="toggleTheme()" title="Toggle theme">☀️/🌙</button><button onclick="toggleHindi()" id="langBtn" title="Language">EN</button></div></div></nav>
@@ -732,17 +746,38 @@ footer{
 
 <section id="about" class="hidden"><button class="back-btn" onclick="goBack()">← Back</button><h2 class="section-title">ABOUT UR PARAMEDIC</h2><div class="content-box"><p>UR PARAMEDIC is a practical platform focused on fitness, health awareness, nutrition, paramedic learning and disciplined living.</p><h3>Mission</h3><p>Make useful health and fitness information simple, practical and accessible.</p><h3>What you can find</h3><ul><li>Weekly workout routines</li><li>Fat-loss, muscle-gain and maintenance nutrition</li><li>Fitness calculators and tools</li><li>Medical awareness and first-aid topics</li><li>Disease information</li><li>Paramedic quiz and daily learning</li><li>Personal fitness dashboard</li></ul></div></section>
 
-<section id="dashboard"><div class="v4-card" style="margin:0 auto 16px;max-width:1050px"><div class="v4-tool-row"><button onclick="openSection('field')">🚑 FIELD MODE</button><button onclick="openSection('walking')">🚶 TRACK WALK</button><button onclick="openSection('patient')">📋 PATIENT CARD</button><button onclick="openSection('checklist')">✅ CHECKLIST</button><button onclick="openSection('library')">📚 LIBRARY</button><button onclick="openSection('progress')">📈 MY PROGRESS</button><button onclick="openSection('runningCenter')">🏃 1600M</button></div></div>
-<div class="premium-eyebrow">✦ YOUR DAILY PERFORMANCE HUB</div><h2 class="section-title">📊 MY DAILY DASHBOARD</h2>
+<section id="dashboard">
 <div class="v3-hero-card">
   <div class="v3-hero-main">
     <div class="v3-kicker">MEDIC ABID • PERSONAL COMMAND CENTER</div>
     <h1>Welcome, <span id="v3Name">Medic</span> 👋</h1>
-    <p>Build fitness. Sharpen medical skills. Stay consistent.</p>
+    <p>Welcome to UR PARAMEDIC — your personal fitness, nutrition and field-learning command center. Build fitness, sharpen medical skills and stay consistent.</p>
     <div class="v3-actions"><button onclick="openSection('workout')">💪 Start Workout</button><button onclick="startQuiz()">🧠 Daily Quiz</button><button onclick="openSection('paramedic')">🚑 Field Mode</button></div>
   </div>
   <div class="v3-level"><div class="v3-ring"><span id="v3Level">1</span><small>LEVEL</small></div><b id="v3XP">0 XP</b><span>Personal Progress</span></div>
 </div>
+
+<div class="personal-plan-shell" id="personalPlanService">
+ <div class="plan-heading"><span class="plan-kicker">✦ PERSONALIZED HEALTH STUDIO</span><h2>🥗 Make Your Own Diet & Workout Plan</h2><p>Apni details bharein — BMI, estimated calories, meal cards aur workout routine aapke inputs ke mutabiq banega.</p></div>
+ <form id="personalPlanForm" onsubmit="event.preventDefault();buildPersonalPlan()">
+  <div class="plan-input-grid">
+   <label>Age (years)<input id="ppAge" type="number" min="18" max="100" value="31" required></label>
+   <label>Sex used for calorie estimate<select id="ppSex"><option value="male">Male</option><option value="female">Female</option></select></label>
+   <label>Height (cm)<input id="ppHeight" type="number" min="120" max="230" value="170" required></label>
+   <label>Weight (kg)<input id="ppWeight" type="number" min="30" max="300" step="0.1" value="81" required></label>
+   <label>Daily activity<select id="ppActivity"><option value="1.2">Mostly sitting / low activity</option><option value="1.375">Light activity</option><option value="1.55" selected>Moderate activity / day duty</option><option value="1.725">Very active / hard training</option></select></label>
+   <label>Your goal<select id="ppGoal"><option value="fatloss">Fat loss</option><option value="maintain">Maintain weight</option><option value="muscle">Muscle gain</option></select></label>
+   <label>Food preference<select id="ppFood"><option value="nonveg">Non-vegetarian</option><option value="veg">Vegetarian</option><option value="eggetarian">Egg + vegetarian</option></select></label>
+   <label>Workout level<select id="ppLevel"><option value="beginner">Beginner / returning</option><option value="intermediate" selected>Intermediate</option><option value="advanced">Advanced</option></select></label>
+  </div>
+  <button class="plan-generate" type="submit">✨ GENERATE MY PERSONAL PLAN</button>
+ </form>
+ <div id="personalPlanResult" class="personal-plan-result" aria-live="polite"><div class="plan-empty-art">🥗　💪　📊</div><h3>Your plan will appear here</h3><p>Enter your details and tap “Generate My Personal Plan”.</p></div>
+ <p class="plan-disclaimer">Health note: BMI and calorie needs are estimates, not a diagnosis or a guaranteed “exact” prescription. BMI does not account for muscle mass; if you have a medical condition, are under 18, or have a history of disordered eating, get advice from a qualified clinician/dietitian before following a weight-loss plan.</p>
+</div>
+
+<div class="v4-card" style="margin:0 auto 16px;max-width:1050px"><div class="v4-tool-row"><button onclick="openSection('field')">🚑 FIELD MODE</button><button onclick="openSection('walking')">🚶 TRACK WALK</button><button onclick="openSection('patient')">📋 PATIENT CARD</button><button onclick="openSection('checklist')">✅ CHECKLIST</button><button onclick="openSection('library')">📚 LIBRARY</button><button onclick="openSection('progress')">📈 MY PROGRESS</button><button onclick="openSection('runningCenter')">🏃 1600M</button></div></div>
+
 <div class="v3-metrics">
  <div><span>🔥 STREAK</span><b id="v3Streak">0</b><small>days</small></div>
  <div><span>🎯 TODAY</span><b id="v3Today">0%</b><small>complete</small></div>
@@ -760,12 +795,7 @@ footer{
  </div>
  <div class="v3-progress"><span id="v3Progress"></span></div>
 </div>
-<div class="v3-feature-grid">
- <div onclick="openSection('growth')"><strong>🏆 GROWTH HUB</strong><span>XP • Levels • 30-day challenge</span></div>
- <div onclick="openSection('paramedic')"><strong>🚑 PARAMEDIC MODE</strong><span>ABCDE • FAST • CPR • Trauma</span></div>
- <div onclick="openSection('tools')"><strong>🧰 FITNESS TOOLS</strong><span>BMI • BMR • Pace • Heart Rate</span></div>
- <div onclick="openSection('diseases')"><strong>🦠 DISEASE LIBRARY</strong><span>Quick revision & health knowledge</span></div>
-</div>
+
 
 <div class="health-ticker" aria-label="Daily Fitness and Health Tips">
 <div class="ticker-label">💡 FITNESS TIPS</div>
@@ -805,6 +835,12 @@ footer{
 <div class="launch-card" onclick="openSection('contact')"><div class="launch-icon">📩</div><h4>Contact</h4><p>Send a query</p></div>
 </div>
 </div>
+</div>
+<div class="v3-feature-grid">
+ <div onclick="openSection('growth')"><strong>🏆 GROWTH HUB</strong><span>XP • Levels • 30-day challenge</span></div>
+ <div onclick="openSection('paramedic')"><strong>🚑 PARAMEDIC MODE</strong><span>ABCDE • FAST • CPR • Trauma</span></div>
+ <div onclick="openSection('tools')"><strong>🧰 FITNESS TOOLS</strong><span>BMI • BMR • Pace • Heart Rate</span></div>
+ <div onclick="openSection('diseases')"><strong>🦠 DISEASE LIBRARY</strong><span>Quick revision & health knowledge</span></div>
 </div>
 <div class="legacy-dashboard-controls" aria-hidden="true" style="display:none!important">
 <div class="content-box"><h3>Today's Progress</h3><div class="progress"><div id="progressBar"></div></div><p id="progressText">0/5 goals completed</p><label class="check"><input type="checkbox" id="workoutDone" onchange="saveDash()"> 🏋️ Workout completed</label><label class="check"><input type="checkbox" id="walkDone" onchange="saveDash()"> 🚶 30-minute walk completed</label><label class="check"><input type="checkbox" id="sleepDone" onchange="saveDash()"> 😴 6–8 hours sleep</label><label class="check"><input type="checkbox" id="quizDone" onchange="saveDash()"> 🧠 Daily paramedic quiz completed</label><button class="primary-btn" onclick="openWater()">💧 Add water</button> <button class="primary-btn" onclick="resetDash()">Reset today</button> <button class="primary-btn" onclick="startQuiz()">🧠 Daily Quiz</button><div class="result" id="waterMsg">Water goal: 8 glasses. A glass is counted manually.</div></div><div class="content-box"><h3>🏆 Badges</h3><div id="badges"><span class="badge">Start today</span></div></div></div></section>
@@ -1095,7 +1131,31 @@ const PAT_IDS=['paId','paAge','paSex','paComplaint','paBP','paPulse','paSpo2','p
 function savePatientDraft(){let o={};PAT_IDS.forEach(id=>o[id]=document.getElementById(id).value);localStorage.setItem('urPatientDraft',JSON.stringify(o));document.getElementById('patientMsg').textContent='✅ Draft saved locally on this device.'}
 function loadPatient(){let o=JSON.parse(localStorage.getItem('urPatientDraft')||'{}');PAT_IDS.forEach(id=>{if(o[id]!=null)document.getElementById(id).value=o[id]})}
 function clearPatient(){PAT_IDS.forEach(id=>document.getElementById(id).value='');localStorage.removeItem('urPatientDraft');document.getElementById('patientMsg').textContent='Cleared.'}
-function generatePatientReport(){let vals=PAT_IDS.map(id=>[id.replace('pa',''),document.getElementById(id).value||'—']);let html='<!doctype html><html><head><title>UR PARAMEDIC Patient Assessment</title><style>body{font-family:Arial;padding:30px}h1{color:#174b3d}table{width:100%;border-collapse:collapse}td{border:1px solid #aaa;padding:8px}td:first-child{font-weight:bold;width:30%}.note{margin-top:20px}</style></head><body><h1>UR PARAMEDIC — Patient Assessment</h1><p>Generated locally • '+new Date().toLocaleString('en-IN')+'</p><table>'+vals.map(x=>'<tr><td>'+x[0]+'</td><td>'+String(x[1]).replace(/</g,'&lt;')+'</td></tr>').join('')+'</table><p class="note">For clinical documentation within authorized scope. Verify against official records/protocol.</p></body></html>';let w=window.open('','_blank');if(w){w.document.write(html);w.document.close();setTimeout(()=>w.print(),500)}else alert('Allow pop-ups to generate the printable report.')}
+function generatePatientReport(){let vals=PAT_IDS.map(id=>[id.replace('pa',''),document.getElementById(id).value||'—']);let html='<!doctype html><html><head><title>UR PARAMEDIC Patient Assessment</title><style>body{font-family:Arial;padding:30px}h1{color:#174b3d}table{width:100%;border-collapse:collapse}td{border:1px solid #aaa;padding:8px}td:first-child{font-weight:bold;width:30%}.note{margin-top:20px}</style></head><body><h1>UR PARAMEDIC — Patient Assessment</h1><p>Generated locally • '+new Date().toLocaleString('en-IN')+'</p><table>'+vals.map(x=>'<tr><td>'+x[0]+'</td><td>'+String(x[1]).replace(/</g,'&lt;')+'</td></tr>').join('')+'</table><p class="note">For clinical documentation within authorized scope. Verify against official records/protocol.</p>
+<script>
+function buildPersonalPlan(){
+ const age=Number(document.getElementById('ppAge').value),h=Number(document.getElementById('ppHeight').value),w=Number(document.getElementById('ppWeight').value),sex=document.getElementById('ppSex').value,activity=Number(document.getElementById('ppActivity').value),goal=document.getElementById('ppGoal').value,food=document.getElementById('ppFood').value,level=document.getElementById('ppLevel').value;
+ if(!age||!h||!w||age<18||h<120||h>230||w<30||w>300){alert('Please enter valid details. This planner is intended for adults 18+.');return}
+ const hm=h/100,bmi=w/(hm*hm),bmr=10*w+6.25*h-5*age+(sex==='male'?5:-161),tdee=bmr*activity;
+ let target=tdee;if(goal==='fatloss')target=Math.max(tdee-400,tdee*.8);if(goal==='muscle')target=tdee+200;target=Math.round(target/50)*50;
+ const protein=Math.round(w*(goal==='muscle'?1.6:goal==='fatloss'?1.4:1.2)),fat=Math.round((target*.27)/9),carb=Math.max(0,Math.round((target-protein*4-fat*9)/4));
+ let cat=bmi<18.5?'Below usual adult BMI range':bmi<25?'Usual adult BMI range':bmi<30?'Above usual adult BMI range':'High adult BMI range';
+ const proteinFoods=food==='veg'?['Dal + curd','Paneer/tofu + roti','Chana/rajma + salad','Milk/curd + nuts']:food==='eggetarian'?['Eggs + whole-wheat roti','Dal + curd','Egg/paneer wrap','Milk/curd + roasted chana']:['Eggs + whole-wheat roti','Chicken/fish + roti/rice','Chicken/soy/dal bowl','Curd + roasted chana'];
+ const meals=[['🌅','Breakfast',proteinFoods[0]+'; oats or 1–2 rotis; cucumber/tomato.'],['☀️','Lunch',proteinFoods[1]+'; 1 bowl sabzi; salad; a moderate rice/roti portion.'],['🍎','Snack','One seasonal fruit + '+proteinFoods[3]+'; water or unsweetened tea.'],['🌙','Dinner',proteinFoods[2]+'; vegetables/salad; roti or rice according to hunger and activity.']];
+ let workout=[];
+ if(level==='beginner') workout=[['🚶','Brisk walk','20–30 min at a comfortable pace; build up gradually.'],['🪑','Strength basics','2 rounds: chair squats, wall push-ups, glute bridges and bird-dog.'],['🧘','Mobility & recovery','10 min gentle mobility; keep one recovery day.']];
+ else if(level==='intermediate') workout=[['🏋️','Strength A','3 rounds: squats, push-ups (suitable variation), rows, hip hinge and plank.'],['🚶','Cardio / walk','30–40 min brisk walk; conversational pace.'],['💪','Strength B','3 rounds: lunges, overhead press variation, rows, glute bridge and dead bug.'],['🧘','Recovery','Mobility or easy walk; at least one easier day weekly.']];
+ else workout=[['🏋️','Strength split','3–4 sessions/week; use progressive overload and sound technique.'],['🏃','Cardio intervals','One or two planned sessions/week matched to current fitness.'],['🚶','Easy aerobic walk','30–45 min easy/moderate, adjusted for recovery.'],['🧘','Recovery','Mobility, sleep and at least one recovery day; avoid training through pain.']];
+ const goalText=goal==='fatloss'?'modest calorie deficit':goal==='muscle'?'small calorie surplus':'estimated maintenance';
+ const result=document.getElementById('personalPlanResult');
+ result.innerHTML='<div class="plan-summary-grid"><div class="plan-stat"><b>'+bmi.toFixed(1)+'</b><span>BMI · '+cat+'</span></div><div class="plan-stat"><b>'+target.toLocaleString()+'</b><span>Estimated kcal/day</span></div><div class="plan-stat"><b>'+protein+' g</b><span>Protein target</span></div><div class="plan-stat"><b>'+carb+' g</b><span>Estimated carbs</span></div></div><div class="plan-alert">🎯 Goal: <b>'+goalText+'</b>. Estimated maintenance is '+Math.round(tdee).toLocaleString()+' kcal/day; needs vary with real activity and weekly weight trend. BMI is a screening measure, not a diagnosis.</div><div class="plan-result-columns"><div class="plan-panel"><h3>🥗 Your Visual Diet Plan</h3><div class="meal-card-grid">'+meals.map(m=>'<article class="meal-card"><div class="meal-art">'+m[0]+'</div><h4>'+m[1]+'</h4><p>'+m[2]+'</p></article>').join('')+'</div><p class="plan-disclaimer">Portions should be adjusted for hunger, food availability, culture and progress. Prefer minimally processed foods, vegetables/fruit and adequate fluids; no food is mandatory.</p></div><div class="plan-panel"><h3>💪 Your Visual Workout Plan</h3><div class="workout-plan-list">'+workout.map(x=>'<article class="workout-plan-card"><div class="workout-art">'+x[0]+'</div><div><h4>'+x[1]+'</h4><p>'+x[2]+'</p></div></article>').join('')+'</div><p class="plan-disclaimer">Stop if you develop chest pain, faintness or unusual breathlessness. Increase training gradually and follow clinician advice for existing medical conditions.</p></div></div><button class="plan-generate" type="button" onclick="window.print()">🖨️ PRINT / SAVE MY PLAN</button>';
+ localStorage.setItem('urPersonalPlanInputs',JSON.stringify({age,h,w,sex,activity,goal,food,level}));
+ result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+(function loadPersonalPlanInputs(){try{const d=JSON.parse(localStorage.getItem('urPersonalPlanInputs')||'null');if(d){Object.entries({ppAge:d.age,ppHeight:d.h,ppWeight:d.w,ppSex:d.sex,ppActivity:d.activity,ppGoal:d.goal,ppFood:d.food,ppLevel:d.level}).forEach(([id,v])=>{const e=document.getElementById(id);if(e)e.value=v});}}catch(e){}})();
+</script>
+
+</body></html>';let w=window.open('','_blank');if(w){w.document.write(html);w.document.close();setTimeout(()=>w.print(),500)}else alert('Allow pop-ups to generate the printable report.')}
 
 function renderProgress(){let km=V4.walks.reduce((a,x)=>a+x.km,0),st=V4.walks.reduce((a,x)=>a+x.steps,0),cal=V4.walks.reduce((a,x)=>a+x.cal,0);document.getElementById('totalWalkKm').textContent=km.toFixed(2)+' km';document.getElementById('totalWalkSteps').textContent=st.toLocaleString();document.getElementById('totalWalkCal').textContent=cal.toLocaleString();let xp=typeof growthState!=='undefined'?growthState.xp||0:0;document.getElementById('progressXP').textContent=xp;document.getElementById('walkTable').innerHTML=V4.walks.slice(0,15).map(x=>'<tr><td>'+x.date+'</td><td>'+x.km.toFixed(2)+' km</td><td>'+x.steps.toLocaleString()+'</td><td>'+fmtSec(x.sec)+'</td><td>'+x.cal+'</td></tr>').join('')||'<tr><td colspan="5">No walks saved yet.</td></tr>';let badges=[];if(V4.walks.length>=1)badges.push('🚶 First Walk');if(km>=10)badges.push('🥉 10 km');if(km>=50)badges.push('🥈 50 km');if(km>=100)badges.push('🥇 100 km');if(xp>=100)badges.push('⭐ 100 XP');document.getElementById('progressBadges').innerHTML=badges.length?badges.map(x=>'<span class="badge">'+x+'</span>').join(''):'<span class="badge">🌱 Start your first activity</span>'}
 function saveRunning(){let m=parseFloat(document.getElementById('runMin').value),t=parseFloat(document.getElementById('runTarget').value)||6;if(!m)return;localStorage.setItem('urRunProgress',JSON.stringify({m,t,n:document.getElementById('runNote').value,date:new Date().toLocaleDateString('en-IN')}));let gap=m-t;document.getElementById('runResult').innerHTML='Current: <strong>'+m.toFixed(2)+' min</strong><br>Target: <strong>'+t.toFixed(2)+' min</strong><br>'+ (gap>0?'You are '+gap.toFixed(2)+' min above target.':'🎯 Target matched or beaten!')}
